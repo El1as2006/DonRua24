@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<!-- Mirrored from sb-admin-pro.startbootstrap.com/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 Nov 2024 02:02:34 GMT -->
 <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Overview - SB Admin Pro</title>
+        <title>Dashboard - SB Admin Pro</title>
+        <link href="../../cdn.jsdelivr.net/npm/simple-datatables%407.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="../../Assets/template2/css/styles.css" rel="stylesheet" />
         <link rel="icon" type="image/x-icon" href="../../Assets/template2/assets/img/favicon.png" />
         <script data-search-pseudo-elements="" defer="" src="../../Plugins/cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" crossorigin="anonymous"></script>
@@ -132,7 +131,7 @@
                         </h6>
                         <!-- Example Message 1  -->
                         <a class="dropdown-item dropdown-notifications-item" href="#!">
-                            <img class="dropdown-notifications-item-img" src="../../Assets/template2/assets/img/illustrations/profiles/profile-2.png" />
+                            <img class="dropdown-notifications-item-img" src="assets/img/illustrations/profiles/profile-2.png" />
                             <div class="dropdown-notifications-item-content">
                                 <div class="dropdown-notifications-item-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                                 <div class="dropdown-notifications-item-content-details">Thomas Wilcox · 58m</div>
@@ -140,7 +139,7 @@
                         </a>
                         <!-- Example Message 2-->
                         <a class="dropdown-item dropdown-notifications-item" href="#!">
-                            <img class="dropdown-notifications-item-img" src="../../Assets/template2/assets/img/illustrations/profiles/profile-3.png" />
+                            <img class="dropdown-notifications-item-img" src="assets/img/illustrations/profiles/profile-3.png" />
                             <div class="dropdown-notifications-item-content">
                                 <div class="dropdown-notifications-item-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                                 <div class="dropdown-notifications-item-content-details">Emily Fowler · 2d</div>
@@ -148,7 +147,7 @@
                         </a>
                         <!-- Example Message 3-->
                         <a class="dropdown-item dropdown-notifications-item" href="#!">
-                            <img class="dropdown-notifications-item-img" src="../../Assets/template2/assets/img/illustrations/profiles/profile-4.png" />
+                            <img class="dropdown-notifications-item-img" src="assets/img/illustrations/profiles/profile-4.png" />
                             <div class="dropdown-notifications-item-content">
                                 <div class="dropdown-notifications-item-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                                 <div class="dropdown-notifications-item-content-details">Marshall Rosencrantz · 3d</div>
@@ -156,7 +155,7 @@
                         </a>
                         <!-- Example Message 4-->
                         <a class="dropdown-item dropdown-notifications-item" href="#!">
-                            <img class="dropdown-notifications-item-img" src="../../Assets/template2/assets/img/illustrations/profiles/profile-5.png" />
+                            <img class="dropdown-notifications-item-img" src="assets/img/illustrations/profiles/profile-5.png" />
                             <div class="dropdown-notifications-item-content">
                                 <div class="dropdown-notifications-item-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                                 <div class="dropdown-notifications-item-content-details">Colby Newton · 3d</div>
@@ -168,13 +167,13 @@
                 </li>
                 <!-- User Dropdown-->
                 <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
-                    <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="../../Assets/template2/assets/img/illustrations/profiles/profile-1.png" /></a>
+                    <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="../../Assets/img/illustrations/profiles/profile-1.png" /></a>
                     <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
                         <h6 class="dropdown-header d-flex align-items-center">
-                            <img class="dropdown-user-img" src="../../Assets/template2/assets/img/illustrations/profiles/profile-1.png" />
+                            <img class="dropdown-user-img" src="assets/img/illustrations/profiles/profile-1.png" />
                             <div class="dropdown-user-details">
                                 <div class="dropdown-user-details-name">Valerie Luna</div>
-                                <div class="dropdown-user-details-email"><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="62140e170c0322030d0e4c010d0f">[email&#160;protected]</a></div>
+                                <div class="dropdown-user-details-email"><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="26504a5348476647494a0845494b">[email&#160;protected]</a></div>
                             </div>
                         </h6>
                         <div class="dropdown-divider"></div>
@@ -500,202 +499,544 @@
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                    <header class="py-10 mb-4 bg-gradient-primary-to-secondary">
+                    <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
                         <div class="container-xl px-4">
-                            <div class="text-center">
-                                <h1 class="text-white">Welcome to SB Admin Pro</h1>
-                                <p class="lead mb-0 text-white-50">A professionally designed admin panel template built with Bootstrap 5</p>
+                            <div class="page-header-content pt-4">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-auto mt-4">
+                                        <h1 class="page-header-title">
+                                            <div class="page-header-icon"><i data-feather="activity"></i></div>
+                                            Dashboard
+                                        </h1>
+                                        <div class="page-header-subtitle">Example dashboard overview and content summary</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </header>
                     <!-- Main page content-->
-                    <div class="container-xl px-4">
-                        <h2 class="mt-5 mb-0">Dashboards</h2>
-                        <p>Three dashboard examples to get you started!</p>
-                        <hr class="mt-0 mb-4" />
+                    <div class="container-xl px-4 mt-n10">
                         <div class="row">
-                            <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="dashboard-1.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/dashboards/default.png" alt="..." /></a>
-                                <div class="text-center small">Default Dashboard</div>
+                            <div class="col-xl-4 mb-4">
+                                <!-- Dashboard example card 1-->
+                                <a class="card lift h-100" href="#!">
+                                    <div class="card-body d-flex justify-content-center flex-column">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="me-3">
+                                                <i class="feather-xl text-primary mb-3" data-feather="package"></i>
+                                                <h5>Powerful Components</h5>
+                                                <div class="text-muted small">To create informative visual elements on your pages</div>
+                                            </div>
+                                            <img src="assets/img/illustrations/browser-stats.svg" alt="..." style="width: 8rem" />
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                            <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="dashboard-3.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/dashboards/affiliate.png" alt="..." /></a>
-                                <div class="text-center small">Affiliate Dashboard</div>
+                            <div class="col-xl-4 mb-4">
+                                <!-- Dashboard example card 2-->
+                                <a class="card lift h-100" href="#!">
+                                    <div class="card-body d-flex justify-content-center flex-column">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="me-3">
+                                                <i class="feather-xl text-secondary mb-3" data-feather="book"></i>
+                                                <h5>Documentation</h5>
+                                                <div class="text-muted small">To keep you on track when working with our toolkit</div>
+                                            </div>
+                                            <img src="assets/img/illustrations/processing.svg" alt="..." style="width: 8rem" />
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                            <div class="col-md-6 col-xl-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="dashboard-2.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/dashboards/multipurpose.png" alt="..." /></a>
-                                <div class="text-center small">Multipurpose Dashboard</div>
+                            <div class="col-xl-4 mb-4">
+                                <!-- Dashboard example card 3-->
+                                <a class="card lift h-100" href="#!">
+                                    <div class="card-body d-flex justify-content-center flex-column">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="me-3">
+                                                <i class="feather-xl text-green mb-3" data-feather="layout"></i>
+                                                <h5>Pages &amp; Layouts</h5>
+                                                <div class="text-muted small">To help get you started when building your new UI</div>
+                                            </div>
+                                            <img src="assets/img/illustrations/windows.svg" alt="..." style="width: 8rem" />
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <h2 class="mt-5 mb-0">App Pages</h2>
-                        <p>App pages to cover common use pages to help build your app!</p>
-                        <hr class="mt-0 mb-4" />
                         <div class="row">
-                            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="account-billing.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/pages/account-billing.png" alt="..." /></a>
-                                <div class="text-center small">Account - Billing</div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="account-notifications.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/pages/account-notifications.png" alt="..." /></a>
-                                <div class="text-center small">Account - Notifications</div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="account-profile.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/pages/account-profile.png" alt="..." /></a>
-                                <div class="text-center small">Account - Profile</div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="account-security.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/pages/account-security.png" alt="..." /></a>
-                                <div class="text-center small">Account - Security</div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="auth-login-basic.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/pages/auth-login-basic.png" alt="..." /></a>
-                                <div class="text-center small">Auth - Login</div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="auth-login-social.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/pages/auth-login-social.png" alt="..." /></a>
-                                <div class="text-center small">Auth - Login (Social)</div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="multi-tenant-select.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/pages/auth-mutli-tenant.png" alt="..." /></a>
-                                <div class="text-center small">Auth - Multi Tenant</div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="auth-password-basic.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/pages/auth-password-basic.png" alt="..." /></a>
-                                <div class="text-center small">Auth - Password</div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="auth-password-social.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/pages/auth-password-social.png" alt="..." /></a>
-                                <div class="text-center small">Auth - Password (Social)</div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="auth-register-basic.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/pages/auth-register-basic.png" alt="..." /></a>
-                                <div class="text-center small">Auth - Register</div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="auth-register-social.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/pages/auth-register-social.png" alt="..." /></a>
-                                <div class="text-center small">Auth - Register (Social)</div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="invoice.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/pages/invoice.png" alt="..." /></a>
-                                <div class="text-center small">Invoice</div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="knowledge-base-article.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/pages/knowledgebase-article.png" alt="..." /></a>
-                                <div class="text-center small">Knowledgebase - Article</div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="knowledge-base-category.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/pages/knowledgebase-category.png" alt="..." /></a>
-                                <div class="text-center small">Knowledgebase - Category</div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="knowledge-base-home-1.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/pages/knowledgebase-home-1.png" alt="..." /></a>
-                                <div class="text-center small">Knowledgebase - Home 1</div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="knowledge-base-home-2.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/pages/knowledgebase-home-2.png" alt="..." /></a>
-                                <div class="text-center small">Knowledgebase - Home 2</div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="pricing.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/pages/pricing.png" alt="..." /></a>
-                                <div class="text-center small">Pricing</div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="wizard.html"><img class="img-fluid" src="../../Plugins/assets.startbootstrap.com/img/screenshots-product-pages/sb-admin-pro/pages/wizard.png" alt="..." /></a>
-                                <div class="text-center small">Wizard</div>
-                            </div>
-                        </div>
-                        <h2 class="mt-5 mb-0">Starter Layouts</h2>
-                        <p>Layouts for creating new pages within your project!</p>
-                        <hr class="mt-0 mb-4" />
-                        <div class="row">
-                            <div class="col-sm-6 col-md-4 mb-4">
-                                <div class="small mb-1">Navigation</div>
-                                <div class="list-group mb-4">
-                                    <a class="list-group-item list-group-item-action p-3" href="layout-static.html">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            Static Sidenav
-                                            <i class="text-muted" data-feather="arrow-right"></i>
+                            <div class="col-xxl-8">
+                                <!-- Tabbed dashboard card example-->
+                                <div class="card mb-4">
+                                    <div class="card-header border-bottom">
+                                        <!-- Dashboard card navigation-->
+                                        <ul class="nav nav-tabs card-header-tabs" id="dashboardNav" role="tablist">
+                                            <li class="nav-item me-1"><a class="nav-link active" id="overview-pill" href="#overview" data-bs-toggle="tab" role="tab" aria-controls="overview" aria-selected="true">Overview</a></li>
+                                            <li class="nav-item"><a class="nav-link" id="activities-pill" href="#activities" data-bs-toggle="tab" role="tab" aria-controls="activities" aria-selected="false">Activities</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="tab-content" id="dashboardNavContent">
+                                            <!-- Dashboard Tab Pane 1-->
+                                            <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-pill">
+                                                <div class="chart-area mb-4 mb-lg-0" style="height: 20rem"><canvas id="myAreaChart" width="100%" height="30"></canvas></div>
+                                            </div>
+                                            <!-- Dashboard Tab Pane 2-->
+                                            <div class="tab-pane fade" id="activities" role="tabpanel" aria-labelledby="activities-pill">
+                                                <table id="datatablesSimple">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Date</th>
+                                                            <th>Event</th>
+                                                            <th>Time</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>Date</th>
+                                                            <th>Event</th>
+                                                            <th>Time</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>01/13/20</td>
+                                                            <td>
+                                                                <i class="me-2 text-green" data-feather="zap"></i>
+                                                                Server online
+                                                            </td>
+                                                            <td>1:21 AM</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>01/13/20</td>
+                                                            <td>
+                                                                <i class="me-2 text-red" data-feather="zap-off"></i>
+                                                                Server restarted
+                                                            </td>
+                                                            <td>1:00 AM</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>01/12/20</td>
+                                                            <td>
+                                                                <i class="me-2 text-purple" data-feather="shopping-cart"></i>
+                                                                New order placed! Order #
+                                                                <a href="#!">1126550</a>
+                                                            </td>
+                                                            <td>5:45 AM</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>01/12/20</td>
+                                                            <td>
+                                                                <i class="me-2 text-blue" data-feather="user"></i>
+                                                                Valerie Luna submitted
+                                                                <a href="#!">quarter four report</a>
+                                                            </td>
+                                                            <td>4:23 PM</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>01/12/20</td>
+                                                            <td>
+                                                                <i class="me-2 text-yellow" data-feather="database"></i>
+                                                                Database backup created
+                                                            </td>
+                                                            <td>3:51 AM</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>01/12/20</td>
+                                                            <td>
+                                                                <i class="me-2 text-purple" data-feather="shopping-cart"></i>
+                                                                New order placed! Order #
+                                                                <a href="#!">1126549</a>
+                                                            </td>
+                                                            <td>1:22 AM</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>01/11/20</td>
+                                                            <td>
+                                                                <i class="me-2 text-blue" data-feather="user-plus"></i>
+                                                                New user created:
+                                                                <a href="#!">Sam Malone</a>
+                                                            </td>
+                                                            <td>4:18 PM</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>01/11/20</td>
+                                                            <td>
+                                                                <i class="me-2 text-purple" data-feather="shopping-cart"></i>
+                                                                New order placed! Order #
+                                                                <a href="#!">1126548</a>
+                                                            </td>
+                                                            <td>4:02 PM</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>01/11/20</td>
+                                                            <td>
+                                                                <i class="me-2 text-purple" data-feather="shopping-cart"></i>
+                                                                New order placed! Order #
+                                                                <a href="#!">1126547</a>
+                                                            </td>
+                                                            <td>3:47 PM</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>01/11/20</td>
+                                                            <td>
+                                                                <i class="me-2 text-green" data-feather="zap"></i>
+                                                                Server online
+                                                            </td>
+                                                            <td>1:19 AM</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>01/11/20</td>
+                                                            <td>
+                                                                <i class="me-2 text-red" data-feather="zap-off"></i>
+                                                                Server restarted
+                                                            </td>
+                                                            <td>1:00 AM</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>01/10/20</td>
+                                                            <td>
+                                                                <i class="me-2 text-purple" data-feather="shopping-cart"></i>
+                                                                New order placed! Order #
+                                                                <a href="#!">1126547</a>
+                                                            </td>
+                                                            <td>5:31 PM</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>01/10/20</td>
+                                                            <td>
+                                                                <i class="me-2 text-purple" data-feather="shopping-cart"></i>
+                                                                New order placed! Order #
+                                                                <a href="#!">1126546</a>
+                                                            </td>
+                                                            <td>12:13 PM</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>01/10/20</td>
+                                                            <td>
+                                                                <i class="me-2 text-blue" data-feather="user"></i>
+                                                                Diane Chambers submitted
+                                                                <a href="#!">quarter four report</a>
+                                                            </td>
+                                                            <td>10:56 AM</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
-                                    </a>
-                                    <a class="list-group-item list-group-item-action p-3" href="layout-dark.html">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            Dark Sidenav
-                                            <i class="text-muted" data-feather="arrow-right"></i>
-                                        </div>
-                                    </a>
-                                    <a class="list-group-item list-group-item-action p-3" href="layout-rtl.html">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            RTL Layout
-                                            <i class="text-muted" data-feather="arrow-right"></i>
-                                        </div>
-                                    </a>
+                                    </div>
                                 </div>
-                                <div class="small mb-1">Container Options</div>
-                                <div class="list-group">
-                                    <a class="list-group-item list-group-item-action p-3" href="layout-boxed.html">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            Boxed Layouts
-                                            <i class="text-muted" data-feather="arrow-right"></i>
+                                <!-- Illustration dashboard card example-->
+                                <div class="card mb-4">
+                                    <div class="card-body py-5">
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <img class="img-fluid mb-4" src="assets/img/illustrations/data-report.svg" alt="" style="height: 10rem" />
+                                            <div class="text-center px-0 px-lg-5">
+                                                <h5>New reports are here! Generate custom reports now!</h5>
+                                                <p class="mb-4">Our new report generation system is now online. You can start creating custom reporting for any documents available on your account.</p>
+                                                <a class="btn btn-primary p-3" href="#!">Get Started</a>
+                                            </div>
                                         </div>
-                                    </a>
-                                    <a class="list-group-item list-group-item-action p-3" href="layout-fluid.html">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            Fluid Layout
-                                            <i class="text-muted" data-feather="arrow-right"></i>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-6 mb-4">
+                                        <!-- Dashboard activity timeline example-->
+                                        <div class="card card-header-actions h-100">
+                                            <div class="card-header">
+                                                Recent Activity
+                                                <div class="dropdown no-caret">
+                                                    <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="text-gray-500" data-feather="more-vertical"></i></button>
+                                                    <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownMenuButton">
+                                                        <h6 class="dropdown-header">Filter Activity:</h6>
+                                                        <a class="dropdown-item" href="#!"><span class="badge bg-green-soft text-green my-1">Commerce</span></a>
+                                                        <a class="dropdown-item" href="#!"><span class="badge bg-blue-soft text-blue my-1">Reporting</span></a>
+                                                        <a class="dropdown-item" href="#!"><span class="badge bg-yellow-soft text-yellow my-1">Server</span></a>
+                                                        <a class="dropdown-item" href="#!"><span class="badge bg-purple-soft text-purple my-1">Users</span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="timeline timeline-xs">
+                                                    <!-- Timeline Item 1-->
+                                                    <div class="timeline-item">
+                                                        <div class="timeline-item-marker">
+                                                            <div class="timeline-item-marker-text">27 min</div>
+                                                            <div class="timeline-item-marker-indicator bg-green"></div>
+                                                        </div>
+                                                        <div class="timeline-item-content">
+                                                            New order placed!
+                                                            <a class="fw-bold text-dark" href="#!">Order #2912</a>
+                                                            has been successfully placed.
+                                                        </div>
+                                                    </div>
+                                                    <!-- Timeline Item 2-->
+                                                    <div class="timeline-item">
+                                                        <div class="timeline-item-marker">
+                                                            <div class="timeline-item-marker-text">58 min</div>
+                                                            <div class="timeline-item-marker-indicator bg-blue"></div>
+                                                        </div>
+                                                        <div class="timeline-item-content">
+                                                            Your
+                                                            <a class="fw-bold text-dark" href="#!">weekly report</a>
+                                                            has been generated and is ready to view.
+                                                        </div>
+                                                    </div>
+                                                    <!-- Timeline Item 3-->
+                                                    <div class="timeline-item">
+                                                        <div class="timeline-item-marker">
+                                                            <div class="timeline-item-marker-text">2 hrs</div>
+                                                            <div class="timeline-item-marker-indicator bg-purple"></div>
+                                                        </div>
+                                                        <div class="timeline-item-content">
+                                                            New user
+                                                            <a class="fw-bold text-dark" href="#!">Valerie Luna</a>
+                                                            has registered
+                                                        </div>
+                                                    </div>
+                                                    <!-- Timeline Item 4-->
+                                                    <div class="timeline-item">
+                                                        <div class="timeline-item-marker">
+                                                            <div class="timeline-item-marker-text">1 day</div>
+                                                            <div class="timeline-item-marker-indicator bg-yellow"></div>
+                                                        </div>
+                                                        <div class="timeline-item-content">Server activity monitor alert</div>
+                                                    </div>
+                                                    <!-- Timeline Item 5-->
+                                                    <div class="timeline-item">
+                                                        <div class="timeline-item-marker">
+                                                            <div class="timeline-item-marker-text">1 day</div>
+                                                            <div class="timeline-item-marker-indicator bg-green"></div>
+                                                        </div>
+                                                        <div class="timeline-item-content">
+                                                            New order placed!
+                                                            <a class="fw-bold text-dark" href="#!">Order #2911</a>
+                                                            has been successfully placed.
+                                                        </div>
+                                                    </div>
+                                                    <!-- Timeline Item 6-->
+                                                    <div class="timeline-item">
+                                                        <div class="timeline-item-marker">
+                                                            <div class="timeline-item-marker-text">1 day</div>
+                                                            <div class="timeline-item-marker-indicator bg-purple"></div>
+                                                        </div>
+                                                        <div class="timeline-item-content">
+                                                            Details for
+                                                            <a class="fw-bold text-dark" href="#!">Marketing and Planning Meeting</a>
+                                                            have been updated.
+                                                        </div>
+                                                    </div>
+                                                    <!-- Timeline Item 7-->
+                                                    <div class="timeline-item">
+                                                        <div class="timeline-item-marker">
+                                                            <div class="timeline-item-marker-text">2 days</div>
+                                                            <div class="timeline-item-marker-indicator bg-green"></div>
+                                                        </div>
+                                                        <div class="timeline-item-content">
+                                                            New order placed!
+                                                            <a class="fw-bold text-dark" href="#!">Order #2910</a>
+                                                            has been successfully placed.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </a>
+                                    </div>
+                                    <div class="col-xl-6 mb-4">
+                                        <!-- Pie chart with legend example-->
+                                        <div class="card h-100">
+                                            <div class="card-header">Traffic Sources</div>
+                                            <div class="card-body">
+                                                <div class="chart-pie mb-4"><canvas id="myPieChart" width="100%" height="50"></canvas></div>
+                                                <div class="list-group list-group-flush">
+                                                    <div class="list-group-item d-flex align-items-center justify-content-between small px-0 py-2">
+                                                        <div class="me-3">
+                                                            <i class="fas fa-circle fa-sm me-1 text-blue"></i>
+                                                            Direct
+                                                        </div>
+                                                        <div class="fw-500 text-dark">55%</div>
+                                                    </div>
+                                                    <div class="list-group-item d-flex align-items-center justify-content-between small px-0 py-2">
+                                                        <div class="me-3">
+                                                            <i class="fas fa-circle fa-sm me-1 text-purple"></i>
+                                                            Social
+                                                        </div>
+                                                        <div class="fw-500 text-dark">15%</div>
+                                                    </div>
+                                                    <div class="list-group-item d-flex align-items-center justify-content-between small px-0 py-2">
+                                                        <div class="me-3">
+                                                            <i class="fas fa-circle fa-sm me-1 text-green"></i>
+                                                            Referral
+                                                        </div>
+                                                        <div class="fw-500 text-dark">30%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-4 mb-4">
-                                <div class="small mb-1">Page Headers</div>
-                                <div class="list-group">
-                                    <a class="list-group-item list-group-item-action p-3" href="header-simplified.html">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            Simplified
-                                            <i class="text-muted" data-feather="arrow-right"></i>
+                            <div class="col-xxl-4">
+                                <div class="row">
+                                    <div class="col-xl-6 col-xxl-12">
+                                        <!-- Team members / people dashboard card example-->
+                                        <div class="card mb-4">
+                                            <div class="card-header">People</div>
+                                            <div class="card-body">
+                                                <!-- Item 1-->
+                                                <div class="d-flex align-items-center justify-content-between mb-4">
+                                                    <div class="d-flex align-items-center flex-shrink-0 me-3">
+                                                        <div class="avatar avatar-xl me-3 bg-gray-200"><img class="avatar-img img-fluid" src="assets/img/illustrations/profiles/profile-1.png" alt="" /></div>
+                                                        <div class="d-flex flex-column fw-bold">
+                                                            <a class="text-dark line-height-normal mb-1" href="#!">Sid Rooney</a>
+                                                            <div class="small text-muted line-height-normal">Position</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown no-caret">
+                                                        <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownPeople1" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="more-vertical"></i></button>
+                                                        <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownPeople1">
+                                                            <a class="dropdown-item" href="#!">Action</a>
+                                                            <a class="dropdown-item" href="#!">Another action</a>
+                                                            <a class="dropdown-item" href="#!">Something else here</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Item 2-->
+                                                <div class="d-flex align-items-center justify-content-between mb-4">
+                                                    <div class="d-flex align-items-center flex-shrink-0 me-3">
+                                                        <div class="avatar avatar-xl me-3 bg-gray-200"><img class="avatar-img img-fluid" src="assets/img/illustrations/profiles/profile-2.png" alt="" /></div>
+                                                        <div class="d-flex flex-column fw-bold">
+                                                            <a class="text-dark line-height-normal mb-1" href="#!">Keelan Garza</a>
+                                                            <div class="small text-muted line-height-normal">Position</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown no-caret">
+                                                        <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownPeople2" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="more-vertical"></i></button>
+                                                        <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownPeople2">
+                                                            <a class="dropdown-item" href="#!">Action</a>
+                                                            <a class="dropdown-item" href="#!">Another action</a>
+                                                            <a class="dropdown-item" href="#!">Something else here</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Item 3-->
+                                                <div class="d-flex align-items-center justify-content-between mb-4">
+                                                    <div class="d-flex align-items-center flex-shrink-0 me-3">
+                                                        <div class="avatar avatar-xl me-3 bg-gray-200"><img class="avatar-img img-fluid" src="assets/img/illustrations/profiles/profile-3.png" alt="" /></div>
+                                                        <div class="d-flex flex-column fw-bold">
+                                                            <a class="text-dark line-height-normal mb-1" href="#!">Kaia Smyth</a>
+                                                            <div class="small text-muted line-height-normal">Position</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown no-caret">
+                                                        <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownPeople3" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="more-vertical"></i></button>
+                                                        <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownPeople3">
+                                                            <a class="dropdown-item" href="#!">Action</a>
+                                                            <a class="dropdown-item" href="#!">Another action</a>
+                                                            <a class="dropdown-item" href="#!">Something else here</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Item 4-->
+                                                <div class="d-flex align-items-center justify-content-between mb-4">
+                                                    <div class="d-flex align-items-center flex-shrink-0 me-3">
+                                                        <div class="avatar avatar-xl me-3 bg-gray-200"><img class="avatar-img img-fluid" src="assets/img/illustrations/profiles/profile-4.png" alt="" /></div>
+                                                        <div class="d-flex flex-column fw-bold">
+                                                            <a class="text-dark line-height-normal mb-1" href="#!">Kerri Kearney</a>
+                                                            <div class="small text-muted line-height-normal">Position</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown no-caret">
+                                                        <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownPeople4" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="more-vertical"></i></button>
+                                                        <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownPeople4">
+                                                            <a class="dropdown-item" href="#!">Action</a>
+                                                            <a class="dropdown-item" href="#!">Another action</a>
+                                                            <a class="dropdown-item" href="#!">Something else here</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Item 5-->
+                                                <div class="d-flex align-items-center justify-content-between mb-4">
+                                                    <div class="d-flex align-items-center flex-shrink-0 me-3">
+                                                        <div class="avatar avatar-xl me-3 bg-gray-200"><img class="avatar-img img-fluid" src="assets/img/illustrations/profiles/profile-5.png" alt="" /></div>
+                                                        <div class="d-flex flex-column fw-bold">
+                                                            <a class="text-dark line-height-normal mb-1" href="#!">Georgina Findlay</a>
+                                                            <div class="small text-muted line-height-normal">Position</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown no-caret">
+                                                        <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownPeople5" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="more-vertical"></i></button>
+                                                        <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownPeople5">
+                                                            <a class="dropdown-item" href="#!">Action</a>
+                                                            <a class="dropdown-item" href="#!">Another action</a>
+                                                            <a class="dropdown-item" href="#!">Something else here</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Item 6-->
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <div class="d-flex align-items-center flex-shrink-0 me-3">
+                                                        <div class="avatar avatar-xl me-3 bg-gray-200"><img class="avatar-img img-fluid" src="assets/img/illustrations/profiles/profile-6.png" alt="" /></div>
+                                                        <div class="d-flex flex-column fw-bold">
+                                                            <a class="text-dark line-height-normal mb-1" href="#!">Wilf Ingram</a>
+                                                            <div class="small text-muted line-height-normal">Position</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown no-caret">
+                                                        <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownPeople6" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="more-vertical"></i></button>
+                                                        <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownPeople6">
+                                                            <a class="dropdown-item" href="#!">Action</a>
+                                                            <a class="dropdown-item" href="#!">Another action</a>
+                                                            <a class="dropdown-item" href="#!">Something else here</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </a>
-                                    <a class="list-group-item list-group-item-action p-3" href="header-compact.html">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            Compact
-                                            <i class="text-muted" data-feather="arrow-right"></i>
+                                    </div>
+                                    <div class="col-xl-6 col-xxl-12">
+                                        <!-- Project tracker card example-->
+                                        <div class="card card-header-actions mb-4">
+                                            <div class="card-header">
+                                                Projects
+                                                <a class="btn btn-sm btn-primary-soft text-primary" href="#!">Create New</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <!-- Progress item 1-->
+                                                <div class="d-flex align-items-center justify-content-between small mb-1">
+                                                    <div class="fw-bold">Server Setup</div>
+                                                    <div class="small">25%</div>
+                                                </div>
+                                                <div class="progress mb-3"><div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                                <!-- Progress item 2-->
+                                                <div class="d-flex align-items-center justify-content-between small mb-1">
+                                                    <div class="fw-bold">Database Migration</div>
+                                                    <div class="small">50%</div>
+                                                </div>
+                                                <div class="progress mb-3"><div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                                <!-- Progress item 3-->
+                                                <div class="d-flex align-items-center justify-content-between small mb-1">
+                                                    <div class="fw-bold">Version Release</div>
+                                                    <div class="small">75%</div>
+                                                </div>
+                                                <div class="progress mb-3"><div class="progress-bar bg-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                                <!-- Progress item 4-->
+                                                <div class="d-flex align-items-center justify-content-between small mb-1">
+                                                    <div class="fw-bold">Product Listings</div>
+                                                    <div class="small">100%</div>
+                                                </div>
+                                                <div class="progress"><div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                            </div>
                                         </div>
-                                    </a>
-                                    <a class="list-group-item list-group-item-action p-3" href="header-overlap.html">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            Content Overlap
-                                            <i class="text-muted" data-feather="arrow-right"></i>
-                                        </div>
-                                    </a>
-                                    <a class="list-group-item list-group-item-action p-3" href="header-breadcrumbs.html">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            Breadcrumbs
-                                            <i class="text-muted" data-feather="arrow-right"></i>
-                                        </div>
-                                    </a>
-                                    <a class="list-group-item list-group-item-action p-3" href="header-light.html">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            Light
-                                            <i class="text-muted" data-feather="arrow-right"></i>
-                                        </div>
-                                    </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 mb-4">
-                                <div class="small mb-1">Starter Layouts</div>
-                                <div class="list-group mb-4">
-                                    <a class="list-group-item list-group-item-action p-3" href="starter-default.html">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            Default
-                                            <i class="text-muted" data-feather="arrow-right"></i>
-                                        </div>
-                                    </a>
-                                    <a class="list-group-item list-group-item-action p-3" href="starter-minimal.html">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            Minimal
-                                            <i class="text-muted" data-feather="arrow-right"></i>
-                                        </div>
-                                    </a>
+                                <!-- Illustration dashboard card example-->
+                                <div class="card">
+                                    <div class="card-body text-center p-5">
+                                        <img class="img-fluid mb-4" src="assets/img/illustrations/team-spirit.svg" alt="" style="max-width: 16.25rem" />
+                                        <h5>Team Access</h5>
+                                        <p class="mb-4">Upgrade your plan to get access to team collaboration tools.</p>
+                                        <a class="btn btn-primary p-3" href="#!">Upgrade</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -715,13 +1056,16 @@
                 </footer>
             </div>
         </div>
-        <script data-cfasync="false" src="../../Plugins/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../cdn.jsdelivr.net/npm/bootstrap%405.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="../../Assets/template2/js/scripts.js"></script>
+        <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../cdn.jsdelivr.net/npm/bootstrap%405.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="../cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-pie-demo.js"></script>
+        <script src="../cdn.jsdelivr.net/npm/simple-datatables%407.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+        <script src="js/datatables/datatables-simple-demo.js"></script>
 
-        <script src="../../Plugins/assets.startbootstrap.com/js/sb-customizer.js"></script>
+        <script src="../assets.startbootstrap.com/js/sb-customizer.js"></script>
         <sb-customizer project="sb-admin-pro"></sb-customizer>
-    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'8e0ab2c8689f7476',t:'MTczMTI5MDUyOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='../../Plugins/cdn-cgi/challenge-platform/h/b/scripts/jsd/22755d9a86c9/maind41d.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8e0ab2c8689f7476","version":"2024.10.5","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"6e2c2575ac8f44ed824cef7899ba8463","b":1}' crossorigin="anonymous"></script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'8e0ab2d1df6f7476',t:'MTczMTI5MDUyOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='cdn-cgi/challenge-platform/h/b/scripts/jsd/22755d9a86c9/maind41d.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8e0ab2d1df6f7476","version":"2024.10.5","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"6e2c2575ac8f44ed824cef7899ba8463","b":1}' crossorigin="anonymous"></script>
 </body>
-
-<!-- Mirrored from sb-admin-pro.startbootstrap.com/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 Nov 2024 02:02:38 GMT -->
 </html>

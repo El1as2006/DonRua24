@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<!-- Mirrored from sb-admin-pro.startbootstrap.com/auth-login-social.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 Nov 2024 02:02:41 GMT -->
 <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -24,12 +22,7 @@
                                 <!-- Social login form-->
                                 <div class="card my-5">
                                     <div class="card-body p-5 text-center">
-                                        <div class="h3 fw-light mb-3">Sign In</div>
-                                        <!-- Social login links-->
-                                        <a class="btn btn-icon btn-facebook mx-1" href="#!"><i class="fab fa-facebook-f fa-fw fa-sm"></i></a>
-                                        <a class="btn btn-icon btn-github mx-1" href="#!"><i class="fab fa-github fa-fw fa-sm"></i></a>
-                                        <a class="btn btn-icon btn-google mx-1" href="#!"><i class="fab fa-google fa-fw fa-sm"></i></a>
-                                        <a class="btn btn-icon btn-twitter mx-1" href="#!"><i class="fab fa-twitter fa-fw fa-sm text-white"></i></a>
+                                        <div class="h3 fw-light mb-3">Sign In</div>                                   
                                     </div>
                                     <hr class="my-0" />
                                     <div class="card-body p-5">
@@ -74,11 +67,10 @@
                 <footer class="footer-admin mt-auto footer-dark">
                     <div class="container-xl px-4">
                         <div class="row">
-                            <div class="col-md-6 small">Copyright © Your Website 2021</div>
+                            <div class="col-md-6 small"></div>
                             <div class="col-md-6 text-md-end small">
-                                <a href="#!">Privacy Policy</a>
-                                ·
-                                <a href="#!">Terms &amp; Conditions</a>
+                                <a href="#!"></a>
+                                <a href="#!"></a>
                             </div>
                         </div>
                     </div>
@@ -92,6 +84,4 @@
         <sb-customizer project="sb-admin-pro"></sb-customizer>
     <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'8e0ab2de5bbe7476',t:'MTczMTI5MDUzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='../../Plugins/cdn-cgi/challenge-platform/h/b/scripts/jsd/22755d9a86c9/maind41d.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8e0ab2de5bbe7476","version":"2024.10.5","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"6e2c2575ac8f44ed824cef7899ba8463","b":1}' crossorigin="anonymous"></script>
 </body>
-
-<!-- Mirrored from sb-admin-pro.startbootstrap.com/auth-login-social.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 Nov 2024 02:02:41 GMT -->
 </html>
