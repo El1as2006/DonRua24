@@ -13,7 +13,7 @@
     <script data-search-pseudo-elements="" defer=""
         src="../../../Plugins/cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"
         crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
     <script src="../../../Plugins/cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"
         crossorigin="anonymous"></script>
@@ -80,7 +80,8 @@
 
                                 </div>
                                 <div class="card-footer text-center">
-                                    <div class="small"><a href="login.php">Have an account? Go to login</a></div>
+                                    <div class="small"><a href="../login/login.php">Have an account? Go to login</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

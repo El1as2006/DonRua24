@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - SB Admin Pro</title>
+        <title>Admin Dashboard</title>
         <link href="../../cdn.jsdelivr.net/npm/simple-datatables%407.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="../../Assets/template2/css/styles.css" rel="stylesheet" />
         <link rel="icon" type="image/x-icon" href="../../Assets/template2/assets/img/favicon.png" />
@@ -170,7 +170,7 @@
                     <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="Assets/img/illustrations/profiles/profile-1.png" /></a>
                     <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
                         <h6 class="dropdown-header d-flex align-items-center">
-                            <img class="dropdown-user-img" src="assets/img/illustrations/profiles/profile-1.png" />
+                            <img class="dropdown-user-img" src="../../Assets/Template2/assets/img/illustrations/profiles/profile-1.png" />
                             <div class="dropdown-user-details">
                                 <div class="dropdown-user-details-name">Valerie Luna</div>
                                 <div class="dropdown-user-details-email"><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="26504a5348476647494a0845494b">[email&#160;protected]</a></div>
@@ -527,7 +527,7 @@
                                                 <h5>Powerful Components</h5>
                                                 <div class="text-muted small">To create informative visual elements on your pages</div>
                                             </div>
-                                            <img src="assets/img/illustrations/browser-stats.svg" alt="..." style="width: 8rem" />
+                                            <img src="../../Assets/Template2/assets/img/illustrations/browser-stats.svg" alt="..." style="width: 8rem" />
                                         </div>
                                     </div>
                                 </a>
@@ -542,7 +542,7 @@
                                                 <h5>Documentation</h5>
                                                 <div class="text-muted small">To keep you on track when working with our toolkit</div>
                                             </div>
-                                            <img src="assets/img/illustrations/processing.svg" alt="..." style="width: 8rem" />
+                                            <img src="../../Assets/Template2/assets/img/illustrations/processing.svg" alt="..." style="width: 8rem" />
                                         </div>
                                     </div>
                                 </a>
@@ -557,7 +557,7 @@
                                                 <h5>Pages &amp; Layouts</h5>
                                                 <div class="text-muted small">To help get you started when building your new UI</div>
                                             </div>
-                                            <img src="assets/img/illustrations/windows.svg" alt="..." style="width: 8rem" />
+                                            <img src="../../Assets/Template2/assets/img/illustrations/windows.svg" alt="..." style="width: 8rem" />
                                         </div>
                                     </div>
                                 </a>
@@ -1057,12 +1057,12 @@
             </div>
         </div>
         <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../cdn.jsdelivr.net/npm/bootstrap%405.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
+        <script src="../Assets/template2/js/scripts.js"></script>
         <script src="../cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="assets/demo/chart-area-demo.js"></script>
-        <script src="assets/demo/chart-pie-demo.js"></script>
+        <script src="../Assets/template2/assets/demo/chart-area-demo.js"></script>
+        <script src="../Assets/template2/assets/demo/chart-pie-demo.js"></script>
         <script src="../cdn.jsdelivr.net/npm/simple-datatables%407.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-        <script src="js/datatables/datatables-simple-demo.js"></script>
+        <script src="../Assets/template2/js/datatables/datatables-simple-demo.js"></script>
 
         <script src="../assets.startbootstrap.com/js/sb-customizer.js"></script>
         <sb-customizer project="sb-admin-pro"></sb-customizer>

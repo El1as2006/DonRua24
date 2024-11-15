@@ -12,7 +12,7 @@
         <script data-search-pseudo-elements="" defer="" src="../../../Plugins/cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" crossorigin="anonymous"></script>
         <script src="../../../Plugins/cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../../../package/dist/sweetalert2.css">
         <script src="../../../package/dist/sweetalert2.min.js"></script>
 </head>
@@ -43,7 +43,7 @@
                                             <input class="form-control form-control-solid" type="password" id="password" name="password" placeholder="Enter your password" aria-label="Password" aria-describedby="passwordExample" required />
                                         </div>
                                         <!-- Form Group (forgot password link)-->
-                                        <div class="mb-3"><a class="small" href="auth-password-social.html">Forgot your password?</a></div>
+                                        <div class="mb-3"><a class="small" href="../forgotpass/forgotpassword.php">Forgot your password?</a></div>
                                         <!-- Form Group (login box)-->
                                         <div class="d-flex align-items-center justify-content-between mb-0">
                                             <div class="form-check">
@@ -58,7 +58,7 @@
                                 <div class="card-body px-5 py-4">
                                     <div class="small text-center">
                                         New user?
-                                        <a href="register.php">Create an account!</a>
+                                        <a href="../registro/register.php">Create an account!</a>
                                     </div>
                                 </div>
                             </div>
