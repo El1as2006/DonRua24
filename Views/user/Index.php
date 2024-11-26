@@ -38,8 +38,6 @@
                                 <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fab fa-x-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fab fa-tumblr"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -80,19 +78,8 @@
                                                                 <li><a href="index-3.html">Home Banner Page</a></li>
                                                             </ul>
                                                         </li>
-                                                        <li><a href="about.php">About</a></li>
-                                                        <li class="menu-item-has-children">
-                                                            <a href="#">Service</a>
-                                                            <ul class="sub-menu">
-                                                                <li><a href="home-security.html">Home Security</a></li>
-                                                                <li><a href="software-development.html">Software
-                                                                        Development</a></li>
-                                                                <li><a href="installation.html">Installation CCTV</a>
-                                                                </li>
-                                                                <li><a href="service-details.html">Service Details</a>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
+                                                        <li><a href="about.php">Acerca de nosotros</a></li>
+                                                        <li><a href="admisiones.php">Admisiones</a></li>
                                                         <li class="menu-item-has-children">
                                                             <a href="#">Pages</a>
                                                             <ul class="sub-menu">
