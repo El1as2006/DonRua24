@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 25-11-2024 a las 21:40:21
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: Nov 26, 2024 at 06:42 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `domingosavio`
+-- Database: `domingosavio`
 --
 CREATE DATABASE IF NOT EXISTS `domingosavio` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
 USE `domingosavio`;
@@ -26,30 +26,34 @@ USE `domingosavio`;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `publicaciones`
+-- Table structure for table `publicaciones`
 --
 
+DROP TABLE IF EXISTS `publicaciones`;
 CREATE TABLE `publicaciones` (
   `id` int(11) NOT NULL,
   `titulo` varchar(255) NOT NULL,
   `contenido` text NOT NULL,
   `imagen` varchar(255) NOT NULL,
-  `creado_en` timestamp NOT NULL DEFAULT current_timestamp()
+  `creado_en` timestamp NOT NULL DEFAULT current_timestamp(),
+  `Tipo_Publicaciones` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `publicaciones`
+-- Dumping data for table `publicaciones`
 --
 
-INSERT INTO `publicaciones` (`id`, `titulo`, `contenido`, `imagen`, `creado_en`) VALUES
-(1, 'hola', 'Prueba1', 'Screenshot 2024-11-25 133725.png', '2024-11-25 20:02:22');
+INSERT INTO `publicaciones` (`id`, `titulo`, `contenido`, `imagen`, `creado_en`, `Tipo_Publicaciones`) VALUES
+(1, 'hola', 'Prueba1', 'Screenshot 2024-11-25 133725.png', '2024-11-25 20:02:22', 1),
+(2, 'hola 2', ' 2 publicacion', 'Screenshot 2024-11-25 134119.png', '2024-11-26 17:35:48', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
+DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `name` varchar(200) NOT NULL,
@@ -61,36 +65,43 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Índices para tablas volcadas
+-- Dumping data for table `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `name`, `lastname`, `username`, `pass`, `email`, `user_type`) VALUES
+(1, 'yohalmo', 'cruz', '', '$2y$10$BdMvCfiwaRx.5uqGS1lxBeWiFYtEQUtRY.n9XuTwT8u0j1/82b4Qi', 'yohalmodaniel16@gmail.com', 1);
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `publicaciones`
+-- Indexes for table `publicaciones`
 --
 ALTER TABLE `publicaciones`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `publicaciones`
+-- AUTO_INCREMENT for table `publicaciones`
 --
 ALTER TABLE `publicaciones`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `usuarios`
+--
+ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
