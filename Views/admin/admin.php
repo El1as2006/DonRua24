@@ -38,7 +38,7 @@ if (!isset($_SESSION['id'])) {
                 <div class="sidenav-menu">
                     <div class="nav accordion" id="accordionSidenav">
                         <div class="sidenav-menu-heading">Core</div>
-                        <a class="nav-link" href="dashboard-1.html">
+                        <a class="nav-link" href="admin.php">
                             <div class="nav-link-icon"><i data-feather="activity"></i></div>
                             Dashboards
                         </a>
@@ -127,7 +127,7 @@ if (!isset($_SESSION['id'])) {
                     </div>
 
                     <!-- Card for Nueva Publicación -->
-                    <div class="overlay" id="overlay"></div>
+                <div class="overlay" id="overlay"></div>
                     <div class="publication-card" id="publicationCard">
                         <button class="close-btn" id="closeCard">&times;</button>
                         <h5>Nueva Publicación</h5>
@@ -144,10 +144,10 @@ if (!isset($_SESSION['id'])) {
                                 <div class="mb-3">
                                     <label for="sector" class="form-label">Seleccionar Sector</label>
                                     <select class="form-control" id="sector" name="sector" required>
-                                        <option value="0">Inicio</option>
-                                        <option value="1">Noticias</option>
-                                        <option value="2">Eventos</option>
-                                        <option value="3">Blog</option>
+                                        <option value="0">Seccion 1</option>
+                                        <option value="1">Seccion 2</option>
+                                        <option value="2">Seccion 3</option>
+                                        <option value="3">Seccion 4</option>
                                         <!-- Agrega más sectores según lo que necesites -->
                                     </select>
                                 </div>

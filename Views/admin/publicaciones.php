@@ -4,11 +4,11 @@ ini_set('display_errors', 1);
 
 session_start();
 
- if (!isset($_SESSION['id'])) {
-     header("Location: ../Login-register/login/login.php");
-     exit();
- }
-?>   
+if (!isset($_SESSION['id'])) {
+    header("Location: ../Login-register/login/login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,6 +25,7 @@ session_start();
         src="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" crossorigin="anonymous"></script>
     <script src="../cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"
         crossorigin="anonymous"></script>
+
 </head>
 
 <body class="nav-fixed">
@@ -52,7 +53,7 @@ session_start();
             <li class="nav-item dropdown no-caret d-none d-md-block me-3">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownDocs" href="javascript:void(0);" role="button"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <div class="fw-500">Documentation</div>
+                    <div class="fw-500">Cuenta</div>
                     <i class="fas fa-chevron-right dropdown-arrow"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end py-0 me-sm-n15 me-lg-0 o-hidden animated--fade-in-up"
@@ -102,156 +103,7 @@ session_start();
                     </form>
                 </div>
             </li>
-            <!-- Alerts Dropdown-->
-            <li class="nav-item dropdown no-caret d-none d-sm-block me-3 dropdown-notifications">
-                <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownAlerts"
-                    href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false"><i data-feather="bell"></i></a>
-                <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up"
-                    aria-labelledby="navbarDropdownAlerts">
-                    <h6 class="dropdown-header dropdown-notifications-header">
-                        <i class="me-2" data-feather="bell"></i>
-                        Alerts Center
-                    </h6>
-                    <!-- Example Alert 1-->
-                    <a class="dropdown-item dropdown-notifications-item" href="#!">
-                        <div class="dropdown-notifications-item-icon bg-warning"><i data-feather="activity"></i></div>
-                        <div class="dropdown-notifications-item-content">
-                            <div class="dropdown-notifications-item-content-details">December 29, 2021</div>
-                            <div class="dropdown-notifications-item-content-text">This is an alert message. It's nothing
-                                serious, but it requires your attention.</div>
-                        </div>
-                    </a>
-                    <!-- Example Alert 2-->
-                    <a class="dropdown-item dropdown-notifications-item" href="#!">
-                        <div class="dropdown-notifications-item-icon bg-info"><i data-feather="bar-chart"></i></div>
-                        <div class="dropdown-notifications-item-content">
-                            <div class="dropdown-notifications-item-content-details">December 22, 2021</div>
-                            <div class="dropdown-notifications-item-content-text">A new monthly report is ready. Click
-                                here to view!</div>
-                        </div>
-                    </a>
-                    <!-- Example Alert 3-->
-                    <a class="dropdown-item dropdown-notifications-item" href="#!">
-                        <div class="dropdown-notifications-item-icon bg-danger"><i
-                                class="fas fa-exclamation-triangle"></i></div>
-                        <div class="dropdown-notifications-item-content">
-                            <div class="dropdown-notifications-item-content-details">December 8, 2021</div>
-                            <div class="dropdown-notifications-item-content-text">Critical system failure, systems
-                                shutting down.</div>
-                        </div>
-                    </a>
-                    <!-- Example Alert 4-->
-                    <a class="dropdown-item dropdown-notifications-item" href="#!">
-                        <div class="dropdown-notifications-item-icon bg-success"><i data-feather="user-plus"></i></div>
-                        <div class="dropdown-notifications-item-content">
-                            <div class="dropdown-notifications-item-content-details">December 2, 2021</div>
-                            <div class="dropdown-notifications-item-content-text">New user request. Woody has requested
-                                access to the organization.</div>
-                        </div>
-                    </a>
-                    <a class="dropdown-item dropdown-notifications-footer" href="#!">View All Alerts</a>
-                </div>
-            </li>
-            <!-- Messages Dropdown-->
-            <li class="nav-item dropdown no-caret d-none d-sm-block me-3 dropdown-notifications">
-                <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownMessages"
-                    href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false"><i data-feather="mail"></i></a>
-                <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up"
-                    aria-labelledby="navbarDropdownMessages">
-                    <h6 class="dropdown-header dropdown-notifications-header">
-                        <i class="me-2" data-feather="mail"></i>
-                        Message Center
-                    </h6>
-                    <!-- Example Message 1  -->
-                    <a class="dropdown-item dropdown-notifications-item" href="#!">
-                        <img class="dropdown-notifications-item-img"
-                            src="assets/img/illustrations/profiles/profile-2.png" />
-                        <div class="dropdown-notifications-item-content">
-                            <div class="dropdown-notifications-item-content-text">Lorem ipsum dolor sit amet,
-                                consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-                            <div class="dropdown-notifications-item-content-details">Thomas Wilcox · 58m</div>
-                        </div>
-                    </a>
-                    <!-- Example Message 2-->
-                    <a class="dropdown-item dropdown-notifications-item" href="#!">
-                        <img class="dropdown-notifications-item-img"
-                            src="assets/img/illustrations/profiles/profile-3.png" />
-                        <div class="dropdown-notifications-item-content">
-                            <div class="dropdown-notifications-item-content-text">Lorem ipsum dolor sit amet,
-                                consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-                            <div class="dropdown-notifications-item-content-details">Emily Fowler · 2d</div>
-                        </div>
-                    </a>
-                    <!-- Example Message 3-->
-                    <a class="dropdown-item dropdown-notifications-item" href="#!">
-                        <img class="dropdown-notifications-item-img"
-                            src="assets/img/illustrations/profiles/profile-4.png" />
-                        <div class="dropdown-notifications-item-content">
-                            <div class="dropdown-notifications-item-content-text">Lorem ipsum dolor sit amet,
-                                consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-                            <div class="dropdown-notifications-item-content-details">Marshall Rosencrantz · 3d</div>
-                        </div>
-                    </a>
-                    <!-- Example Message 4-->
-                    <a class="dropdown-item dropdown-notifications-item" href="#!">
-                        <img class="dropdown-notifications-item-img"
-                            src="assets/img/illustrations/profiles/profile-5.png" />
-                        <div class="dropdown-notifications-item-content">
-                            <div class="dropdown-notifications-item-content-text">Lorem ipsum dolor sit amet,
-                                consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-                            <div class="dropdown-notifications-item-content-details">Colby Newton · 3d</div>
-                        </div>
-                    </a>
-                    <!-- Footer Link-->
-                    <a class="dropdown-item dropdown-notifications-footer" href="#!">Read All Messages</a>
-                </div>
-            </li>
-            <!-- User Dropdown-->
-            <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
-                <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage"
-                    href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false"><img class="img-fluid"
-                        src="assets/img/illustrations/profiles/profile-1.png" /></a>
-                <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up"
-                    aria-labelledby="navbarDropdownUserImage">
-                    <h6 class="dropdown-header d-flex align-items-center">
-                        <img class="dropdown-user-img" src="assets/img/illustrations/profiles/profile-1.png" />
-                        <div class="dropdown-user-details">
-                            <div class="dropdown-user-details-name">Valerie Luna</div>
-                            <div class="dropdown-user-details-email"><a href="cdn-cgi/l/email-protection.html"
-                                    class="__cf_email__"
-                                    data-cfemail="62140e170c0322030d0e4c010d0f">[email&#160;protected]</a></div>
-                        </div>
-                    </h6>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#!">
-                        <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
-                        Account
-                    </a>
-                    <a class="dropdown-item" href="#!">
-                        <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
-                        Logout
-                    </a>
-                </div>
-            </li>
+
         </ul>
     </nav>
     <div id="layoutSidenav">
@@ -300,7 +152,7 @@ session_start();
                         <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
                             data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                             <div class="nav-link-icon"><i data-feather="grid"></i></div>
-                            Pages
+                            Publicaciones
                             <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapsePages" data-bs-parent="#accordionSidenav">
@@ -427,7 +279,7 @@ session_start();
                                 <!-- Nested Sidenav Accordion (Apps -> Posts Management)-->
                             </nav>
                         </div>
-                        <!-- Sidenav Accordion (Flows)-->                              
+                        <!-- Sidenav Accordion (Flows)-->
                     </div>
                 </div>
                 <!-- Sidenav Footer-->
@@ -441,135 +293,415 @@ session_start();
         </div>
         <div id="layoutSidenav_content">
             <main>
-                <header class="py-10 mb-4 bg-gradient-primary-to-secondary">
+                <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
                     <div class="container-xl px-4">
-                        <div class="text-center">
-                            <h1 class="text-white">Publicaciones</h1>
-                            <p class="lead mb-0 text-white-50">Listado de publicaciones del index usuario.</p>
+                        <div class="page-header-content pt-4">
+                            <h1 class="page-header-title">Publicaciones 1</h1>
+                            <div class="page-header-subtitle">Podras modificar todas las publicaciones que se encutran en el sector publicaciones 1</div>
                         </div>
                     </div>
                 </header>
-                <div class="news-button-section">
-                    <h5>Acciones disponibles</h5>
-                    <p>Aquí puedes realizar diferentes acciones sobre los datos.</p>
-                    <div class="d-flex justify-content-center flex-wrap gap-3">
-                        <button class="new-publication-button">
-                            <i data-feather="file-plus"></i>
-                            NUEVA PUBLICACIÓN
-                        </button>
-                        <button class="new-publication-button">
-                            <i data-feather="edit-3"></i>
-                            EDITAR
-                        </button>
-                        <button class="new-publication-button">
-                            <i data-feather="trash-2"></i>
-                            ELIMINAR
-                        </button>
-                        <button class="new-publication-button">
-                            <i data-feather="eye"></i>
-                            VER
-                        </button>
+                <div class="container-xl px-4 mt-n10">
+
+
+                    <!-- Section with multiple buttons -->
+                    <div class="news-button-section">
+                        <h5>Acciones disponibles</h5>
+                        <p>Aquí puedes realizar diferentes acciones sobre los datos.</p>
+                        <div class="d-flex justify-content-center flex-wrap gap-3">
+                            <button class="new-publication-button">
+                                <i data-feather="file-plus"></i>
+                                NUEVA PUBLICACIÓN
+                            </button>
+                            <button class="new-publication-button">
+                                <i data-feather="edit-3"></i>
+                                EDITAR
+                            </button>
+                            <button class="new-publication-button">
+                                <i data-feather="trash-2"></i>
+                                ELIMINAR
+                            </button>
+                            <button class="new-publication-button">
+                                <i data-feather="eye"></i>
+                                VER
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card for Nueva Publicación -->
+                    <div class="overlay" id="overlay"></div>
+                    <div class="publication-card" id="publicationCard">
+                        <button class="close-btn" id="closeCard">&times;</button>
+                        <h5>Nueva Publicación</h5>
+                        <form action="add.php" method="POST" enctype="multipart/form-data">
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="title" class="form-label">Título</label>
+                                    <input type="text" class="form-control" id="title" name="title" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="content" class="form-label">Contenido</label>
+                                    <textarea class="form-control" id="content" name="content" rows="3"
+                                        required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="sector" class="form-label">Seleccionar Sector</label>
+                                    <select class="form-control" id="sector" name="sector" required>
+                                        <option value="0">Seccion 1</option>
+                                        <option value="1">Seccion 2</option>
+                                        <option value="2">Seccion 3</option>
+                                        <option value="3">Seccion 4</option>
+                                        <!-- Agrega más sectores según lo que necesites -->
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="image" class="form-label">Subir Imagen</label>
+                                    <input type="file" class="form-control" id="image" name="image" accept="image/*"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                <button type="button" class="btn btn-secondary" id="botoncancelar">Cancelar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
+
+                <!-- Card for Editar -->
+                <div class="overlay" id="editCardOverlay"></div>
+                <div class="publication-card" id="editCard">
+                    <button class="close-btn" id="closeEditCard">&times;</button>
+                    <h5>Editar</h5>
+                    <form>
+                        <div class="form-group">
+                            <label for="editTitle">Título</label>
+                            <input type="text" id="editTitle" class="form-control" placeholder="Editar el título">
+                        </div>
+                        <div class="form-group">
+                            <label for="editContent">Contenido</label>
+                            <textarea id="editContent" class="form-control"
+                                placeholder="Editar el contenido"></textarea>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Card for Eliminar -->
+                <div class="overlay" id="deleteCardOverlay"></div>
+                <div class="publication-card" id="deleteCard">
+                    <button class="close-btn" id="closeDeleteCard">&times;</button>
+                    <h5>Eliminar</h5>
+                    <p>¿Estás seguro de que deseas eliminar este elemento?</p>
+                    <div class="form-group text-center">
+                        <button type="button" class="btn btn-danger">Eliminar</button>
+                        <button type="button" class="btn btn-secondary" id="cancelDelete">Cancelar</button>
+                    </div>
+                </div>
+
+                <!-- Card for Ver -->
+                <div class="overlay" id="viewCardOverlay"></div>
+                <div class="publication-card" id="viewCard">
+                    <button class="close-btn" id="closeViewCard">&times;</button>
+                    <h5>Detalles</h5>
+                    <p>Aquí se mostrarán los detalles del elemento seleccionado.</p>
+                </div>
+
+
                 <!-- Main page content-->
                 <div class="container-xl px-4">
-                    <!-- publicaciones 1-->
-                    <h2 class="mt-5 mb-0">Publicaciones 1</h2>
-                    <p>Three dashboard examples to get you started!</p>
+
+
+
+                    <!-------------------------------------------------- publicaciones 1 -------------------------------------------------->
+                    <h2 class="mt-5 mb-0">Sección 1</h2>
+
                     <hr class="mt-0 mb-4" />
                     <div class="row">
                         <?php
                         require_once '../../funcs/conexion.php';
-                        $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 0");
+
+                        // Consulta para obtener las publicaciones con Tipo_Publicaciones = 0 (máximo 2)
+                        $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 0 LIMIT 2");
+
+                        $publicaciones = [null, null]; // Array para mantener las publicaciones (dos posiciones)
+                        $index = 0;
 
                         if ($resultado && $resultado->num_rows > 0) {
-                            while ($row = $resultado->fetch_assoc()) {
-                                $titulo = htmlspecialchars($row['titulo']);
-                                $contenido = htmlspecialchars($row['contenido']);
-                                $imagen = htmlspecialchars($row['imagen']);
-                                $rutaImagen = '../uploads/' . $imagen; 
+                            while ($index < 2 && $row = $resultado->fetch_assoc()) {
+                                $publicaciones[$index] = [
+                                    'titulo' => htmlspecialchars($row['titulo']),
+                                    'contenido' => htmlspecialchars($row['contenido']),
+                                    'imagen' => '../uploads/' . htmlspecialchars($row['imagen']),
+                                ];
+                                $index++;
+                            }
+                        }
+
+                        // Generar las dos posiciones, sean dinámicas o con marcador
+                        for ($i = 0; $i < 2; $i++) {
+                            if (!empty($publicaciones[$i])) {
+                                $titulo = $publicaciones[$i]['titulo'];
+                                $contenido = $publicaciones[$i]['contenido'];
+                                $rutaImagen = $publicaciones[$i]['imagen'];
                         ?>
                                 <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
                                     <a class="d-block lift rounded overflow-hidden mb-2" href="#">
                                         <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>"
-                                            onerror="this.src='../../uploads/placeholder.png';" />
+                                            onerror="this.src='../uploads/placeholder.png';" />
                                     </a>
                                     <div class="text-center small">
                                         <strong><?php echo $titulo; ?></strong>
                                         <p><?php echo $contenido; ?></p>
                                     </div>
                                 </div>
-                                <?php
+                            <?php
+                            } else {
+                                // Espacio reservado si no hay imagen publicada
+                            ?>
+                                <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
+                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#">
+                                        <img class="img-fluid" src="../uploads/placeholder.png" alt="Espacio reservado" />
+                                    </a>
+                                    <div class="text-center small">
+                                        <strong>Espacio Disponible</strong>
+                                        <p>Publica aquí tu contenido</p>
+                                    </div>
+                                </div>
+                        <?php
                             }
-                        } else {
-                            echo "<p>No hay publicaciones disponibles para Carrusel 1.</p>";
                         }
+
                         ?>
                     </div>
-                     <!-- publicaciones 2-->
-                    <h2 class="mt-5 mb-0">Publicaciones 2</h2>
-                    <p>App pages to cover common use pages to help build your app!</p>
+
+
+
+
+                    <!-------------------------------------------------- publicaciones 2 -------------------------------------------------->
+                    <h2 class="mt-5 mb-0">Sección 2</h2>
+
                     <hr class="mt-0 mb-4" />
                     <div class="row">
                         <?php
-                        $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 1");
+                        $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 1 LIMIT 5");
 
+                        $publicaciones = []; // Array para mantener publicaciones
                         if ($resultado && $resultado->num_rows > 0) {
                             while ($row = $resultado->fetch_assoc()) {
-                                $titulo = htmlspecialchars($row['titulo']);
-                                $contenido = htmlspecialchars($row['contenido']);
-                                $imagen = htmlspecialchars($row['imagen']);
-                                $rutaImagen = '../uploads/' . $imagen; 
+                                $publicaciones[] = [
+                                    'titulo' => htmlspecialchars($row['titulo'] ?? 'Título no disponible'),
+                                    'contenido' => htmlspecialchars($row['contenido'] ?? 'Contenido no disponible'),
+                                    'imagen' => '../uploads/' . htmlspecialchars($row['imagen'] ?? 'placeholder.png'),
+                                ];
+                            }
+                        }
+
+                        // Asegurarse de que el array tenga exactamente 5 espacios
+                        while (count($publicaciones) < 5) {
+                            $publicaciones[] = null; // Añadir marcadores para los espacios vacíos
+                        }
+
+                        // Generar las 5 posiciones
+                        foreach ($publicaciones as $publicacion) {
+                            if ($publicacion !== null) {
+                                // Publicación disponible
+                                $titulo = $publicacion['titulo'];
+                                $contenido = $publicacion['contenido'];
+                                $rutaImagen = $publicacion['imagen'];
                         ?>
                                 <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
                                     <a class="d-block lift rounded overflow-hidden mb-2" href="#">
-                                        <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>"
-                                            onerror="this.src='../../uploads/placeholder.png';" />
+                                        <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>" onerror="this.src='../../uploads/placeholder.png';" />
                                     </a>
                                     <div class="text-center small">
                                         <strong><?php echo $titulo; ?></strong>
                                         <p><?php echo $contenido; ?></p>
                                     </div>
                                 </div>
-                                <?php
+                            <?php
+                            } else {
+                                // Espacio vacío
+                            ?>
+                                <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#" onclick="abrirModal()">
+                                        <img class="img-fluid" src="../uploads/placeholder.png" alt="Espacio disponible" />
+                                    </a>
+                                    <div class="text-center small">
+                                        <strong>Espacio Disponible</strong>
+                                        <p>Publica aquí tu contenido</p>
+                                    </div>
+                                </div>
+                        <?php
                             }
-                        } else {
-                            echo "<p>No hay publicaciones disponibles para Carrusel 2.</p>";
                         }
                         ?>
                     </div>
 
 
 
-                    <h2 class="mt-5 mb-0">Carrusel 3</h2>
-                    <p>Layouts for creating new pages within your project!</p>
+
+                    <!-------------------------------------------------- publicaciones 3 -------------------------------------------------->
+
+                    <h2 class="mt-5 mb-0">Sección 3</h2>
+
                     <hr class="mt-0 mb-4" />
                     <div class="row">
-                    <?php
+                        <?php
                         require_once '../../funcs/conexion.php';
-                        $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 2");
 
+                        // Inicializar las 3 posiciones como vacías
+                        $publicaciones = array_fill(0, 3, null);
+
+                        // Consulta para obtener publicaciones (máximo 3)
+                        $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 2 LIMIT 3");
+
+                        $index = 0; // Para llenar las posiciones dinámicamente
                         if ($resultado && $resultado->num_rows > 0) {
                             while ($row = $resultado->fetch_assoc()) {
-                                $titulo = htmlspecialchars($row['titulo']);
-                                $imagen = htmlspecialchars($row['imagen']);
-                                $rutaImagen = '../uploads/' . $imagen;
-                                ?>
-                                <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
+                                $publicaciones[$index] = [
+                                    'titulo' => htmlspecialchars($row['titulo']),
+                                    'contenido' => htmlspecialchars($row['contenido']),
+                                    'imagen' => '../uploads/' . htmlspecialchars($row['imagen']),
+                                ];
+                                $index++;
+                            }
+                        }
+
+                        // Renderizar publicaciones y espacios disponibles
+                        foreach ($publicaciones as $publicacion) {
+                            if ($publicacion !== null) {
+                                $titulo = $publicacion['titulo'];
+                                $rutaImagen = $publicacion['imagen'];
+                        ?>
+                                <div class="col-md-4 mb-4">
                                     <a class="d-block lift rounded overflow-hidden mb-2" href="#">
-                                        <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>"
-                                            onerror="this.src='../../uploads/placeholder.png';" />
+                                        <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>" />
                                     </a>
                                     <div class="text-center small"><?php echo $titulo; ?></div>
                                 </div>
-                                <?php
+                            <?php
+                            } else {
+                            ?>
+                                <div class="col-md-4 mb-4">
+                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#">
+                                        <img class="img-fluid" src="../uploads/placeholder.png" alt="Espacio disponible" onclick="openAddModal()" />
+                                    </a>
+                                    <div class="text-center small">Espacio Disponible</div>
+                                </div>
+                        <?php
                             }
-                        } else {
-                            echo "<p>No hay publicaciones disponibles para Carrusel 3.</p>";
                         }
                         ?>
                     </div>
+                    <!-------------------------------------------------- publicaciones 4-------------------------------------------------->
+                    <h2 class="mt-5 mb-0">Sección 4</h2>
+                    <hr class="mt-0 mb-4" />
+                    <div class="row">
+                        <?php
+                        require_once '../../funcs/conexion.php';
+
+                        // Inicializar las 6 posiciones como vacías
+                        $publicaciones = array_fill(0, 6, null);
+
+                        // Consulta para obtener publicaciones (máximo 6)
+                        $resultado = $conn->query("SELECT titulo, imagen FROM publicaciones WHERE Tipo_Publicaciones = 3 LIMIT 6");
+
+                        $index = 0; // Para llenar las posiciones dinámicamente
+                        if ($resultado && $resultado->num_rows > 0) {
+                            while ($row = $resultado->fetch_assoc()) {
+                                $publicaciones[$index] = [
+                                    'titulo' => htmlspecialchars($row['titulo']),
+                                    'imagen' => '../uploads/' . htmlspecialchars($row['imagen']),
+                                ];
+                                $index++;
+                            }
+                        }
+
+                        // Renderizar publicaciones y espacios disponibles
+                        foreach ($publicaciones as $publicacion) {
+                            if ($publicacion !== null) {
+                                $titulo = $publicacion['titulo'];
+                                $rutaImagen = $publicacion['imagen'];
+                        ?>
+                                <div class="col-md-4 mb-4">
+                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#">
+                                        <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>">
+                                    </a>
+                                    <div class="text-center small"><?php echo $titulo; ?></div>
+                                </div>
+                            <?php
+                            } else {
+                            ?>
+                                <div class="col-md-4 mb-4">
+                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#">
+                                        <img class="img-fluid" src="../uploads/placeholder.png" alt="Espacio disponible" onclick="openAddModal()">
+                                    </a>
+                                    <div class="text-center small">Espacio Disponible</div>
+                                </div>
+                        <?php
+                            }
+                        }
+                        ?>
+                    </div>
+                    <!---------------------------------------------------------------------------- publicaciones 5---------------------------------------------------------------------------->
+                    <h2 class="mt-5 mb-0">Sección 5</h2>
+                    <hr class="mt-0 mb-4" />
+                    <div class="row">
+                        <?php
+                        require_once '../../funcs/conexion.php';
+
+                        // Inicializar las 4 posiciones como vacías
+                        $publicaciones = array_fill(0, 4, null);
+
+                        // Consulta para obtener publicaciones (máximo 4)
+                        $resultado = $conn->query("SELECT titulo, imagen FROM publicaciones WHERE Tipo_Publicaciones = 4 LIMIT 4");
+
+                        $index = 0; // Para llenar las posiciones dinámicamente
+                        if ($resultado && $resultado->num_rows > 0) {
+                            while ($row = $resultado->fetch_assoc()) {
+                                $publicaciones[$index] = [
+                                    'titulo' => htmlspecialchars($row['titulo']),
+                                    'imagen' => '../uploads/' . htmlspecialchars($row['imagen']),
+                                ];
+                                $index++;
+                            }
+                        }
+
+                        // Renderizar publicaciones y espacios disponibles
+                        foreach ($publicaciones as $publicacion) {
+                            if ($publicacion !== null) {
+                                $titulo = $publicacion['titulo'];
+                                $rutaImagen = $publicacion['imagen'];
+                        ?>
+                                <div class="col-md-3 mb-4"> <!-- Ajuste para 4 publicaciones por fila -->
+                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#">
+                                        <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>">
+                                    </a>
+                                    <div class="text-center small"><?php echo $titulo; ?></div>
+                                </div>
+                            <?php
+                            } else {
+                            ?>
+                                <div class="col-md-3 mb-4"> <!-- Ajuste para 4 publicaciones por fila -->
+                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#">
+                                        <img class="img-fluid" src="../uploads/placeholder.png" alt="Espacio disponible" onclick="openAddModal()">
+                                    </a>
+                                    <div class="text-center small">Espacio Disponible</div>
+                                </div>
+                        <?php
+                            }
+                        }
+                        ?>
+                    </div>
+                    <hr class="mt-0 mb-4" />
+
+
+
                 </div>
+
             </main>
             <footer class="footer-admin mt-auto footer-light">
                 <div class="container-xl px-4">
@@ -585,6 +717,91 @@ session_start();
             </footer>
         </div>
     </div>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        feather.replace(); // Reemplaza los íconos en el DOM
+    </script>
+    <script>
+        feather.replace();
+        // Show/Hide the edit card
+        document.querySelector('.new-publication-button:nth-of-type(2)').addEventListener('click', () => {
+            document.getElementById('editCard').style.display = 'block';
+            document.getElementById('editCardOverlay').style.display = 'block';
+        });
+        document.getElementById('closeEditCard').addEventListener('click', () => {
+            document.getElementById('editCard').style.display = 'none';
+            document.getElementById('editCardOverlay').style.display = 'none';
+        });
+
+        // Show/Hide the delete card
+        document.querySelector('.new-publication-button:nth-of-type(3)').addEventListener('click', () => {
+            document.getElementById('deleteCard').style.display = 'block';
+            document.getElementById('deleteCardOverlay').style.display = 'block';
+        });
+        document.getElementById('closeDeleteCard').addEventListener('click', () => {
+            document.getElementById('deleteCard').style.display = 'none';
+            document.getElementById('deleteCardOverlay').style.display = 'none';
+        });
+        document.getElementById('cancelDelete').addEventListener('click', () => {
+            document.getElementById('deleteCard').style.display = 'none';
+            document.getElementById('deleteCardOverlay').style.display = 'none';
+        });
+        document.getElementById('botoncancelar').addEventListener('click', () => {
+            document.getElementById('publicationCard').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        });
+
+        // Show/Hide the view card
+        document.querySelector('.new-publication-button:nth-of-type(4)').addEventListener('click', () => {
+            document.getElementById('viewCard').style.display = 'block';
+            document.getElementById('viewCardOverlay').style.display = 'block';
+        });
+        document.getElementById('closeViewCard').addEventListener('click', () => {
+            document.getElementById('viewCard').style.display = 'none';
+            document.getElementById('viewCardOverlay').style.display = 'none';
+        });
+
+
+        // Toggle sidebar visibility
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('layoutSidenav').classList.toggle('collapsed');
+        });
+
+        // Seleccionar elementos
+        const overlay = document.getElementById('overlay');
+        const publicationCard = document.getElementById('publicationCard');
+        const newPublicationButton = document.querySelector('.new-publication-button');
+        const closeCard = document.getElementById('closeCard');
+
+        // Función para abrir el modal
+        newPublicationButton.addEventListener('click', () => {
+            publicationCard.style.display = 'block';
+            overlay.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Bloquear scroll en el fondo
+        });
+        // Función para cerrar el modal
+        closeCard.addEventListener('click', () => {
+            publicationCard.style.display = 'none';
+            overlay.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restaurar scroll
+        });
+
+
+        // Cerrar modal al hacer clic en el overlay
+        overlay.addEventListener('click', () => {
+            publicationCard.style.display = 'none';
+            overlay.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    </script>
+    <script>
+        function abrirModal() {
+            // Mostrar el modal usando Bootstrap
+            const modal = new bootstrap.Modal(document.getElementById('newPublicationModal'));
+            modal.show();
+        }
+    </script>
     <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="../cdn.jsdelivr.net/npm/bootstrap%405.2.3/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
@@ -592,8 +809,9 @@ session_start();
 
     <script src="../assets.startbootstrap.com/js/sb-customizer.js"></script>
     <sb-customizer project="sb-admin-pro"></sb-customizer>
+
     <script>
-        (function () {
+        (function() {
             function c() {
                 var b = a.contentDocument || a.contentWindow.document;
                 if (b) {
@@ -615,8 +833,8 @@ session_start();
                 if ('loading' !== document.readyState) c();
                 else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
                 else {
-                    var e = document.onreadystatechange || function () { };
-                    document.onreadystatechange = function (b) {
+                    var e = document.onreadystatechange || function() {};
+                    document.onreadystatechange = function(b) {
                         e(b);
                         'loading' !== document.readyState && (document.onreadystatechange = e, c())
                     }
@@ -628,6 +846,9 @@ session_start();
         src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
         integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
         data-cf-beacon='{"rayId":"8e0ab2c8689f7476","version":"2024.10.5","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"6e2c2575ac8f44ed824cef7899ba8463","b":1}'
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+    </script>
+
 </body>
+
 </html>
