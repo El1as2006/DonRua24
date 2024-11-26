@@ -4,11 +4,11 @@ ini_set('display_errors', 1);
 
 session_start();
 
-// if (!isset($_SESSION['id'])) {
-//     header("Location: ../Login-register/login/login.php");
-//     exit();
-// }
-?>
+ if (!isset($_SESSION['id'])) {
+     header("Location: ../Login-register/login/login.php");
+     exit();
+ }
+?>   
 <!DOCTYPE html>
 <html lang="en">
 
@@ -296,8 +296,6 @@ session_start();
                                 <a class="nav-link" href="dashboard-3.html">Affiliate</a>
                             </nav>
                         </div>
-                        <!-- Sidenav Heading (Custom)-->
-                        <div class="sidenav-menu-heading">Custom</div>
                         <!-- Sidenav Accordion (Pages)-->
                         <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
                             data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -390,12 +388,6 @@ session_start();
                             </nav>
                         </div>
                         <!-- Sidenav Accordion (Applications)-->
-                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
-                            data-bs-target="#collapseApps" aria-expanded="false" aria-controls="collapseApps">
-                            <div class="nav-link-icon"><i data-feather="globe"></i></div>
-                            Applications
-                            <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
                         <div class="collapse" id="collapseApps" data-bs-parent="#accordionSidenav">
                             <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavAppsMenu">
                                 <!-- Nested Sidenav Accordion (Apps -> Knowledge Base)-->
@@ -433,177 +425,16 @@ session_start();
                                     </nav>
                                 </div>
                                 <!-- Nested Sidenav Accordion (Apps -> Posts Management)-->
-                                <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
-                                    data-bs-target="#appsCollapsePostsManagement" aria-expanded="false"
-                                    aria-controls="appsCollapsePostsManagement">
-                                    Posts Management
-                                    <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="appsCollapsePostsManagement"
-                                    data-bs-parent="#accordionSidenavAppsMenu">
-                                    <nav class="sidenav-menu-nested nav">
-                                        <a class="nav-link" href="blog-management-posts-list.html">Posts List</a>
-                                        <a class="nav-link" href="blog-management-create-post.html">Create Post</a>
-                                        <a class="nav-link" href="blog-management-edit-post.html">Edit Post</a>
-                                        <a class="nav-link" href="blog-management-posts-admin.html">Posts Admin</a>
-                                    </nav>
-                                </div>
                             </nav>
                         </div>
-                        <!-- Sidenav Accordion (Flows)-->
-                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
-                            data-bs-target="#collapseFlows" aria-expanded="false" aria-controls="collapseFlows">
-                            <div class="nav-link-icon"><i data-feather="repeat"></i></div>
-                            Flows
-                            <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseFlows" data-bs-parent="#accordionSidenav">
-                            <nav class="sidenav-menu-nested nav">
-                                <a class="nav-link" href="multi-tenant-select.html">Multi-Tenant Registration</a>
-                                <a class="nav-link" href="wizard.html">Wizard</a>
-                            </nav>
-                        </div>
-                        <!-- Sidenav Heading (UI Toolkit)-->
-                        <div class="sidenav-menu-heading">UI Toolkit</div>
-                        <!-- Sidenav Accordion (Layout)-->
-                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
-                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="nav-link-icon"><i data-feather="layout"></i></div>
-                            Layout
-                            <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseLayouts" data-bs-parent="#accordionSidenav">
-                            <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
-                                <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
-                                <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseLayoutSidenavVariations" aria-expanded="false"
-                                    aria-controls="collapseLayoutSidenavVariations">
-                                    Navigation
-                                    <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="collapseLayoutSidenavVariations"
-                                    data-bs-parent="#accordionSidenavLayout">
-                                    <nav class="sidenav-menu-nested nav">
-                                        <a class="nav-link" href="layout-static.html">Static Sidenav</a>
-                                        <a class="nav-link" href="layout-dark.html">Dark Sidenav</a>
-                                        <a class="nav-link" href="layout-rtl.html">RTL Layout</a>
-                                    </nav>
-                                </div>
-                                <!-- Nested Sidenav Accordion (Layout -> Container Options)-->
-                                <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseLayoutContainers" aria-expanded="false"
-                                    aria-controls="collapseLayoutContainers">
-                                    Container Options
-                                    <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="collapseLayoutContainers"
-                                    data-bs-parent="#accordionSidenavLayout">
-                                    <nav class="sidenav-menu-nested nav">
-                                        <a class="nav-link" href="layout-boxed.html">Boxed Layout</a>
-                                        <a class="nav-link" href="layout-fluid.html">Fluid Layout</a>
-                                    </nav>
-                                </div>
-                                <!-- Nested Sidenav Accordion (Layout -> Page Headers)-->
-                                <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseLayoutsPageHeaders" aria-expanded="false"
-                                    aria-controls="collapseLayoutsPageHeaders">
-                                    Page Headers
-                                    <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="collapseLayoutsPageHeaders"
-                                    data-bs-parent="#accordionSidenavLayout">
-                                    <nav class="sidenav-menu-nested nav">
-                                        <a class="nav-link" href="header-simplified.html">Simplified</a>
-                                        <a class="nav-link" href="header-compact.html">Compact</a>
-                                        <a class="nav-link" href="header-overlap.html">Content Overlap</a>
-                                        <a class="nav-link" href="header-breadcrumbs.html">Breadcrumbs</a>
-                                        <a class="nav-link" href="header-light.html">Light</a>
-                                    </nav>
-                                </div>
-                                <!-- Nested Sidenav Accordion (Layout -> Starter Layouts)-->
-                                <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseLayoutsStarterTemplates" aria-expanded="false"
-                                    aria-controls="collapseLayoutsStarterTemplates">
-                                    Starter Layouts
-                                    <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="collapseLayoutsStarterTemplates"
-                                    data-bs-parent="#accordionSidenavLayout">
-                                    <nav class="sidenav-menu-nested nav">
-                                        <a class="nav-link" href="starter-default.html">Default</a>
-                                        <a class="nav-link" href="starter-minimal.html">Minimal</a>
-                                    </nav>
-                                </div>
-                            </nav>
-                        </div>
-                        <!-- Sidenav Accordion (Components)-->
-                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
-                            data-bs-target="#collapseComponents" aria-expanded="false"
-                            aria-controls="collapseComponents">
-                            <div class="nav-link-icon"><i data-feather="package"></i></div>
-                            Components
-                            <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseComponents" data-bs-parent="#accordionSidenav">
-                            <nav class="sidenav-menu-nested nav">
-                                <a class="nav-link" href="alerts.html">Alerts</a>
-                                <a class="nav-link" href="avatars.html">Avatars</a>
-                                <a class="nav-link" href="badges.html">Badges</a>
-                                <a class="nav-link" href="buttons.html">Buttons</a>
-                                <a class="nav-link" href="cards.html">
-                                    Cards
-                                    <span class="badge bg-primary-soft text-primary ms-auto">Updated</span>
-                                </a>
-                                <a class="nav-link" href="dropdowns.html">Dropdowns</a>
-                                <a class="nav-link" href="forms.html">
-                                    Forms
-                                    <span class="badge bg-primary-soft text-primary ms-auto">Updated</span>
-                                </a>
-                                <a class="nav-link" href="modals.html">Modals</a>
-                                <a class="nav-link" href="navigation.html">Navigation</a>
-                                <a class="nav-link" href="progress.html">Progress</a>
-                                <a class="nav-link" href="step.html">Step</a>
-                                <a class="nav-link" href="timeline.html">Timeline</a>
-                                <a class="nav-link" href="toasts.html">Toasts</a>
-                                <a class="nav-link" href="tooltips.html">Tooltips</a>
-                            </nav>
-                        </div>
-                        <!-- Sidenav Accordion (Utilities)-->
-                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
-                            data-bs-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
-                            <div class="nav-link-icon"><i data-feather="tool"></i></div>
-                            Utilities
-                            <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseUtilities" data-bs-parent="#accordionSidenav">
-                            <nav class="sidenav-menu-nested nav">
-                                <a class="nav-link" href="animations.html">Animations</a>
-                                <a class="nav-link" href="background.html">Background</a>
-                                <a class="nav-link" href="borders.html">Borders</a>
-                                <a class="nav-link" href="lift.html">Lift</a>
-                                <a class="nav-link" href="shadows.html">Shadows</a>
-                                <a class="nav-link" href="typography.html">Typography</a>
-                            </nav>
-                        </div>
-                        <!-- Sidenav Heading (Addons)-->
-                        <div class="sidenav-menu-heading">Plugins</div>
-                        <!-- Sidenav Link (Charts)-->
-                        <a class="nav-link" href="charts.html">
-                            <div class="nav-link-icon"><i data-feather="bar-chart"></i></div>
-                            Charts
-                        </a>
-                        <!-- Sidenav Link (Tables)-->
-                        <a class="nav-link" href="tables.html">
-                            <div class="nav-link-icon"><i data-feather="filter"></i></div>
-                            Tables
-                        </a>
+                        <!-- Sidenav Accordion (Flows)-->                              
                     </div>
                 </div>
                 <!-- Sidenav Footer-->
                 <div class="sidenav-footer">
                     <div class="sidenav-footer-content">
                         <div class="sidenav-footer-subtitle">Logged in as:</div>
-                        <div class="sidenav-footer-title">Valerie Luna</div>
+                        <div class="sidenav-footer-title"><?php echo $_SESSION["username"]; ?></div>
                     </div>
                 </div>
             </nav>
@@ -613,12 +444,33 @@ session_start();
                 <header class="py-10 mb-4 bg-gradient-primary-to-secondary">
                     <div class="container-xl px-4">
                         <div class="text-center">
-                            <h1 class="text-white">Welcome to SB Admin Pro</h1>
-                            <p class="lead mb-0 text-white-50">A professionally designed admin panel template built with
-                                Bootstrap 5</p>
+                            <h1 class="text-white">Publicaciones</h1>
+                            <p class="lead mb-0 text-white-50">Listado de publicaciones del index usuario.</p>
                         </div>
                     </div>
                 </header>
+                <div class="news-button-section">
+                    <h5>Acciones disponibles</h5>
+                    <p>Aquí puedes realizar diferentes acciones sobre los datos.</p>
+                    <div class="d-flex justify-content-center flex-wrap gap-3">
+                        <button class="new-publication-button">
+                            <i data-feather="file-plus"></i>
+                            NUEVA PUBLICACIÓN
+                        </button>
+                        <button class="new-publication-button">
+                            <i data-feather="edit-3"></i>
+                            EDITAR
+                        </button>
+                        <button class="new-publication-button">
+                            <i data-feather="trash-2"></i>
+                            ELIMINAR
+                        </button>
+                        <button class="new-publication-button">
+                            <i data-feather="eye"></i>
+                            VER
+                        </button>
+                    </div>
+                </div>
                 <!-- Main page content-->
                 <div class="container-xl px-4">
                     <h2 class="mt-5 mb-0">Carrusel 1</h2>
@@ -633,15 +485,16 @@ session_start();
                             while ($row = $resultado->fetch_assoc()) {
                                 $titulo = htmlspecialchars($row['titulo']);
                                 $imagen = htmlspecialchars($row['imagen']);
-                                $rutaImagen = '../uploads/' . $imagen; 
-                        ?>
+                                $rutaImagen = '../uploads/' . $imagen;
+                                ?>
                                 <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
                                     <a class="d-block lift rounded overflow-hidden mb-2" href="#">
-                                        <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>" onerror="this.src='../../uploads/placeholder.png';" />
+                                        <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>"
+                                            onerror="this.src='../../uploads/placeholder.png';" />
                                     </a>
                                     <div class="text-center small"><?php echo $titulo; ?></div>
                                 </div>
-                        <?php
+                                <?php
                             }
                         } else {
                             echo "<p>No hay publicaciones disponibles para Carrusel 1.</p>";
@@ -659,15 +512,16 @@ session_start();
                             while ($row = $resultado->fetch_assoc()) {
                                 $titulo = htmlspecialchars($row['titulo']);
                                 $imagen = htmlspecialchars($row['imagen']);
-                                $rutaImagen = '../uploads/' . $imagen; 
-                        ?>
+                                $rutaImagen = '../uploads/' . $imagen;
+                                ?>
                                 <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
                                     <a class="d-block lift rounded overflow-hidden mb-2" href="#">
-                                        <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>" onerror="this.src='../../uploads/placeholder.png';" />
+                                        <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>"
+                                            onerror="this.src='../../uploads/placeholder.png';" />
                                     </a>
                                     <div class="text-center small"><?php echo $titulo; ?></div>
                                 </div>
-                        <?php
+                                <?php
                             }
                         } else {
                             echo "<p>No hay publicaciones disponibles para Carrusel 2.</p>";
@@ -676,100 +530,33 @@ session_start();
                     </div>
 
 
-                    <h2 class="mt-5 mb-0">Starter Layouts</h2>
+                    <h2 class="mt-5 mb-0">Carrusel 3</h2>
                     <p>Layouts for creating new pages within your project!</p>
                     <hr class="mt-0 mb-4" />
                     <div class="row">
-                        <div class="col-sm-6 col-md-4 mb-4">
-                            <div class="small mb-1">Navigation</div>
-                            <div class="list-group mb-4">
-                                <a class="list-group-item list-group-item-action p-3" href="layout-static.html">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        Static Sidenav
-                                        <i class="text-muted" data-feather="arrow-right"></i>
-                                    </div>
-                                </a>
-                                <a class="list-group-item list-group-item-action p-3" href="layout-dark.html">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        Dark Sidenav
-                                        <i class="text-muted" data-feather="arrow-right"></i>
-                                    </div>
-                                </a>
-                                <a class="list-group-item list-group-item-action p-3" href="layout-rtl.html">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        RTL Layout
-                                        <i class="text-muted" data-feather="arrow-right"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="small mb-1">Container Options</div>
-                            <div class="list-group">
-                                <a class="list-group-item list-group-item-action p-3" href="layout-boxed.html">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        Boxed Layouts
-                                        <i class="text-muted" data-feather="arrow-right"></i>
-                                    </div>
-                                </a>
-                                <a class="list-group-item list-group-item-action p-3" href="layout-fluid.html">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        Fluid Layout
-                                        <i class="text-muted" data-feather="arrow-right"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 mb-4">
-                            <div class="small mb-1">Page Headers</div>
-                            <div class="list-group">
-                                <a class="list-group-item list-group-item-action p-3" href="header-simplified.html">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        Simplified
-                                        <i class="text-muted" data-feather="arrow-right"></i>
-                                    </div>
-                                </a>
-                                <a class="list-group-item list-group-item-action p-3" href="header-compact.html">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        Compact
-                                        <i class="text-muted" data-feather="arrow-right"></i>
-                                    </div>
-                                </a>
-                                <a class="list-group-item list-group-item-action p-3" href="header-overlap.html">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        Content Overlap
-                                        <i class="text-muted" data-feather="arrow-right"></i>
-                                    </div>
-                                </a>
-                                <a class="list-group-item list-group-item-action p-3" href="header-breadcrumbs.html">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        Breadcrumbs
-                                        <i class="text-muted" data-feather="arrow-right"></i>
-                                    </div>
-                                </a>
-                                <a class="list-group-item list-group-item-action p-3" href="header-light.html">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        Light
-                                        <i class="text-muted" data-feather="arrow-right"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 mb-4">
-                            <div class="small mb-1">Starter Layouts</div>
-                            <div class="list-group mb-4">
-                                <a class="list-group-item list-group-item-action p-3" href="starter-default.html">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        Default
-                                        <i class="text-muted" data-feather="arrow-right"></i>
-                                    </div>
-                                </a>
-                                <a class="list-group-item list-group-item-action p-3" href="starter-minimal.html">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        Minimal
-                                        <i class="text-muted" data-feather="arrow-right"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                    <?php
+                        require_once '../../funcs/conexion.php';
+                        $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 2");
+
+                        if ($resultado && $resultado->num_rows > 0) {
+                            while ($row = $resultado->fetch_assoc()) {
+                                $titulo = htmlspecialchars($row['titulo']);
+                                $imagen = htmlspecialchars($row['imagen']);
+                                $rutaImagen = '../uploads/' . $imagen;
+                                ?>
+                                <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
+                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#">
+                                        <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>"
+                                            onerror="this.src='../../uploads/placeholder.png';" />
+                                    </a>
+                                    <div class="text-center small"><?php echo $titulo; ?></div>
+                                </div>
+                                <?php
+                            }
+                        } else {
+                            echo "<p>No hay publicaciones disponibles para Carrusel 3.</p>";
+                        }
+                        ?>
                     </div>
                 </div>
             </main>
@@ -795,7 +582,7 @@ session_start();
     <script src="../assets.startbootstrap.com/js/sb-customizer.js"></script>
     <sb-customizer project="sb-admin-pro"></sb-customizer>
     <script>
-        (function() {
+        (function () {
             function c() {
                 var b = a.contentDocument || a.contentWindow.document;
                 if (b) {
@@ -817,8 +604,8 @@ session_start();
                 if ('loading' !== document.readyState) c();
                 else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
                 else {
-                    var e = document.onreadystatechange || function() {};
-                    document.onreadystatechange = function(b) {
+                    var e = document.onreadystatechange || function () { };
+                    document.onreadystatechange = function (b) {
                         e(b);
                         'loading' !== document.readyState && (document.onreadystatechange = e, c())
                     }
@@ -832,7 +619,4 @@ session_start();
         data-cf-beacon='{"rayId":"8e0ab2c8689f7476","version":"2024.10.5","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"6e2c2575ac8f44ed824cef7899ba8463","b":1}'
         crossorigin="anonymous"></script>
 </body>
-
-<!-- Mirrored from sb-admin-pro.startbootstrap.com/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 Nov 2024 02:02:38 GMT -->
-
 </html>
