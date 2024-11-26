@@ -473,7 +473,8 @@ session_start();
                 </div>
                 <!-- Main page content-->
                 <div class="container-xl px-4">
-                    <h2 class="mt-5 mb-0">Carrusel 1</h2>
+                    <!-- publicaciones 1-->
+                    <h2 class="mt-5 mb-0">Publicaciones 1</h2>
                     <p>Three dashboard examples to get you started!</p>
                     <hr class="mt-0 mb-4" />
                     <div class="row">
@@ -484,15 +485,19 @@ session_start();
                         if ($resultado && $resultado->num_rows > 0) {
                             while ($row = $resultado->fetch_assoc()) {
                                 $titulo = htmlspecialchars($row['titulo']);
+                                $contenido = htmlspecialchars($row['contenido']);
                                 $imagen = htmlspecialchars($row['imagen']);
-                                $rutaImagen = '../uploads/' . $imagen;
-                                ?>
+                                $rutaImagen = '../uploads/' . $imagen; 
+                        ?>
                                 <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
                                     <a class="d-block lift rounded overflow-hidden mb-2" href="#">
                                         <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>"
                                             onerror="this.src='../../uploads/placeholder.png';" />
                                     </a>
-                                    <div class="text-center small"><?php echo $titulo; ?></div>
+                                    <div class="text-center small">
+                                        <strong><?php echo $titulo; ?></strong>
+                                        <p><?php echo $contenido; ?></p>
+                                    </div>
                                 </div>
                                 <?php
                             }
@@ -501,7 +506,8 @@ session_start();
                         }
                         ?>
                     </div>
-                    <h2 class="mt-5 mb-0">Carrusel 2</h2>
+                     <!-- publicaciones 2-->
+                    <h2 class="mt-5 mb-0">Publicaciones 2</h2>
                     <p>App pages to cover common use pages to help build your app!</p>
                     <hr class="mt-0 mb-4" />
                     <div class="row">
@@ -511,15 +517,19 @@ session_start();
                         if ($resultado && $resultado->num_rows > 0) {
                             while ($row = $resultado->fetch_assoc()) {
                                 $titulo = htmlspecialchars($row['titulo']);
+                                $contenido = htmlspecialchars($row['contenido']);
                                 $imagen = htmlspecialchars($row['imagen']);
-                                $rutaImagen = '../uploads/' . $imagen;
-                                ?>
+                                $rutaImagen = '../uploads/' . $imagen; 
+                        ?>
                                 <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
                                     <a class="d-block lift rounded overflow-hidden mb-2" href="#">
                                         <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>"
                                             onerror="this.src='../../uploads/placeholder.png';" />
                                     </a>
-                                    <div class="text-center small"><?php echo $titulo; ?></div>
+                                    <div class="text-center small">
+                                        <strong><?php echo $titulo; ?></strong>
+                                        <p><?php echo $contenido; ?></p>
+                                    </div>
                                 </div>
                                 <?php
                             }
@@ -528,6 +538,7 @@ session_start();
                         }
                         ?>
                     </div>
+
 
 
                     <h2 class="mt-5 mb-0">Carrusel 3</h2>
