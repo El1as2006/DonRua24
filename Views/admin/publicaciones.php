@@ -626,39 +626,56 @@ session_start();
                     <hr class="mt-0 mb-4" />
                     <div class="row">
                         <?php
-                        $conn = include '../../funcs/conexion.php';
+                        require_once '../../funcs/conexion.php';
                         $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 0");
-                        $i = $resultado->fetch_all(MYSQLI_ASSOC);
 
+                        if ($resultado && $resultado->num_rows > 0) {
+                            while ($row = $resultado->fetch_assoc()) {
+                                $titulo = htmlspecialchars($row['titulo']);
+                                $imagen = htmlspecialchars($row['imagen']);
+                                $rutaImagen = '../uploads/' . $imagen; 
                         ?>
-                        <?php foreach ($i as $row): ?>
-                            <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
-                                <a class="d-block lift rounded overflow-hidden mb-2" href="dashboard-1.html">
-                                    <img class="img-fluid" src="<?php echo htmlspecialchars($row['imagen']); ?>"
-                                        alt="..." />
-                                </a>
-                                <div class="text-center small"><?php echo $row["titulo"]; ?></div>
-                            </div>
-                        <?php endforeach; ?>
+                                <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
+                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#">
+                                        <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>" onerror="this.src='../../uploads/placeholder.png';" />
+                                    </a>
+                                    <div class="text-center small"><?php echo $titulo; ?></div>
+                                </div>
+                        <?php
+                            }
+                        } else {
+                            echo "<p>No hay publicaciones disponibles para Carrusel 1.</p>";
+                        }
+                        ?>
                     </div>
                     <h2 class="mt-5 mb-0">Carrusel 2</h2>
                     <p>App pages to cover common use pages to help build your app!</p>
                     <hr class="mt-0 mb-4" />
                     <div class="row">
-                        <?php 
+                        <?php
                         $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 1");
-                        $i = $resultado->fetch_all(MYSQLI_ASSOC);
+
+                        if ($resultado && $resultado->num_rows > 0) {
+                            while ($row = $resultado->fetch_assoc()) {
+                                $titulo = htmlspecialchars($row['titulo']);
+                                $imagen = htmlspecialchars($row['imagen']);
+                                $rutaImagen = '../uploads/' . $imagen; 
                         ?>
-                        <?php foreach ($i as $row): ?>
-                        <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                            <a class="d-block lift rounded overflow-hidden mb-2" href="account-billing.html"><img
-                                    class="img-fluid"
-                                    src="<?php echo htmlspecialchars($row['imagen']); ?>"
-                                    alt="..." /></a>
-                            <div class="text-center small"><?php echo $row["titulo"]; ?></div>
-                        </div>
-                        <?php endforeach; ?>
+                                <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#">
+                                        <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>" onerror="this.src='../../uploads/placeholder.png';" />
+                                    </a>
+                                    <div class="text-center small"><?php echo $titulo; ?></div>
+                                </div>
+                        <?php
+                            }
+                        } else {
+                            echo "<p>No hay publicaciones disponibles para Carrusel 2.</p>";
+                        }
+                        ?>
                     </div>
+
+
                     <h2 class="mt-5 mb-0">Starter Layouts</h2>
                     <p>Layouts for creating new pages within your project!</p>
                     <hr class="mt-0 mb-4" />
@@ -777,7 +794,38 @@ session_start();
 
     <script src="../assets.startbootstrap.com/js/sb-customizer.js"></script>
     <sb-customizer project="sb-admin-pro"></sb-customizer>
-    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'8e0ab2c8689f7476',t:'MTczMTI5MDUyOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='cdn-cgi/challenge-platform/h/b/scripts/jsd/22755d9a86c9/maind41d.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+    <script>
+        (function() {
+            function c() {
+                var b = a.contentDocument || a.contentWindow.document;
+                if (b) {
+                    var d = b.createElement('script');
+                    d.innerHTML = "window.__CF$cv$params={r:'8e0ab2c8689f7476',t:'MTczMTI5MDUyOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='cdn-cgi/challenge-platform/h/b/scripts/jsd/22755d9a86c9/maind41d.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName('head')[0].appendChild(d)
+                }
+            }
+            if (document.body) {
+                var a = document.createElement('iframe');
+                a.height = 1;
+                a.width = 1;
+                a.style.position = 'absolute';
+                a.style.top = 0;
+                a.style.left = 0;
+                a.style.border = 'none';
+                a.style.visibility = 'hidden';
+                document.body.appendChild(a);
+                if ('loading' !== document.readyState) c();
+                else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+                else {
+                    var e = document.onreadystatechange || function() {};
+                    document.onreadystatechange = function(b) {
+                        e(b);
+                        'loading' !== document.readyState && (document.onreadystatechange = e, c())
+                    }
+                }
+            }
+        })();
+    </script>
     <script defer
         src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
         integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="

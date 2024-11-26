@@ -7,8 +7,8 @@ session_start();
 include '../../funcs/conexion.php';
 
 if (!isset($_SESSION['id'])) {
-    header("Location: ../Login-register/login/login.php");
-    exit();
+   header("Location: ../Login-register/login/login.php");
+   exit();
 }
 
 ?>

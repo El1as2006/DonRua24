@@ -374,9 +374,9 @@
                 <div class="col-lg-12">
                     <div class="witr_section_title">
                         <div class="witr_section_title_inner text-center">
-                            <h2>Our Singin 1987.</h2>
-                            <h3>DISCOVER THE WORLD OF BEST</h3>
-                            <h1>CCTV Safety.</h1>
+                            <h2>Publicaciones</h2>
+                            <h3>Seccion</h3>
+                            <h1>1</h1>
                         </div>
                     </div>
                 </div>
