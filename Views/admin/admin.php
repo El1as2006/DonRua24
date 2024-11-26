@@ -7,8 +7,8 @@ session_start();
 include '../../funcs/conexion.php';
 
 if (!isset($_SESSION['id'])) {
-   header("Location: ../Login-register/login/login.php");
-   exit();
+    header("Location: ../Login-register/login/login.php");
+    exit();
 }
 
 ?>
@@ -56,7 +56,7 @@ if (!isset($_SESSION['id'])) {
                 <div class="sidenav-footer">
                     <div class="sidenav-footer-content">
                         <div class="sidenav-footer-subtitle">Logged in as:</div>
-                        <div class="sidenav-footer-title"><?php echo $_SESSION["username"];?></div>
+                        <div class="sidenav-footer-title"><?php echo $_SESSION["username"]; ?></div>
                     </div>
                 </div>
             </nav>
@@ -139,19 +139,26 @@ if (!isset($_SESSION['id'])) {
                                 </div>
                                 <div class="mb-3">
                                     <label for="content" class="form-label">Contenido</label>
-                                    <textarea class="form-control" id="content" name="content" rows="3"
-                                        required></textarea>
+                                    <textarea class="form-control" id="content" name="content" rows="3" required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="sector" class="form-label">Seleccionar Sector</label>
+                                    <select class="form-control" id="sector" name="sector" required>
+                                        <option value="0">Inicio</option>
+                                        <option value="1">Noticias</option>
+                                        <option value="2">Eventos</option>
+                                        <option value="3">Blog</option>
+                                        <!-- Agrega más sectores según lo que necesites -->
+                                    </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="image" class="form-label">Subir Imagen</label>
-                                    <input type="file" class="form-control" id="image" name="image" accept="image/*"
-                                        required>
+                                    <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
                                 </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary">Guardar</button>
-                                <button type="button" class="btn btn-secondary"
-                                    data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                             </div>
                         </form>
                     </div>
@@ -204,71 +211,71 @@ if (!isset($_SESSION['id'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <script>
-    feather.replace();
-    // Show/Hide the edit card
-    document.querySelector('.new-publication-button:nth-of-type(2)').addEventListener('click', () => {
-        document.getElementById('editCard').style.display = 'block';
-        document.getElementById('editCardOverlay').style.display = 'block';
-    });
-    document.getElementById('closeEditCard').addEventListener('click', () => {
-        document.getElementById('editCard').style.display = 'none';
-        document.getElementById('editCardOverlay').style.display = 'none';
-    });
+        feather.replace();
+        // Show/Hide the edit card
+        document.querySelector('.new-publication-button:nth-of-type(2)').addEventListener('click', () => {
+            document.getElementById('editCard').style.display = 'block';
+            document.getElementById('editCardOverlay').style.display = 'block';
+        });
+        document.getElementById('closeEditCard').addEventListener('click', () => {
+            document.getElementById('editCard').style.display = 'none';
+            document.getElementById('editCardOverlay').style.display = 'none';
+        });
 
-    // Show/Hide the delete card
-    document.querySelector('.new-publication-button:nth-of-type(3)').addEventListener('click', () => {
-        document.getElementById('deleteCard').style.display = 'block';
-        document.getElementById('deleteCardOverlay').style.display = 'block';
-    });
-    document.getElementById('closeDeleteCard').addEventListener('click', () => {
-        document.getElementById('deleteCard').style.display = 'none';
-        document.getElementById('deleteCardOverlay').style.display = 'none';
-    });
-    document.getElementById('cancelDelete').addEventListener('click', () => {
-        document.getElementById('deleteCard').style.display = 'none';
-        document.getElementById('deleteCardOverlay').style.display = 'none';
-    });
+        // Show/Hide the delete card
+        document.querySelector('.new-publication-button:nth-of-type(3)').addEventListener('click', () => {
+            document.getElementById('deleteCard').style.display = 'block';
+            document.getElementById('deleteCardOverlay').style.display = 'block';
+        });
+        document.getElementById('closeDeleteCard').addEventListener('click', () => {
+            document.getElementById('deleteCard').style.display = 'none';
+            document.getElementById('deleteCardOverlay').style.display = 'none';
+        });
+        document.getElementById('cancelDelete').addEventListener('click', () => {
+            document.getElementById('deleteCard').style.display = 'none';
+            document.getElementById('deleteCardOverlay').style.display = 'none';
+        });
 
-    // Show/Hide the view card
-    document.querySelector('.new-publication-button:nth-of-type(4)').addEventListener('click', () => {
-        document.getElementById('viewCard').style.display = 'block';
-        document.getElementById('viewCardOverlay').style.display = 'block';
-    });
-    document.getElementById('closeViewCard').addEventListener('click', () => {
-        document.getElementById('viewCard').style.display = 'none';
-        document.getElementById('viewCardOverlay').style.display = 'none';
-    });
+        // Show/Hide the view card
+        document.querySelector('.new-publication-button:nth-of-type(4)').addEventListener('click', () => {
+            document.getElementById('viewCard').style.display = 'block';
+            document.getElementById('viewCardOverlay').style.display = 'block';
+        });
+        document.getElementById('closeViewCard').addEventListener('click', () => {
+            document.getElementById('viewCard').style.display = 'none';
+            document.getElementById('viewCardOverlay').style.display = 'none';
+        });
 
 
-    // Toggle sidebar visibility
-    document.getElementById('sidebarToggle').addEventListener('click', function() {
-        document.getElementById('layoutSidenav').classList.toggle('collapsed');
-    });
+        // Toggle sidebar visibility
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('layoutSidenav').classList.toggle('collapsed');
+        });
 
-    // Show/Hide the publication card
-    const newPublicationButton = document.querySelector('.new-publication-button');
-    const publicationCard = document.getElementById('publicationCard');
-    const overlay = document.getElementById('overlay');
-    const closeCard = document.getElementById('closeCard');
+        // Show/Hide the publication card
+        const newPublicationButton = document.querySelector('.new-publication-button');
+        const publicationCard = document.getElementById('publicationCard');
+        const overlay = document.getElementById('overlay');
+        const closeCard = document.getElementById('closeCard');
 
-    newPublicationButton.addEventListener('click', () => {
-        publicationCard.style.display = 'block';
-        overlay.style.display = 'block';
-    });
+        newPublicationButton.addEventListener('click', () => {
+            publicationCard.style.display = 'block';
+            overlay.style.display = 'block';
+        });
 
-    closeCard.addEventListener('click', () => {
-        publicationCard.style.display = 'none';
-        overlay.style.display = 'none';
-    });
+        closeCard.addEventListener('click', () => {
+            publicationCard.style.display = 'none';
+            overlay.style.display = 'none';
+        });
 
-    overlay.addEventListener('click', () => {
-        publicationCard.style.display = 'none';
-        overlay.style.display = 'none';
-    });
-    document.getElementById('newPublicationBtn').addEventListener('click', function() {
-        const modal = new bootstrap.Modal(document.getElementById('newPublicationModal'));
-        modal.show();
-    });
+        overlay.addEventListener('click', () => {
+            publicationCard.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+        document.getElementById('newPublicationBtn').addEventListener('click', function() {
+            const modal = new bootstrap.Modal(document.getElementById('newPublicationModal'));
+            modal.show();
+        });
     </script>
 </body>
 

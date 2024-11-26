@@ -1,9 +1,10 @@
 <?php
-require_once '../../funcs/conexion.php'; // Ajusta la ruta según tu estructura
+require_once '../../funcs/conexion.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'];
     $content = $_POST['content'];
+    $sector = $_POST['sector']; 
 
     // Verificar y procesar la imagen subida
     if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
@@ -17,10 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (in_array(strtolower($fileType), $allowedTypes)) {
             if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
-                // Guardar en la base de datos
-                $sql = "INSERT INTO publicaciones (titulo, contenido, imagen) VALUES (?, ?, ?)";
+                
+                $sql = "INSERT INTO publicaciones (titulo, contenido, imagen, Tipo_publicaciones) VALUES (?, ?, ?, ?)";
                 $stmt = $conn->prepare($sql);
-                $stmt->bind_param("sss", $title, $content, $fileName);
+                $stmt->bind_param("sssi", $title, $content, $fileName, $sector);
 
                 if ($stmt->execute()) {
                     echo "<script>alert('Publicación creada exitosamente'); window.location.href='index.php';</script>";
@@ -41,4 +42,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else {
     echo "<script>alert('Método de solicitud no permitido'); window.history.back();</script>";
 }
-?>
