@@ -290,12 +290,29 @@
 
 <!-- solutech_serivce_area -->
 <div class="solutech_serivce_area serivce_bg">
-	<div class="container">	
+	<div class="container">		
+	<div class="row">
+			<div class="col-lg-12">
+				<div class="witr_section_title">
+					<div class="witr_section_title_inner text-center">
+						<h2>Mensaje de la hermana Directora</h2>		
+						<h3>Hna. Rosa Demi Larreynaga Ayala H.D.S</h3>
+						<p>Estimados maestros, padres de familia y estudiantes:</p>		
+						<p>
+Reciban un cordial saludo en este nuevo año, implorando de Dios su bendición y protección para ustedes y cada uno de los miembros de su familia.
+Gracias por asociarnos en la noble tarea de la educación de sus hijos, misión que realizamos en conjunto con la ayuda de Dios, de usted estimado padre de familia, el docente y el mismo estudiante con su docilidad y colaboración.
+Les invito queridos docentes, padres de familia, y estudiantes a reflexionar seriamente en su propia santificación. Dios nos ofrece esa oportunidad, él mismo nos ayuda y nos ama.                                Agradezco desde ya su apoyo y colaboración en todas las actividades programadas para este año, esperando que Dios los bendiga por su entrega y donación generosa.
+ </p>		
+					</div>
+				</div>
+			</div>	
+		</div>
+	<div class="row"></div>
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="witr_section_title">
 					<div class="witr_section_title_inner text-center">
-						<h2>Our Service</h2>		
+						<h2>Nuestros Valores</h2>		
 						<h3>Industries What We Serve With You.</h3>		
 					</div>
 				</div>
