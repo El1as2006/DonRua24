@@ -1,3 +1,17 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+session_start();
+
+include '../../funcs/conexion.php';
+
+if (!isset($_SESSION['id'])) {
+    header("Location: ../Login-register/login/login.php");
+    exit();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,6 +42,10 @@
                             <div class="nav-link-icon"><i data-feather="activity"></i></div>
                             Dashboards
                         </a>
+                        <a class="nav-link" href="publicaciones.php">
+                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            Publicaciones
+                        </a>
                         <div class="sidenav-menu-heading">Custom</div>
                         <a class="nav-link" href="pages.html">
                             <div class="nav-link-icon"><i data-feather="grid"></i></div>
@@ -38,7 +56,7 @@
                 <div class="sidenav-footer">
                     <div class="sidenav-footer-content">
                         <div class="sidenav-footer-subtitle">Logged in as:</div>
-                        <div class="sidenav-footer-title">Valerie Luna</div>
+                        <div class="sidenav-footer-title"><?php echo $_SESSION["username"];?></div>
                     </div>
                 </div>
             </nav>

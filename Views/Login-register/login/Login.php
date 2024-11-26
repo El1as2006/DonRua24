@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <style>
     html,
     body {
@@ -235,6 +233,22 @@
 </head>
 
 <body class="bg-primary">
+    <?php 
+
+    require __DIR__ . "../../../../vendor/autoload.php";
+
+    $client = new  Google\Client();
+
+    $client->setClientId("943455787225-q8e87klnf1e1haqtq7m3g0vccumenv94.apps.googleusercontent.com");
+    $client->setClientSecret("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nm");
+    $client->setRedirectUri("http://localhost/DonRua24/Views/admin/admin.php");
+
+    $client->addScope("email");
+    $client->addScope("profile");
+
+    $url = $client->createAuthUrl();
+    
+    ?>
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
             <main>
@@ -252,7 +266,9 @@
                                             style="max-width: 100px; height: auto; display: block; margin: 0 auto;">
                                     </div>
                                     <div class="h3 fw-light mb-3">Sign In</div>
-
+                                    <div>
+                                    <a class="btn btn-icon btn-google mx-1" href="<?= $url ?>"><i class="fab fa-google fa-fw fa-sm"></i></a>
+                                    </div>
                                 </div>
                                 <hr class="my-0" />
                                 <div class="card-body p-5">

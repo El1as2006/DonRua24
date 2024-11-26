@@ -80,7 +80,7 @@
                                                                 <li><a href="index-3.html">Home Banner Page</a></li>
                                                             </ul>
                                                         </li>
-                                                        <li><a href="about.html">About</a></li>
+                                                        <li><a href="about.php">About</a></li>
                                                         <li class="menu-item-has-children">
                                                             <a href="#">Service</a>
                                                             <ul class="sub-menu">

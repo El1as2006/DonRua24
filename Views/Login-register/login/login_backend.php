@@ -44,8 +44,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (password_verify($password, $row['pass'])) {
                 $_SESSION['email'] = $email;
                 $_SESSION['user_type'] = $row['user_type'];
+                $_SESSION['id'] = $row['id'];
+                $_SESSION['username'] = $row['username'];
 
-                // if($remember_me){
+                // if($remember_me){    
                 //     $token = bin2hex(random_bytes(16));
                 //     $expiry = time() + (86400 * 30);
 
