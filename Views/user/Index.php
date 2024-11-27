@@ -111,7 +111,7 @@
                                                                         Sidebar</a></li>
                                                             </ul>
                                                         </li>
-                                                        <li><a href="contact.html">Contact Us</a></li>
+                                                        <li><a href="contactus.php">Contactanos</a></li>
                                                     </ul>
                                                     <div class="donate-btn-header">
                                                         <a class="dtbtn" href="../login-register/login/Login.php">Iniciar Sesión </a>
@@ -238,8 +238,8 @@
                     style="background-image: url(../../Assets/template1/assets/images/slider-3.png);">
                     <div class="witr_sw_text_area text-left">
                         <div class="witr_swiper_content">
-                            <h2>High Quality For</h2>
-                            <h3>Your <span> Business</span></h3>
+                            <h2>Escuela Salesiana</h2>
+                            <h3>Domingo <span> Savio</span></h3>
                             <!-- btn gradient style -->
                             <div class="slider_btn">
                                 <div class="witr_btn_style">
@@ -460,8 +460,8 @@
                 <div class="col-lg-12">
                     <div class="witr_section_title">
                         <div class="witr_section_title_inner text-center">
-                            <h2>Our Service</h2>
-                            <h3>Industries What We Serve With You.</h3>
+                            <h2>Nuestro Compromiso</h2>
+                            <h3>Valores Salesianos</h3>
                         </div>
                     </div>
                 </div>
@@ -799,7 +799,9 @@
                 <div class="col-lg-6 col-md-10 col-sm-12">
                     <div class="witr_section_title">
                         <div class="witr_section_title_inner text-left">
-                            <h2>Publicaciones 1</h2>
+                            <h2>Publicaciones 1
+                                Preguntas Frecuentes
+                            </h2>
                             <h3>seccion 4</h3>
                         </div>
                     </div>
