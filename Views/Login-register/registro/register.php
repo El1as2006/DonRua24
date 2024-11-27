@@ -19,6 +19,71 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../../package/dist/sweetalert2.css">
     <script src="../../../package/dist/sweetalert2.min.js"></script>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-y: auto;
+            /* Permitir desplazamiento vertical */
+            background-image: url('../../../Assets/template2/assets/img/fondo.png');
+            /* Imagen de fondo */
+            background-size: cover;
+            /* Expandir al tamaño de la pantalla */
+            background-repeat: no-repeat;
+            /* No repetir */
+            background-position: center center;
+            /* Centrar */
+        }
+
+        .login-container {
+            min-height: calc(100vh - 20px);
+            /* Altura completa con espacio debajo */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            /* Alinear hacia arriba */
+            flex-direction: column;
+            /* Estructura vertical */
+            padding: 20px 0;
+            /* Espaciado superior e inferior */
+        }
+
+        .login-box {
+            width: 90%;
+            /* Adaptarse al tamaño del viewport */
+            max-width: 400px;
+            /* No exceder un ancho máximo */
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px auto 40px;
+            /* Margen superior e inferior */
+        }
+
+        img {
+            max-width: 100%;
+            /* Escalar el logo */
+            height: auto;
+            margin: 0 auto;
+            /* Centrar */
+        }
+
+        .card {
+            box-shadow: none;
+            /* Eliminar sombra si está causando efecto visual */
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body class="bg-primary">
@@ -31,7 +96,13 @@
                             <!-- Basic registration form-->
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header justify-content-center">
-                                    <h3 class="fw-light my-4">Create Account</h3>
+
+
+                                    <div style="display: flex; align-items: center; justify-content: center;">
+                                        <h3 class="fw-light my-4" style="margin-right: 10px;">Create Account</h3>
+                                        <img src="../../../Assets/template2/assets/img/logo.png" alt="Logo"
+                                            style="width: auto; height: 50px; max-height: 100%; object-fit: contain;">
+                                    </div>
                                 </div>
                                 <div class="card-body">
                                     <!-- Registration form-->
@@ -81,6 +152,8 @@
                                 </div>
                                 <div class="card-footer text-center">
                                     <div class="small"><a href="../login/login.php">Have an account? Go to login</a>
+                                    <br>
+                                        <a href="../../user/index.php">home</a>
                                     </div>
                                 </div>
                             </div>
