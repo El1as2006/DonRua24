@@ -127,8 +127,7 @@
                                                         <li><a href="contact.html">Contact Us</a></li>
                                                     </ul>
                                                     <div class="donate-btn-header">
-                                                        <a class="dtbtn" href="../login-register/login/Login.php">Log
-                                                            In</a>
+                                                        <a class="dtbtn" href="../login-register/login/Login.php">Iniciar Sesión </a>
                                                     </div>
                                                 </nav>
                                             </div>

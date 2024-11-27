@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Admisiones</title>
+    <title>Admisiones Domingo Savio</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="../../Assets/template1/assets/images/favicon.png">
@@ -13,9 +13,8 @@
     <link rel="stylesheet" type="text/css" href="../../Assets/template1/assets/css/plugin_theme_css.css">
     <link rel="stylesheet" type="text/css" href="../../Assets/template1/assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="../../Assets/template1/assets/css/responsive.css">
-    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../package/dist/sweetalert2.css">
-    <script src="../../../package/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="../../package/dist/sweetalert2.css">
+    <script src="../../package/dist/sweetalert2.min.js"></script>
 
 </head>
 
@@ -28,8 +27,8 @@
                     <div class="col-xs-12 col-lg-9 col-xl-9 col-md-9 col-sm-12">
                         <div class="top-address text-left">
                             <p>
-                                <span><i class="fas fa-home"></i>Ground Floor New World.</span>
-                                <a href="#"><i class="fas fa-phone-alt"></i>+998556778345</a>
+                                <span><i class="fas fa-home"></i>Quinta Avenida Norte, San Salvador</span>
+                                <a href="#"><i class="fas fa-phone-alt"></i>+503 2526-9742</a>
                                 <a href="#"><i class="fas fa-envelope"></i>demo@example.com</a>
                             </p>
                         </div>
@@ -41,8 +40,6 @@
                                 <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fab fa-x-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fab fa-tumblr"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -130,7 +127,7 @@
                                                         <li><a href="contact.html">Contact Us</a></li>
                                                     </ul>
                                                     <div class="donate-btn-header">
-                                                        <a class="dtbtn" href="#">Contact Now</a>
+                                                        <a class="dtbtn" href="../login-register/login/Login.php">Iniciar Sesión</a>
                                                     </div>
                                                 </nav>
                                             </div>
@@ -254,17 +251,17 @@
             </div>
 
 
-<?php 
+            <?php
 $conn = require '../../funcs/conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    $name = $_POST["name"];
-    $edad = $_POST["edad"];
-    $sexo = $_POST["sexo"];
-    $nacionalidad = $_POST["nacionalidad"];
-    $telefono = $_POST["phone"];
-    $email = $_POST["email"];
+
+    $name = trim($_POST["name"]);
+    $edad = trim($_POST["edad"]);
+    $sexo = trim($_POST["sexo"]);
+    $nacionalidad = trim($_POST["nacionalidad"]);
+    $telefono = trim($_POST["phone"]);
+    $email = trim($_POST["email"]);
 
     if (empty($name) || empty($edad) || empty($sexo) || empty($nacionalidad) || empty($telefono) || empty($email)) {
         echo "<script>
@@ -275,37 +272,73 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     confirmButtonText: 'OK'
                 });
               </script>";
+        return;
+    }
+
+    if (!filter_var($edad, FILTER_VALIDATE_INT) || $edad <= 0) {
+        echo "<script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Ingrese una edad válida',
+                    confirmButtonText: 'OK'
+                });
+              </script>";
+        return;
+    }
+
+    if (!preg_match('/^\d{8}$/', $telefono)) {
+        echo "<script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Ingrese un teléfono válido de 8 dígitos',
+                    confirmButtonText: 'OK'
+                });
+              </script>";
+        return;
+    }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL) || !str_ends_with($email, '@gmail.com')) {
+        echo "<script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Ingrese un correo válido con dominio @gmail.com',
+                    confirmButtonText: 'OK'
+                });
+              </script>";
+        return;
+    }
+
+    $sql = "INSERT INTO admisiones (nombre, edad, sexo, nacionalidad, tel_contacto, correo)
+            VALUES ('$name', '$edad', '$sexo', '$nacionalidad', '$telefono', '$email')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "<script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registro exitoso',
+                    text: 'Solicitud de admisión enviada',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'admisiones.php';
+                    }
+                });
+              </script>";
     } else {
-
-        $sql = "INSERT INTO admisiones (nombre, edad, sexo, nacionalidad, tel_contacto, correo)
-                VALUES ('$name', '$edad', '$sexo', '$nacionalidad', '$telefono','$email' )";
-
-        if ($conn->query($sql) === TRUE) {
-            echo "<script>
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Registro exitoso',
-                        text: 'Solicitud de admisión enviada',
-                        confirmButtonText: 'OK'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            window.location.href = 'index.php';
-                        }
-                    });
-                  </script>";
-        } else {
-            echo "<script>
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error',
-                        text: 'No se pudo registrar la solicitud de adminsion. Error: " . $conn->error . "',
-                        confirmButtonText: 'OK'
-                    });
-                  </script>";
-        }
+        echo "<script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'No se pudo registrar la solicitud de admisión. Error: " . $conn->error . "',
+                    confirmButtonText: 'OK'
+                });
+              </script>";
     }
 }
-?>           
+?>
             <div class="row contact_top">
                 <div class="col-lg-8 col-md-12 col-sm-12">
                     <div class="apartment_area">
@@ -341,12 +374,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <div class="form-row">
                                     <!-- algo -->
                                 </div>
-                                <button type="submit" name="ok" class="btn btn-primary">Enviar Ahora</button>
-                                <div class="row">
-                                    <div class="col-lg-12 text-center">
-                                        <p class="form-messege"></p>
-                                    </div>
-                                </div>
+                                <button type="submit"  class="btn btn-primary">Enviar Ahora</button>
                             </form>
                         </div>
                     </div>
