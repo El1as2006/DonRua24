@@ -23,6 +23,7 @@ if (!isset($_SESSION['id'])) {
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../../Assets/template2/css/styles.css" rel="stylesheet" />
+
 </head>
 
 <body class="nav-fixed">
@@ -120,14 +121,15 @@ if (!isset($_SESSION['id'])) {
                                 ELIMINAR
                             </button>
                             <button class="new-publication-button">
-                                <i data-feather="eye"></i>
-                                VER
+                                <i data-feather="log-out"></i>
+                                SALIDA
                             </button>
+
                         </div>
                     </div>
 
                     <!-- Card for Nueva Publicación -->
-                <div class="overlay" id="overlay"></div>
+                    <div class="overlay" id="overlay"></div>
                     <div class="publication-card" id="publicationCard">
                         <button class="close-btn" id="closeCard">&times;</button>
                         <h5>Nueva Publicación</h5>
@@ -139,7 +141,8 @@ if (!isset($_SESSION['id'])) {
                                 </div>
                                 <div class="mb-3">
                                     <label for="content" class="form-label">Contenido</label>
-                                    <textarea class="form-control" id="content" name="content" rows="3" required></textarea>
+                                    <textarea class="form-control" id="content" name="content" rows="3"
+                                        required></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label for="sector" class="form-label">Seleccionar Sector</label>
@@ -153,12 +156,14 @@ if (!isset($_SESSION['id'])) {
                                 </div>
                                 <div class="mb-3">
                                     <label for="image" class="form-label">Subir Imagen</label>
-                                    <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
+                                    <input type="file" class="form-control" id="image" name="image" accept="image/*"
+                                        required>
                                 </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary">Guardar</button>
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Cancelar</button>
                             </div>
                         </form>
                     </div>
@@ -210,6 +215,12 @@ if (!isset($_SESSION['id'])) {
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+    <!-- Scripts exclusivos para el área de publicaciones con estilos del index -->
+    <script src="../../Assets/template1/assets/js/vendor/jquery-3.5.1.min.js"></script>
+    <script src="../../Assets/template1/assets/js/bootstrap.min.js"></script>
+    <script src="../../Assets/template1/assets/js/scripts.js"></script>
+
+
     <script>
         feather.replace();
         // Show/Hide the edit card
@@ -248,7 +259,7 @@ if (!isset($_SESSION['id'])) {
 
 
         // Toggle sidebar visibility
-        document.getElementById('sidebarToggle').addEventListener('click', function() {
+        document.getElementById('sidebarToggle').addEventListener('click', function () {
             document.getElementById('layoutSidenav').classList.toggle('collapsed');
         });
 
@@ -272,7 +283,7 @@ if (!isset($_SESSION['id'])) {
             publicationCard.style.display = 'none';
             overlay.style.display = 'none';
         });
-        document.getElementById('newPublicationBtn').addEventListener('click', function() {
+        document.getElementById('newPublicationBtn').addEventListener('click', function () {
             const modal = new bootstrap.Modal(document.getElementById('newPublicationModal'));
             modal.show();
         });

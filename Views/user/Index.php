@@ -38,6 +38,8 @@
                                 <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fab fa-x-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-tumblr"></i></a></li>
+                                <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -78,8 +80,19 @@
                                                                 <li><a href="index-3.html">Home Banner Page</a></li>
                                                             </ul>
                                                         </li>
-                                                        <li><a href="about.php">Acerca de nosotros</a></li>
-                                                        <li><a href="admisiones.php">Admisiones</a></li>
+                                                        <li><a href="about.html">About</a></li>
+                                                        <li class="menu-item-has-children">
+                                                            <a href="#">Service</a>
+                                                            <ul class="sub-menu">
+                                                                <li><a href="home-security.html">Home Security</a></li>
+                                                                <li><a href="software-development.html">Software
+                                                                        Development</a></li>
+                                                                <li><a href="installation.html">Installation CCTV</a>
+                                                                </li>
+                                                                <li><a href="service-details.html">Service Details</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
                                                         <li class="menu-item-has-children">
                                                             <a href="#">Pages</a>
                                                             <ul class="sub-menu">
@@ -353,7 +366,7 @@
         </div>
     </div>
 
-    <!-------------------------------------------------- publicaciones 1 -------------------------------------------------->
+
     <!-- solutech_about_area -->
     <div class="solutech_about_area">
         <div class="container">
@@ -361,94 +374,78 @@
                 <div class="col-lg-12">
                     <div class="witr_section_title">
                         <div class="witr_section_title_inner text-center">
-                            <h2>Publicaciones</h2>
-                            <h3>Seccion</h3>
-                            <h1>1</h1>
+                            <h2>Our Singin 1987.</h2>
+                            <h3>DISCOVER THE WORLD OF BEST</h3>
+                            <h1>CCTV Safety.</h1>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="witr_pslide3 all_pslides_color ps1 ps3 service_active">
                 <div class="witr_cslide3_idany service_top">
+                    <!-- solutech_serivce_01 -->
                     <?php
-                    // Incluir la conexión a la base de datos
-                    require_once '../../funcs/conexion.php';
+                // Incluir la conexión a la base de datos
+                require_once '../../funcs/conexion.php';
 
-                    // Consulta para obtener las dos publicaciones con Tipo_publicaciones = 0
-                    $sql = "SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_publicaciones = 0 LIMIT 2";
-                    $result = $conn->query($sql);
+                // Consulta para obtener las publicaciones desde la base de datos
+                $sql = "SELECT titulo, contenido, imagen FROM publicaciones LIMIT 1"; // Solo una publicación para el lado izquierdo
+                $result = $conn->query($sql);
 
-                    $index = 1; // Para asignar números dinámicos (01, 02, ...)
-                    $imagenes = array_fill(0, 2, null); // Array para mantener las posiciones de las imágenes (02 elementos)
+                if ($result && $result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $titulo = htmlspecialchars($row['titulo']); // Título de la publicación
+                        $contenido = htmlspecialchars($row['contenido']); // Contenido de la publicación
+                        $imagePath = '../uploads/' . htmlspecialchars($row['imagen']); // Ruta de la imagen
 
-                    if ($result && $result->num_rows > 0) {
-                        $i = 0; // Índice para el array de imágenes
-                        while ($row = $result->fetch_assoc()) {
-                            if ($i < 2) {
-                                $imagenes[$i] = [
-                                    'titulo' => htmlspecialchars($row['titulo']),
-                                    'contenido' => htmlspecialchars($row['contenido']),
-                                    'imagen' => '../uploads/' . htmlspecialchars($row['imagen']),
-                                ];
-                                $i++;
-                            }
-                        }
+                        echo '<div class="item_pos col-lg-12">';
+                        echo '    <div class="witr_single_pslide">';
+                        echo '        <div class="witr_pslide_image">';
+                        echo '            <img src="' . $imagePath . '" alt="' . $titulo . '" class="img-fluid">';
+                        echo '        </div>';
+                        echo '        <div class="witr_content_pslide_text">';
+                        echo '            <div class="witr_number_pslide">';
+                        echo '                <h4>01.</h4>'; // Número estático
+                        echo '            </div>';
+                        echo '            <div class="witr_content_pslide">';
+                        echo '                <p>' . $contenido . '</p>'; // Contenido dinámico
+                        echo '                <h3><a href="#">' . $titulo . '</a></h3>'; // Título dinámico
+                        echo '            </div>';
+                        echo '            <div class="witr_pslide_custom">';
+                        echo '                <a href="#"><span class="ti-arrow-right"></span></a>';
+                        echo '            </div>';
+                        echo '        </div>';
+                        echo '    </div>';
+                        echo '</div>';
                     }
+                } else {
+                    echo '<p>No hay publicaciones disponibles para mostrar.</p>';
+                }
 
-                    for ($i = 0; $i < 2; $i++) {
-                        if ($imagenes[$i] !== null) {
-                            $titulo = $imagenes[$i]['titulo'];
-                            $contenido = $imagenes[$i]['contenido'];
-                            $imagePath = $imagenes[$i]['imagen'];
-
-                            echo '<div class="item_pos col-lg-12">';
-                            echo '    <div class="witr_single_pslide">';
-                            echo '        <div class="witr_pslide_image">';
-                            echo '            <img src="' . $imagePath . '" alt="' . $titulo . '" class="img-fluid">';
-                            echo '        </div>';
-                            echo '        <div class="witr_content_pslide_text">';
-                            echo '            <div class="witr_number_pslide">';
-                            echo '                <h4>' . sprintf("%02d.", $index) . '</h4>'; // Número dinámico
-                            echo '            </div>';
-                            echo '            <div class="witr_content_pslide">';
-                            echo '                <p>' . $contenido . '</p>'; // Contenido dinámico
-                            echo '                <h3><a href="#">' . $titulo . '</a></h3>'; // Título dinámico
-                            echo '            </div>';
-                            echo '            <div class="witr_pslide_custom">';
-                            echo '                <a href="#"><span class="ti-arrow-right"></span></a>';
-                            echo '            </div>';
-                            echo '        </div>';
-                            echo '    </div>';
-                            echo '</div>';
-                        } else {
-                            // Mostrar un marcador indicando que la imagen ha sido eliminada
-                            echo '<div class="item_pos col-lg-12">';
-                            echo '    <div class="witr_single_pslide">';
-                            echo '        <div class="witr_pslide_image">';
-                            echo '            <img src="../uploads/placeholder.png" alt="Imagen eliminada" class="img-fluid">';
-                            echo '        </div>';
-                            echo '        <div class="witr_content_pslide_text">';
-                            echo '            <div class="witr_number_pslide">';
-                            echo '                <h4>' . sprintf("%02d.", $index) . '</h4>'; // Número dinámico
-                            echo '            </div>';
-                            echo '            <div class="witr_content_pslide">';
-                            echo '                <p>Esta publicación fue eliminada.</p>';
-                            echo '                <h3><a href="#">Sin contenido</a></h3>';
-                            echo '            </div>';
-                            echo '            <div class="witr_pslide_custom">';
-                            echo '                <a href="#"><span class="ti-arrow-right"></span></a>';
-                            echo '            </div>';
-                            echo '        </div>';
-                            echo '    </div>';
-                            echo '</div>';
-                        }
-                        $index++; // Incrementar el número
-                    }
-
-
-                    ?>
+                // Cerrar la conexión
+                $conn->close();
+                ?>
+                    <!-- solutech_serivce_02 -->
+                    <div class="item_pos col-lg-12">
+                        <div class="witr_single_pslide">
+                            <div class="witr_pslide_image">
+                                <img src="../../Assets/template1/assets/images/service-img-2.jpg" alt="image">
+                            </div>
+                            <div class="witr_content_pslide_text">
+                                <div class="witr_number_pslide">
+                                    <h4>02.</h4>
+                                </div>
+                                <div class="witr_content_pslide">
+                                    <p>SECURITY PROFESSIONAL</p>
+                                    <h3><a href="#">Experts and Staff</a></h3>
+                                </div>
+                                <div class="witr_pslide_custom">
+                                    <a href="#"><span class="ti-arrow-right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -579,7 +576,7 @@
             </div>
         </div>
     </div>
-    <!-------------------------------------------------- publicaciones 2 -------------------------------------------------->
+
     <!-- solutech_project_area -->
     <div class="solutech_project_area">
         <div class="containers">
@@ -587,93 +584,105 @@
                 <div class="col-lg-12">
                     <div class="witr_section_title">
                         <div class="witr_section_title_inner text-center">
-                            <h2>Publicaciones 1</h2>
-                            <h3>Seccion 2</h3>
+                            <h2> We Work Project</h2>
+                            <h3>How We Approach Our Projects</h3>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="witr_pslide all_pslides_color ps1 service_active">
                 <div class="witr_islidess_slick witr_cslide_idany project_top">
-                    <?php
-                    require_once '../../funcs/conexion.php';
-
-                    // Inicializar las 5 posiciones como vacías
-                    $publicaciones = array_fill(0, 5, null);
-
-                    // Consulta para obtener publicaciones (máximo 5)
-                    $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 1 LIMIT 5");
-
-                    $index = 0; // Para llenar las posiciones dinámicamente
-                    if ($resultado && $resultado->num_rows > 0) {
-                        while ($row = $resultado->fetch_assoc()) {
-                            $publicaciones[$index] = [
-                                'titulo' => htmlspecialchars($row['titulo']),
-                                'contenido' => htmlspecialchars($row['contenido']),
-                                'imagen' => '../uploads/' . htmlspecialchars($row['imagen']),
-                            ];
-                            $index++;
-                        }
-                    }
-
-                    // Iterar para renderizar las 5 posiciones
-                    for ($i = 0; $i < 5; $i++) {
-                        if ($publicaciones[$i] !== null) {
-                            $titulo = $publicaciones[$i]['titulo'];
-                            $contenido = $publicaciones[$i]['contenido'];
-                            $rutaImagen = $publicaciones[$i]['imagen'];
-                    ?>
-                            <div class="item_pos col-lg-12">
-                                <div class="witr_single_pslide">
-                                    <div class="witr_pslide_image">
-                                        <img src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>" class="img-fluid">
-                                    </div>
-                                    <div class="witr_pslide_custom">
-                                        <a href="#"><span class="ti-arrow-right"></span></a>
-                                    </div>
-                                    <div class="witr_content_pslide_text">
-                                        <div class="witr_content_pslide">
-                                            <h3><a href="#"><?php echo $titulo; ?></a></h3>
-                                            <p><?php echo $contenido; ?></p>
-                                        </div>
-                                    </div>
+                    <!-- solutech_project_01 -->
+                    <div class="item_pos col-lg-12">
+                        <div class="witr_single_pslide">
+                            <div class="witr_pslide_image">
+                                <img src="../../Assets/template1/assets/images/project-thumb-02.jpg" alt="image">
+                            </div>
+                            <div class="witr_pslide_custom">
+                                <a href="#"><span class="ti-arrow-right"></span></a>
+                            </div>
+                            <div class="witr_content_pslide_text">
+                                <div class="witr_content_pslide">
+                                    <h3><a href="#">Fingerprint Door </a></h3>
+                                    <p>Access </p>
                                 </div>
                             </div>
-                        <?php
-                        } else {
-                            // Espacio vacío (placeholder)
-                        ?>
-                            <div class="item_pos col-lg-12">
-                                <div class="witr_single_pslide">
-                                    <div class="witr_pslide_image">
-                                        <img src="../uploads/placeholder.png" alt="Espacio Disponible" class="img-fluid">
-                                    </div>
-                                    <div class="witr_pslide_custom">
-                                        <a href="#"><span class="ti-arrow-right"></span></a>
-                                    </div>
-                                    <div class="witr_content_pslide_text">
-                                        <div class="witr_content_pslide">
-                                            <h3><a href="#">Espacio Disponible</a></h3>
-                                            <p>Publica aquí tu contenido</p>
-                                        </div>
-                                    </div>
+                        </div>
+                    </div>
+                    <!-- solutech_project_02 -->
+                    <div class="item_pos col-lg-12">
+                        <div class="witr_single_pslide">
+                            <div class="witr_pslide_image">
+                                <img src="../../Assets/template1/assets/images/project-thumb-03.jpg" alt="image">
+                            </div>
+                            <div class="witr_pslide_custom">
+                                <a href="#"><span class="ti-arrow-right"></span></a>
+                            </div>
+                            <div class="witr_content_pslide_text">
+                                <div class="witr_content_pslide">
+                                    <h3><a href="#">Antenna Tagging</a></h3>
+                                    <p>Alarm & Lock </p>
                                 </div>
                             </div>
-                    <?php
-                        }
-                    }
-                    ?>
+                        </div>
+                    </div>
+                    <!-- solutech_project_03 -->
+                    <div class="item_pos col-lg-12">
+                        <div class="witr_single_pslide">
+                            <div class="witr_pslide_image">
+                                <img src="../../Assets/template1/assets/images/project-thumb-04.jpg" alt="image">
+                            </div>
+                            <div class="witr_pslide_custom">
+                                <a href="#"><span class="ti-arrow-right"></span></a>
+                            </div>
+                            <div class="witr_content_pslide_text">
+                                <div class="witr_content_pslide">
+                                    <h3><a href="#">Home Automation </a></h3>
+                                    <p>System </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- solutech_project_04 -->
+                    <div class="item_pos col-lg-12">
+                        <div class="witr_single_pslide">
+                            <div class="witr_pslide_image">
+                                <img src="../../Assets/template1/assets/images/project-thumb-01.jpg" alt="image">
+                            </div>
+                            <div class="witr_pslide_custom">
+                                <a href="#"><span class="ti-arrow-right"></span></a>
+                            </div>
+                            <div class="witr_content_pslide_text">
+                                <div class="witr_content_pslide">
+                                    <h3><a href="#">Fingerprint Door </a></h3>
+                                    <p>Access </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- solutech_project_05 -->
+                    <div class="item_pos col-lg-12">
+                        <div class="witr_single_pslide">
+                            <div class="witr_pslide_image">
+                                <img src="../../Assets/template1/assets/images/project-thumb-05.jpg" alt="image">
+                            </div>
+                            <div class="witr_pslide_custom">
+                                <a href="#"><span class="ti-arrow-right"></span></a>
+                            </div>
+                            <div class="witr_content_pslide_text">
+                                <div class="witr_content_pslide">
+                                    <h3><a href="#">Fingerprint Door Lock</a></h3>
+                                    <p>Alarm & Lock </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
-
-
         </div>
     </div>
 
-    <!-------------------------------------------------- publicaciones 3 -------------------------------------------------->
+
     <!-- solutech_team_area -->
     <div class="solutech_team_area">
         <div class="container">
@@ -681,118 +690,176 @@
                 <div class="col-lg-12">
                     <div class="witr_section_title">
                         <div class="witr_section_title_inner text-center">
-                            <h2>Publicaciones 1</h2>
-                            <h3>Seccion </h3>
-                            <h1>3</h1>
+                            <h2>OUR MEMBER</h2>
+                            <h3>WHAT DO YOU WANT TO</h3>
+                            <h1>LEARN TODAY ?</h1>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row team_top">
-                <?php
-                require_once '../../funcs/conexion.php';
-
-                // Inicializar las 3 posiciones como vacías
-                $publicaciones = array_fill(0, 3, null);
-
-                // Consulta para obtener publicaciones (máximo 3)
-                $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 2 LIMIT 3");
-
-                $index = 0; // Para llenar las posiciones dinámicamente
-                if ($resultado && $resultado->num_rows > 0) {
-                    while ($row = $resultado->fetch_assoc()) {
-                        $publicaciones[$index] = [
-                            'titulo' => htmlspecialchars($row['titulo']),
-                            'contenido' => htmlspecialchars($row['contenido']),
-                            'imagen' => '../uploads/' . htmlspecialchars($row['imagen']),
-                        ];
-                        $index++;
-                    }
-                }
-
-                // Generar las 3 posiciones, sean dinámicas o con marcador de "Espacio disponible"
-                foreach ($publicaciones as $publicacion) {
-                    if ($publicacion !== null) {
-                        $titulo = $publicacion['titulo'];
-                        $contenido = $publicacion['contenido'];
-                        $rutaImagen = $publicacion['imagen'];
-                ?>
-                        <div class="col-lg-4 col-md-6 col-sm-12">
-                            <div class="em-team all_color_team ">
-                                <div class="em-team-one">
-                                    <div class="em-team-content-image-inner">
-                                        <div class="em-team-content-image">
-                                            <img src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>">
-                                        </div>
+                <!-- solutech_team_01 -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="em-team all_color_team ">
+                        <div class="em-team-one">
+                            <div class="em-team-content-image-inner">
+                                <div class="em-team-content-image">
+                                    <img src="../../Assets/template1/assets/images/team-01.jpg" alt="image">
+                                </div>
+                            </div>
+                            <div class="em-team-content-waraper all_content_bg_color">
+                                <div class="em-team-content-title-inner">
+                                    <div class="em-content-title">
+                                        <h5><a href="#">EDWARD SMITH </a></h5>
                                     </div>
-                                    <div class="em-team-content-waraper all_content_bg_color">
-                                        <div class="em-team-content-title-inner">
-                                            <div class="em-content-title">
-                                                <h5><a href="#"><?php echo $titulo; ?></a></h5>
-                                            </div>
-                                        </div>
-                                        <div class="em-team-content-subtitle-inner">
-                                            <div class="em-content-subtitle">
-                                                <span><?php echo $contenido; ?></span>
-                                            </div>
-                                        </div>
-                                        <div class="em-team-content-socials-inner">
-                                            <div class="em-team-content-socials all_team_s_color">
-                                                <a href="#"><i class="fa fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fab fa-x-twitter"></i></a>
-                                                <a href="#"><i class="fab fa-tumblr"></i></a>
-                                                <a href="#"><i class="fab fa-vimeo-v"></i></a>
-                                            </div>
-                                        </div>
+                                </div>
+                                <div class="em-team-content-subtitle-inner">
+                                    <div class="em-content-subtitle">
+                                        <span>DIRECTOR</span>
+                                    </div>
+                                </div>
+                                <div class="em-team-content-socials-inner">
+                                    <div class="em-team-content-socials all_team_s_color">
+                                        <a href="#"><i class="fa fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-tumblr"></i></a>
+                                        <a href="#"><i class="fab fa-vimeo-v"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    <?php
-                    } else {
-                        // Espacio vacío (placeholder)
-                    ?>
-                        <div class="col-lg-4 col-md-6 col-sm-12">
-                            <div class="em-team all_color_team ">
-                                <div class="em-team-one">
-                                    <div class="em-team-content-image-inner">
-                                        <div class="em-team-content-image">
-                                            <img src="../uploads/placeholder.png" alt="Espacio Disponible" onclick="openAddModal()">
-                                        </div>
+                    </div>
+                </div>
+                <!-- solutech_team_02 -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="em-team all_color_team ">
+                        <div class="em-team-one">
+                            <div class="em-team-content-image-inner">
+                                <div class="em-team-content-image">
+                                    <img src="../../Assets/template1/assets/images/team-02.jpg" alt="image">
+                                </div>
+                            </div>
+                            <div class="em-team-content-waraper all_content_bg_color">
+                                <div class="em-team-content-title-inner">
+                                    <div class="em-content-title">
+                                        <h5><a href="#">RUBEL SMITH</a></h5>
                                     </div>
-                                    <div class="em-team-content-waraper all_content_bg_color">
-                                        <div class="em-team-content-title-inner">
-                                            <div class="em-content-title">
-                                                <h5><a href="#">Espacio Disponible</a></h5>
-                                            </div>
-                                        </div>
-                                        <div class="em-team-content-subtitle-inner">
-                                            <div class="em-content-subtitle">
-                                                <span>Publica aquí tu contenido</span>
-                                            </div>
-                                        </div>
-                                        <div class="em-team-content-socials-inner">
-                                            <div class="em-team-content-socials all_team_s_color">
-                                                <a href="#"><i class="fa fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fab fa-x-twitter"></i></a>
-                                                <a href="#"><i class="fab fa-tumblr"></i></a>
-                                                <a href="#"><i class="fab fa-vimeo-v"></i></a>
-                                            </div>
-                                        </div>
+                                </div>
+                                <div class="em-team-content-subtitle-inner">
+                                    <div class="em-content-subtitle">
+                                        <span>MANAGER</span>
+                                    </div>
+                                </div>
+                                <div class="em-team-content-socials-inner">
+                                    <div class="em-team-content-socials all_team_s_color">
+                                        <a href="#"><i class="fa fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-tumblr"></i></a>
+                                        <a href="#"><i class="fab fa-vimeo-v"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                <?php
-                    }
-                }
-                ?>
+                    </div>
+                </div>
+                <!-- solutech_team_03 -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="em-team all_color_team ">
+                        <div class="em-team-one">
+                            <div class="em-team-content-image-inner">
+                                <div class="em-team-content-image">
+                                    <img src="../../Assets/template1/assets/images/team-03.jpg" alt="image">
+                                </div>
+                            </div>
+                            <div class="em-team-content-waraper all_content_bg_color">
+                                <div class="em-team-content-title-inner">
+                                    <div class="em-content-title">
+                                        <h5><a href="#">ANDORSON</a></h5>
+                                    </div>
+                                </div>
+                                <div class="em-team-content-subtitle-inner">
+                                    <div class="em-content-subtitle">
+                                        <span>MARKETING</span>
+                                    </div>
+                                </div>
+                                <div class="em-team-content-socials-inner">
+                                    <div class="em-team-content-socials all_team_s_color">
+                                        <a href="#"><i class="fa fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-tumblr"></i></a>
+                                        <a href="#"><i class="fab fa-vimeo-v"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-
         </div>
     </div>
-    <!-------------------------------------------------- publicaciones 4 -------------------------------------------------->
+
+
+    <!-- solutech_counter_area -->
+    <div class="solutech_counter_area">
+        <div class="container counter_bg">
+            <div class="row">
+                <!-- desicat_counter_01 -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="witr_counter_single all_counter_color">
+                        <div class="witr_custom_icon">
+                            <i class="icofont-man-in-glasses"></i>
+                        </div>
+                        <div class="witr_counter_number_inn">
+                            <h3 class="counter">130</h3>
+                            <span>+</span>
+                            <h4>Happy Customers </h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- desicat_counter_02 -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="witr_counter_single all_counter_color">
+                        <div class="witr_custom_icon">
+                            <i class="icofont-automation"></i>
+                        </div>
+                        <div class="witr_counter_number_inn">
+                            <h3 class="counter">60</h3>
+                            <span>+</span>
+                            <h4>Employer Solutions</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- desicat_counter_03 -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="witr_counter_single all_counter_color">
+                        <div class="witr_custom_icon">
+                            <i class="icofont-money"></i>
+                        </div>
+                        <div class="witr_counter_number_inn">
+                            <h3 class="counter">30</h3>
+                            <span>+</span>
+                            <h4>Client Coffee</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- desicat_counter_04 -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="witr_counter_single all_counter_color">
+                        <div class="witr_custom_icon">
+                            <i class="icofont-checked"></i>
+                        </div>
+                        <div class="witr_counter_number_inn">
+                            <h3 class="counter">33</h3>
+                            <span>+</span>
+                            <h4>Project Completed</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- single_next_work_area -->
     <div class="single_faq_bg_area faq_area">
         <div class="container">
@@ -800,8 +867,8 @@
                 <div class="col-lg-6 col-md-10 col-sm-12">
                     <div class="witr_section_title">
                         <div class="witr_section_title_inner text-left">
-                            <h2>Publicaciones 1</h2>
-                            <h3>seccion 4</h3>
+                            <h2>OUR FAQ</h2>
+                            <h3>Frequently Asked Questions?</h3>
                         </div>
                     </div>
                     <div class="witr_single_progress">
@@ -932,9 +999,199 @@
         </div>
     </div>
 
+    <!-- solutech_work_area -->
+    <div class="solutech_work_area work_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="witr_section_title">
+                        <div class="witr_section_title_inner text-center">
+                            <h2>How We Work</h2>
+                            <h3>Security Surveillance Systems</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row work_top">
+                <!-- solutech_process_01 -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="witr_process all_process_color">
+                        <div class="witr_front_content">
+                            <div class="witr_process_image">
+                                <img src="../../Assets/template1/assets/images/work-1.jpg" alt="image">
+                                <div class="witr_back_process">
+                                    <div class="witr_content_service">
+                                        <h3><a href="#">Day & night Wireless cams</a></h3>
+                                        <p>We help businesses elevate their through custom service software development
+                                            product design. </p>
+                                    </div>
+                                </div>
+                                <div class="witr_process_box">
+                                    <div class="witr_process_icon">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
+                                    <div class="witr_process_icon2">
+                                        <i class="fas fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- solutech_process_02 -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="witr_process all_process_color">
+                        <div class="witr_front_content">
+                            <div class="witr_process_image">
+                                <img src="../../Assets/template1/assets/images/work-2.jpg" alt="image">
+                                <div class="witr_back_process">
+                                    <div class="witr_content_service">
+                                        <h3><a href="#"> venenatis felis Wireless cams</a></h3>
+                                        <p>We help businesses elevate their through custom service software development
+                                            product design. </p>
+                                    </div>
+                                </div>
+                                <div class="witr_process_box">
+                                    <div class="witr_process_icon">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
+                                    <div class="witr_process_icon2">
+                                        <i class="fas fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- solutech_process_03 -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="witr_process all_process_color">
+                        <div class="witr_front_content">
+                            <div class="witr_process_image">
+                                <img src="../../Assets/template1/assets/images/work-3.jpg" alt="image">
+                                <div class="witr_back_process">
+                                    <div class="witr_content_service">
+                                        <h3><a href="#">Cras tristique purus non lacus</a></h3>
+                                        <p>We help businesses elevate their through custom service software development
+                                            product design. </p>
+                                    </div>
+                                </div>
+                                <div class="witr_process_box">
+                                    <div class="witr_process_icon">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
+                                    <div class="witr_process_icon2">
+                                        <i class="fas fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- solutech_testimonial_bg_area -->
+    <div class="solutech_testimonial_bg_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="witr_section_title white">
+                        <div class="witr_section_title_inner text-center">
+                            <h2>Our Testimonial</h2>
+                            <h3>Compilate Recent Product For</h3>
+                            <h1>Our Customer</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carso_idtesti all_color_testimonial dfa testi_top">
+                <!-- solutech_blog_01 -->
+                <div class="item guttergs">
+                    <div class="single_creativeItem post_t6">
+                        <div class="box-size">
+                            <div class="testiCreCon">
+                                <i class="fa fa-quote-right"></i>
+                                <!-- content -->
+                                <p>Following best practices and pro edures provided by the leading orga izations in the
+                                    industry, our clea ng and disinfectingIt</p>
+                            </div>
+                            <div class="em_test_thumb">
+                                <img src="../../Assets/template1/assets/images/testimonial2.png" alt="image">
+                            </div>
+                            <div class="testAuthor">
+                                <h6>Zonson Amplilian</h6>
+                                <span> Co- Of Officer </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- solutech_blog_02 -->
+                <div class="item guttergs">
+                    <div class="single_creativeItem post_t6">
+                        <div class="box-size">
+                            <div class="testiCreCon">
+                                <i class="fa fa-quote-right"></i>
+                                <!-- content -->
+                                <p>Following best practices and pro edures provided by the leading orga izations in the
+                                    industry, our clea ng and disinfectingIt</p>
+                            </div>
+                            <div class="em_test_thumb">
+                                <img src="../../Assets/template1/assets/images/testimonial1.png" alt="image">
+                            </div>
+                            <div class="testAuthor">
+                                <h6>Rahul Alartson</h6>
+                                <span> Admin Officer </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- solutech_blog_03 -->
+                <div class="item guttergs">
+                    <div class="single_creativeItem post_t6">
+                        <div class="box-size">
+                            <div class="testiCreCon">
+                                <i class="fa fa-quote-right"></i>
+                                <!-- content -->
+                                <p>Following best practices and pro edures provided by the leading orga izations in the
+                                    industry, our clea ng and disinfectingIt</p>
+                            </div>
+                            <div class="em_test_thumb">
+                                <img src="../../Assets/template1/assets/images/testimonial3.png" alt="image">
+                            </div>
+                            <div class="testAuthor">
+                                <h6>Robert Amplilian</h6>
+                                <span> Chief People Officer </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- solutech_blog_04 -->
+                <div class="item guttergs">
+                    <div class="single_creativeItem post_t6">
+                        <div class="box-size">
+                            <div class="testiCreCon">
+                                <i class="fa fa-quote-right"></i>
+                                <!-- content -->
+                                <p>Following best practices and pro edures provided by the leading orga izations in the
+                                    industry, our clea ng and disinfectingIt</p>
+                            </div>
+                            <div class="em_test_thumb">
+                                <img src="../../Assets/template1/assets/images/testimonial1.png" alt="image">
+                            </div>
+                            <div class="testAuthor">
+                                <h6>Marvin McKinney</h6>
+                                <span> District Officer </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-    <!------------------------------------------- Publicaciones 4 ------------------------------------------->
     <!-- witr_brand_area -->
     <div class="witr_brand_area">
         <div class="container">
@@ -942,46 +1199,24 @@
                 <div class="col-lg-9 col-md-8 col-sm-12 pdlf">
                     <div class="imagess_area wittr_car_top_left brand_bg">
                         <div class="witr_car_overlay brand_imagess_active">
-                            <?php
-                            require_once '../../funcs/conexion.php';
-
-                            // Inicializar las 6 posiciones como vacías
-                            $publicaciones = array_fill(0, 6, null);
-
-                            // Consulta para obtener publicaciones (máximo 6)
-                            $resultado = $conn->query("SELECT titulo, imagen FROM publicaciones WHERE Tipo_Publicaciones = 3 LIMIT 6");
-
-                            $index = 0; // Para llenar las posiciones dinámicamente
-                            if ($resultado && $resultado->num_rows > 0) {
-                                while ($row = $resultado->fetch_assoc()) {
-                                    $publicaciones[$index] = [
-                                        'titulo' => htmlspecialchars($row['titulo']),
-                                        'imagen' => '../uploads/' . htmlspecialchars($row['imagen']),
-                                    ];
-                                    $index++;
-                                }
-                            }
-
-                            // Iterar para renderizar las 6 posiciones
-                            foreach ($publicaciones as $publicacion) {
-                                if ($publicacion !== null) {
-                                    $titulo = $publicacion['titulo'];
-                                    $rutaImagen = $publicacion['imagen'];
-                            ?>
-                                    <div class="slide_items">
-                                        <img src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>" class="img-fluid">
-                                    </div>
-                                <?php
-                                } else {
-                                    // Espacio vacío (placeholder)
-                                ?>
-                                    <div class="slide_items">
-                                        <img src="../uploads/placeholder.png" alt="Espacio Disponible" class="img-fluid" onclick="openAddModal()">
-                                    </div>
-                            <?php
-                                }
-                            }
-                            ?>
+                            <div class="slide_items">
+                                <img src="../../Assets/template1/assets/images/brand1.png" alt="image">
+                            </div>
+                            <div class="slide_items">
+                                <img src="../../Assets/template1/assets/images/brand2.png" alt="image">
+                            </div>
+                            <div class="slide_items">
+                                <img src="../../Assets/template1/assets/images/brand3.png" alt="image">
+                            </div>
+                            <div class="slide_items">
+                                <img src="../../Assets/template1/assets/images/brand4.png" alt="image">
+                            </div>
+                            <div class="slide_items">
+                                <img src="../../Assets/template1/assets/images/brand2.png" alt="image">
+                            </div>
+                            <div class="slide_items">
+                                <img src="../../Assets/template1/assets/images/brand3.png" alt="image">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1008,91 +1243,108 @@
                 <div class="col-lg-12">
                     <div class="witr_section_title">
                         <div class="witr_section_title_inner text-center">
-                            <h2>Publicaciones 1</h2>
-                            <h3>seccion 5</h3>
+                            <h2>Our News & Media</h2>
+                            <h3>Latest news are on top</h3>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="witr_blog_area11 witr_blog_area16">
                 <div class="blog_wrap blog16_idblog1 blog_top">
-                    <?php
-                    require_once '../../funcs/conexion.php';
-
-                    // Inicializar las 4 posiciones como vacías
-                    $publicaciones = array_fill(0, 4, null);
-
-                    // Consulta para obtener publicaciones (máximo 4)
-                    $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 4 LIMIT 4");
-
-                    $index = 0; // Para llenar las posiciones dinámicamente
-                    if ($resultado && $resultado->num_rows > 0) {
-                        while ($row = $resultado->fetch_assoc()) {
-                            $publicaciones[$index] = [
-                                'titulo' => htmlspecialchars($row['titulo']),
-                                'contenido' => htmlspecialchars($row['contenido']),
-                                'imagen' => '../uploads/' . htmlspecialchars($row['imagen']),
-                            ];
-                            $index++;
-                        }
-                    }
-
-                    // Generar las publicaciones dinámicas o espacios vacíos
-                    foreach ($publicaciones as $publicacion) {
-                        if ($publicacion !== null) {
-                            $titulo = $publicacion['titulo'];
-                            $contenido = $publicacion['contenido'];
-                            $rutaImagen = $publicacion['imagen'];
-                    ?>
-                            <div class="witr_all_mb_30 col-lg-12">
-                                <div class="busi_singleBlog">
-                                    <div class="witr_sb_thumb">
-                                        <a href="#"><img src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>" class="img-fluid"></a>
-                                    </div>
-                                    <div class="all_blog_color">
-                                        <div class="witr_blog_con bs5">
-                                            <h2><a href="#"><?php echo $titulo; ?></a></h2>
-                                            <p><?php echo $contenido; ?></p>
-                                            <div class="em-blog-content-area_adn">
-                                                <div class="learn_more_adn">
-                                                    <a class="learn_btn adnbtn2" href="#">Read More</a>
-                                                </div>
-                                            </div>
-                                            <div class="witr_blog_border"></div>
+                    <!-- solutech_blog_01 -->
+                    <div class="witr_all_mb_30 col-lg-12 ">
+                        <div class="busi_singleBlog">
+                            <div class="witr_sb_thumb">
+                                <a href="#"><img src="../../Assets/template1/assets/images/blog-thumb-01.jpg"
+                                        alt="image"></a>
+                            </div>
+                            <div class="all_blog_color">
+                                <div class="witr_blog_con bs5">
+                                    <h2><a href="#">Boost Leads Optimize Market New Year</a></h2>
+                                    <p>Lorem Ipsum has been the industry's standarddummy text ever since this</p>
+                                    <div class="em-blog-content-area_adn ">
+                                        <div class="learn_more_adn">
+                                            <a class="learn_btn adnbtn2" href="#">Read More </a>
                                         </div>
                                     </div>
+                                    <div class="witr_blog_border"></div>
+                                    <span><i class="icofont-tags"></i> <a href="#"> Business</a></span>
+                                    <span><a href="#"><i class="icofont-ui-clock"></i></a> 07 July, 2024</span>
                                 </div>
                             </div>
-                        <?php
-                        } else {
-                            // Espacio vacío
-                        ?>
-                            <div class="witr_all_mb_30 col-lg-12">
-                                <div class="busi_singleBlog">
-                                    <div class="witr_sb_thumb">
-                                        <a href="#"><img src="../uploads/placeholder.png" alt="Espacio Disponible" class="img-fluid" onclick="openAddModal()"></a>
-                                    </div>
-                                    <div class="all_blog_color">
-                                        <div class="witr_blog_con bs5">
-                                            <h2><a href="#">Espacio Disponible</a></h2>
-                                            <p>Publica aquí tu contenido</p>
-                                            <div class="em-blog-content-area_adn">
-                                                <div class="learn_more_adn">
-                                                    <a class="learn_btn adnbtn2" href="#">Add Content</a>
-                                                </div>
-                                            </div>
-                                            <div class="witr_blog_border"></div>
+                        </div>
+                    </div>
+                    <!-- solutech_blog_02 -->
+                    <div class="witr_all_mb_30 col-lg-12">
+                        <div class="busi_singleBlog">
+                            <div class="witr_sb_thumb">
+                                <a href="#"><img src="../../Assets/template1/assets/images/blog-thumb-02.jpg"
+                                        alt="image"></a>
+                            </div>
+                            <div class="all_blog_color">
+                                <div class="witr_blog_con bs5">
+                                    <h2><a href="#">We make a Revolution in Word Class Building.</a></h2>
+                                    <p>Lorem Ipsum has been the industry's standarddummy text ever since this</p>
+                                    <div class="em-blog-content-area_adn ">
+                                        <div class="learn_more_adn">
+                                            <a class="learn_btn adnbtn2" href="#">Read More </a>
                                         </div>
                                     </div>
+                                    <div class="witr_blog_border"></div>
+                                    <span><i class="icofont-tags"></i> <a href="#"> Business</a></span>
+                                    <span><a href="#"><i class="icofont-ui-clock"></i></a> 07 July, 2024</span>
                                 </div>
                             </div>
-                    <?php
-                        }
-                    }
-                    ?>
+                        </div>
+                    </div>
+                    <!-- solutech_blog_03 -->
+                    <div class="witr_all_mb_30 col-lg-12">
+                        <div class="busi_singleBlog">
+                            <div class="witr_sb_thumb">
+                                <a href="#"><img src="../../Assets/template1/assets/images/blog-thumb-03.jpg"
+                                        alt="image"></a>
+                            </div>
+                            <div class="all_blog_color">
+                                <div class="witr_blog_con bs5">
+                                    <h2><a href="#">Which Architecture sheet tool is to choose?</a></h2>
+                                    <p>Lorem Ipsum has been the industry's standarddummy text ever since this</p>
+                                    <div class="em-blog-content-area_adn ">
+                                        <div class="learn_more_adn">
+                                            <a class="learn_btn adnbtn2" href="#">Read More </a>
+                                        </div>
+                                    </div>
+                                    <div class="witr_blog_border"></div>
+                                    <span><i class="icofont-tags"></i> <a href="#">Home Safe</a></span>
+                                    <span><a href="#"><i class="icofont-ui-clock"></i></a> 07 July, 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- solutech_blog_04 -->
+                    <div class="witr_all_mb_30 col-lg-12">
+                        <div class="busi_singleBlog">
+                            <div class="witr_sb_thumb">
+                                <a href="#"><img src="../../Assets/template1/assets/images/blog-thumb-04.jpg"
+                                        alt="image"></a>
+                            </div>
+                            <div class="all_blog_color">
+                                <div class="witr_blog_con bs5">
+                                    <h2><a href="#">Questions every business owner able to answer</a></h2>
+                                    <p>Lorem Ipsum has been the industry's standarddummy text ever since this</p>
+                                    <div class="em-blog-content-area_adn ">
+                                        <div class="learn_more_adn">
+                                            <a class="learn_btn adnbtn2" href="#">Read More </a>
+                                        </div>
+                                    </div>
+                                    <div class="witr_blog_border"></div>
+                                    <span><i class="icofont-tags"></i> <a href="#"> Antivirus app</a></span>
+                                    <span><a href="#"><i class="icofont-ui-clock"></i></a> 07 July, 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
 
