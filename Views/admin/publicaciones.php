@@ -26,7 +26,44 @@ if (!isset($_SESSION['id'])) {
     <script src="../cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"
         crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" type="text/css" href="../../Assets/template1/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../Assets/template1/venobox/venobox.css">
+    <link rel="stylesheet" type="text/css" href="../../Assets/template1/assets/css/plugin_theme_css.css">
+    <link rel="stylesheet" type="text/css" href="../../Assets/template1/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../Assets/template1/assets/css/responsive.css">
+
+
+    <style>
+        /* Asegurar tamaño fijo de las imágenes */
+        .publicacion img {
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+            /* Recorta y ajusta la imagen */
+            object-position: center;
+            /* Centra la imagen */
+            border-radius: 8px;
+            /* Opcional: bordes redondeados */
+        }
+
+        .publicacion {
+            display: flex;
+            justify-content: center;
+            /* Centrar contenido en su espacio */
+            align-items: center;
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+            margin: 10px;
+        }
+    </style>
+
+    <!-- Rutas exclusivas para el área de publicaciones con estilos del index -->
+    <link rel="stylesheet" href="../../Assets/template1/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../Assets/template1/assets/css/styles.css">
 </head>
+
+
 
 <body class="nav-fixed">
     <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white"
@@ -297,7 +334,8 @@ if (!isset($_SESSION['id'])) {
                     <div class="container-xl px-4">
                         <div class="page-header-content pt-4">
                             <h1 class="page-header-title">Publicaciones 1</h1>
-                            <div class="page-header-subtitle">Podras modificar todas las publicaciones que se encutran en el sector publicaciones 1</div>
+                            <div class="page-header-subtitle">Podras modificar todas las publicaciones que se encutran
+                                en el sector publicaciones 1</div>
                         </div>
                     </div>
                 </header>
@@ -416,68 +454,90 @@ if (!isset($_SESSION['id'])) {
 
 
                     <!-------------------------------------------------- publicaciones 1 -------------------------------------------------->
+
                     <h2 class="mt-5 mb-0">Sección 1</h2>
 
                     <hr class="mt-0 mb-4" />
                     <div class="row">
-                        <?php
-                        require_once '../../funcs/conexion.php';
+                        <div class="witr_pslide3 all_pslides_color ps1 ps3 service_active">
+                            <div class="witr_cslide3_idany service_top">
+                                <?php
+                                require_once '../../funcs/conexion.php';
 
-                        // Consulta para obtener las publicaciones con Tipo_Publicaciones = 0 (máximo 2)
-                        $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 0 LIMIT 2");
+                                // Consulta para obtener las publicaciones con Tipo_Publicaciones = 0 (máximo 2)
+                                $sql = "SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 0 LIMIT 2";
+                                $resultado = $conn->query($sql);
 
-                        $publicaciones = [null, null]; // Array para mantener las publicaciones (dos posiciones)
-                        $index = 0;
+                                $imagenes = [null, null]; // Array para mantener las publicaciones (dos posiciones)
+                                $index = 1; // Para numeración dinámica
+                                
+                                if ($resultado && $resultado->num_rows > 0) {
+                                    $i = 0; // Índice para el array de imágenes
+                                    while ($i < 2 && $row = $resultado->fetch_assoc()) {
+                                        $imagenes[$i] = [
+                                            'titulo' => htmlspecialchars($row['titulo']),
+                                            'contenido' => htmlspecialchars($row['contenido']),
+                                            'imagen' => '../uploads/' . htmlspecialchars($row['imagen']),
+                                        ];
+                                        $i++;
+                                    }
+                                }
 
-                        if ($resultado && $resultado->num_rows > 0) {
-                            while ($index < 2 && $row = $resultado->fetch_assoc()) {
-                                $publicaciones[$index] = [
-                                    'titulo' => htmlspecialchars($row['titulo']),
-                                    'contenido' => htmlspecialchars($row['contenido']),
-                                    'imagen' => '../uploads/' . htmlspecialchars($row['imagen']),
-                                ];
-                                $index++;
-                            }
-                        }
+                                // Generar las dos posiciones, sean dinámicas o con marcador
+                                for ($i = 0; $i < 2; $i++) {
+                                    if (!empty($imagenes[$i])) {
+                                        $titulo = $imagenes[$i]['titulo'];
+                                        $contenido = $imagenes[$i]['contenido'];
+                                        $imagePath = $imagenes[$i]['imagen'];
 
-                        // Generar las dos posiciones, sean dinámicas o con marcador
-                        for ($i = 0; $i < 2; $i++) {
-                            if (!empty($publicaciones[$i])) {
-                                $titulo = $publicaciones[$i]['titulo'];
-                                $contenido = $publicaciones[$i]['contenido'];
-                                $rutaImagen = $publicaciones[$i]['imagen'];
-                        ?>
-                                <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
-                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#">
-                                        <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>"
-                                            onerror="this.src='../uploads/placeholder.png';" />
-                                    </a>
-                                    <div class="text-center small">
-                                        <strong><?php echo $titulo; ?></strong>
-                                        <p><?php echo $contenido; ?></p>
-                                    </div>
-                                </div>
-                            <?php
-                            } else {
-                                // Espacio reservado si no hay imagen publicada
-                            ?>
-                                <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
-                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#">
-                                        <img class="img-fluid" src="../uploads/placeholder.png" alt="Espacio reservado" />
-                                    </a>
-                                    <div class="text-center small">
-                                        <strong>Espacio Disponible</strong>
-                                        <p>Publica aquí tu contenido</p>
-                                    </div>
-                                </div>
-                        <?php
-                            }
-                        }
+                                        echo '<div class="item_pos col-lg-12">';
+                                        echo '    <div class="witr_single_pslide">';
+                                        echo '        <div class="witr_pslide_image">';
+                                        echo '            <img src="' . $imagePath . '" alt="' . $titulo . '" class="img-fluid">';
+                                        echo '        </div>';
+                                        echo '        <div class="witr_content_pslide_text">';
+                                        echo '            <div class="witr_number_pslide">';
+                                        echo '                <h4>' . sprintf("%02d.", $index) . '</h4>'; // Número dinámico
+                                        echo '            </div>';
+                                        echo '            <div class="witr_content_pslide">';
+                                        echo '                <p>' . $contenido . '</p>'; // Contenido dinámico
+                                        echo '                <h3><a href="#">' . $titulo . '</a></h3>'; // Título dinámico
+                                        echo '            </div>';
+                                        echo '            <div class="witr_pslide_custom">';
+                                        echo '                <a href="#"><span class="ti-arrow-right"></span></a>';
+                                        echo '            </div>';
+                                        echo '        </div>';
+                                        echo '    </div>';
+                                        echo '</div>';
+                                    } else {
+                                        // Mostrar un marcador indicando que la imagen ha sido eliminada
+                                        echo '<div class="item_pos col-lg-12">';
+                                        echo '    <div class="witr_single_pslide">';
+                                        echo '        <div class="witr_pslide_image">';
+                                        echo '            <img src="../uploads/placeholder.png" alt="Imagen eliminada" class="img-fluid">';
+                                        echo '        </div>';
+                                        echo '        <div class="witr_content_pslide_text">';
+                                        echo '            <div class="witr_number_pslide">';
+                                        echo '                <h4>' . sprintf("%02d.", $index) . '</h4>'; // Número dinámico
+                                        echo '            </div>';
+                                        echo '            <div class="witr_content_pslide">';
+                                        echo '                <p>Esta publicación fue eliminada.</p>';
+                                        echo '                <h3><a href="#">Sin contenido</a></h3>';
+                                        echo '            </div>';
+                                        echo '            <div class="witr_pslide_custom">';
+                                        echo '                <a href="#"><span class="ti-arrow-right"></span></a>';
+                                        echo '            </div>';
+                                        echo '        </div>';
+                                        echo '    </div>';
+                                        echo '</div>';
+                                    }
+                                    $index++; // Incrementar el número
+                                }
+                                ?>
+                            </div>
 
-                        ?>
+                        </div>
                     </div>
-
-
 
 
                     <!-------------------------------------------------- publicaciones 2 -------------------------------------------------->
@@ -485,217 +545,334 @@ if (!isset($_SESSION['id'])) {
 
                     <hr class="mt-0 mb-4" />
                     <div class="row">
-                        <?php
-                        $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 1 LIMIT 5");
+                        <div class="witr_pslide3 all_pslides_color ps1 ps3 service_active">
+                            <div class="witr_cslide3_idany service_top">
+                                <?php
+                                require_once '../../funcs/conexion.php';
 
-                        $publicaciones = []; // Array para mantener publicaciones
-                        if ($resultado && $resultado->num_rows > 0) {
-                            while ($row = $resultado->fetch_assoc()) {
-                                $publicaciones[] = [
-                                    'titulo' => htmlspecialchars($row['titulo'] ?? 'Título no disponible'),
-                                    'contenido' => htmlspecialchars($row['contenido'] ?? 'Contenido no disponible'),
-                                    'imagen' => '../uploads/' . htmlspecialchars($row['imagen'] ?? 'placeholder.png'),
-                                ];
-                            }
-                        }
+                                // Consulta para obtener las publicaciones con Tipo_Publicaciones = 1 (máximo 5)
+                                $sql = "SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 1 LIMIT 5";
+                                $resultado = $conn->query($sql);
 
-                        // Asegurarse de que el array tenga exactamente 5 espacios
-                        while (count($publicaciones) < 5) {
-                            $publicaciones[] = null; // Añadir marcadores para los espacios vacíos
-                        }
+                                $imagenes = [null, null, null, null, null]; // Array para mantener las 5 publicaciones
+                                $index = 1; // Para numeración dinámica
+                                
+                                if ($resultado && $resultado->num_rows > 0) {
+                                    $i = 0; // Índice para el array de imágenes
+                                    while ($i < 5 && $row = $resultado->fetch_assoc()) {
+                                        $imagenes[$i] = [
+                                            'titulo' => htmlspecialchars($row['titulo'] ?? 'Título no disponible'),
+                                            'contenido' => htmlspecialchars($row['contenido'] ?? 'Contenido no disponible'),
+                                            'imagen' => '../uploads/' . htmlspecialchars($row['imagen'] ?? 'placeholder.png'),
+                                        ];
+                                        $i++;
+                                    }
+                                }
 
-                        // Generar las 5 posiciones
-                        foreach ($publicaciones as $publicacion) {
-                            if ($publicacion !== null) {
-                                // Publicación disponible
-                                $titulo = $publicacion['titulo'];
-                                $contenido = $publicacion['contenido'];
-                                $rutaImagen = $publicacion['imagen'];
-                        ?>
-                                <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#">
-                                        <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>" onerror="this.src='../../uploads/placeholder.png';" />
-                                    </a>
-                                    <div class="text-center small">
-                                        <strong><?php echo $titulo; ?></strong>
-                                        <p><?php echo $contenido; ?></p>
-                                    </div>
-                                </div>
-                            <?php
-                            } else {
-                                // Espacio vacío
-                            ?>
-                                <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#" onclick="abrirModal()">
-                                        <img class="img-fluid" src="../uploads/placeholder.png" alt="Espacio disponible" />
-                                    </a>
-                                    <div class="text-center small">
-                                        <strong>Espacio Disponible</strong>
-                                        <p>Publica aquí tu contenido</p>
-                                    </div>
-                                </div>
-                        <?php
-                            }
-                        }
-                        ?>
+                                // Generar las 5 posiciones, sean dinámicas o con marcador
+                                for ($i = 0; $i < 5; $i++) {
+                                    if (!empty($imagenes[$i])) {
+                                        $titulo = $imagenes[$i]['titulo'];
+                                        $contenido = $imagenes[$i]['contenido'];
+                                        $imagePath = $imagenes[$i]['imagen'];
+
+                                        echo '<div class="item_pos col-sm-6 col-md-4 col-xl-3 mb-4">';
+                                        echo '    <div class="witr_single_pslide">';
+                                        echo '        <div class="witr_pslide_image">';
+                                        echo '            <img src="' . $imagePath . '" alt="' . $titulo . '" class="img-fluid">';
+                                        echo '        </div>';
+                                        echo '        <div class="witr_content_pslide_text">';
+                                        echo '            <div class="witr_number_pslide">';
+                                        echo '                <h4>' . sprintf("%02d.", $index) . '</h4>'; // Número dinámico
+                                        echo '            </div>';
+                                        echo '            <div class="witr_content_pslide">';
+                                        echo '                <p>' . $contenido . '</p>'; // Contenido dinámico
+                                        echo '                <h3><a href="#">' . $titulo . '</a></h3>'; // Título dinámico
+                                        echo '            </div>';
+                                        echo '            <div class="witr_pslide_custom">';
+                                        echo '                <a href="#"><span class="ti-arrow-right"></span></a>';
+                                        echo '            </div>';
+                                        echo '        </div>';
+                                        echo '    </div>';
+                                        echo '</div>';
+                                    } else {
+                                        // Mostrar un marcador indicando que el espacio está disponible
+                                        echo '<div class="item_pos col-sm-6 col-md-4 col-xl-3 mb-4">';
+                                        echo '    <div class="witr_single_pslide">';
+                                        echo '        <div class="witr_pslide_image">';
+                                        echo '            <img src="../uploads/placeholder.png" alt="Espacio disponible" class="img-fluid">';
+                                        echo '        </div>';
+                                        echo '        <div class="witr_content_pslide_text">';
+                                        echo '            <div class="witr_number_pslide">';
+                                        echo '                <h4>' . sprintf("%02d.", $index) . '</h4>'; // Número dinámico
+                                        echo '            </div>';
+                                        echo '            <div class="witr_content_pslide">';
+                                        echo '                <p>Espacio disponible.</p>'; // Indicador de espacio vacío
+                                        echo '                <h3><a href="#">Sin contenido</a></h3>';
+                                        echo '            </div>';
+                                        echo '            <div class="witr_pslide_custom">';
+                                        echo '                <a href="#"><span class="ti-arrow-right"></span></a>';
+                                        echo '            </div>';
+                                        echo '        </div>';
+                                        echo '    </div>';
+                                        echo '</div>';
+                                    }
+                                    $index++; // Incrementar el número
+                                }
+                                ?>
+                            </div>
+
+                        </div>
                     </div>
+
 
 
 
 
                     <!-------------------------------------------------- publicaciones 3 -------------------------------------------------->
-
                     <h2 class="mt-5 mb-0">Sección 3</h2>
 
                     <hr class="mt-0 mb-4" />
                     <div class="row">
-                        <?php
-                        require_once '../../funcs/conexion.php';
+                        <div class="witr_pslide3 all_pslides_color ps1 ps3 service_active">
+                            <div class="witr_cslide3_idany service_top">
+                                <?php
+                                require_once '../../funcs/conexion.php';
 
-                        // Inicializar las 3 posiciones como vacías
-                        $publicaciones = array_fill(0, 3, null);
+                                // Consulta para obtener las publicaciones con Tipo_Publicaciones = 2 (máximo 3)
+                                $sql = "SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 2 LIMIT 3";
+                                $resultado = $conn->query($sql);
 
-                        // Consulta para obtener publicaciones (máximo 3)
-                        $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 2 LIMIT 3");
+                                $imagenes = [null, null, null]; // Array para mantener las 3 publicaciones
+                                $index = 1; // Para numeración dinámica
+                                
+                                if ($resultado && $resultado->num_rows > 0) {
+                                    $i = 0; // Índice para el array de imágenes
+                                    while ($i < 3 && $row = $resultado->fetch_assoc()) {
+                                        $imagenes[$i] = [
+                                            'titulo' => htmlspecialchars($row['titulo'] ?? 'Título no disponible'),
+                                            'contenido' => htmlspecialchars($row['contenido'] ?? 'Contenido no disponible'),
+                                            'imagen' => '../uploads/' . htmlspecialchars($row['imagen'] ?? 'placeholder.png'),
+                                        ];
+                                        $i++;
+                                    }
+                                }
 
-                        $index = 0; // Para llenar las posiciones dinámicamente
-                        if ($resultado && $resultado->num_rows > 0) {
-                            while ($row = $resultado->fetch_assoc()) {
-                                $publicaciones[$index] = [
-                                    'titulo' => htmlspecialchars($row['titulo']),
-                                    'contenido' => htmlspecialchars($row['contenido']),
-                                    'imagen' => '../uploads/' . htmlspecialchars($row['imagen']),
-                                ];
-                                $index++;
-                            }
-                        }
+                                // Generar las 3 posiciones, sean dinámicas o con marcador
+                                for ($i = 0; $i < 3; $i++) {
+                                    if (!empty($imagenes[$i])) {
+                                        $titulo = $imagenes[$i]['titulo'];
+                                        $contenido = $imagenes[$i]['contenido'];
+                                        $imagePath = $imagenes[$i]['imagen'];
 
-                        // Renderizar publicaciones y espacios disponibles
-                        foreach ($publicaciones as $publicacion) {
-                            if ($publicacion !== null) {
-                                $titulo = $publicacion['titulo'];
-                                $rutaImagen = $publicacion['imagen'];
-                        ?>
-                                <div class="col-md-4 mb-4">
-                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#">
-                                        <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>" />
-                                    </a>
-                                    <div class="text-center small"><?php echo $titulo; ?></div>
-                                </div>
-                            <?php
-                            } else {
-                            ?>
-                                <div class="col-md-4 mb-4">
-                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#">
-                                        <img class="img-fluid" src="../uploads/placeholder.png" alt="Espacio disponible" onclick="openAddModal()" />
-                                    </a>
-                                    <div class="text-center small">Espacio Disponible</div>
-                                </div>
-                        <?php
-                            }
-                        }
-                        ?>
+                                        echo '<div class="item_pos col-md-4 mb-4">';
+                                        echo '    <div class="witr_single_pslide">';
+                                        echo '        <div class="witr_pslide_image">';
+                                        echo '            <img src="' . $imagePath . '" alt="' . $titulo . '" class="img-fluid">';
+                                        echo '        </div>';
+                                        echo '        <div class="witr_content_pslide_text">';
+                                        echo '            <div class="witr_number_pslide">';
+                                        echo '                <h4>' . sprintf("%02d.", $index) . '</h4>'; // Número dinámico
+                                        echo '            </div>';
+                                        echo '            <div class="witr_content_pslide">';
+                                        echo '                <p>' . $contenido . '</p>'; // Contenido dinámico
+                                        echo '                <h3><a href="#">' . $titulo . '</a></h3>'; // Título dinámico
+                                        echo '            </div>';
+                                        echo '            <div class="witr_pslide_custom">';
+                                        echo '                <a href="#"><span class="ti-arrow-right"></span></a>';
+                                        echo '            </div>';
+                                        echo '        </div>';
+                                        echo '    </div>';
+                                        echo '</div>';
+                                    } else {
+                                        // Mostrar un marcador indicando que el espacio está disponible
+                                        echo '<div class="item_pos col-md-4 mb-4">';
+                                        echo '    <div class="witr_single_pslide">';
+                                        echo '        <div class="witr_pslide_image">';
+                                        echo '            <img src="../uploads/placeholder.png" alt="Espacio disponible" class="img-fluid">';
+                                        echo '        </div>';
+                                        echo '        <div class="witr_content_pslide_text">';
+                                        echo '            <div class="witr_number_pslide">';
+                                        echo '                <h4>' . sprintf("%02d.", $index) . '</h4>'; // Número dinámico
+                                        echo '            </div>';
+                                        echo '            <div class="witr_content_pslide">';
+                                        echo '                <p>Espacio disponible.</p>'; // Indicador de espacio vacío
+                                        echo '                <h3><a href="#">Sin contenido</a></h3>';
+                                        echo '            </div>';
+                                        echo '            <div class="witr_pslide_custom">';
+                                        echo '                <a href="#"><span class="ti-arrow-right"></span></a>';
+                                        echo '            </div>';
+                                        echo '        </div>';
+                                        echo '    </div>';
+                                        echo '</div>';
+                                    }
+                                    $index++; // Incrementar el número
+                                }
+                                ?>
+                            </div>
+                        </div>
                     </div>
+
                     <!-------------------------------------------------- publicaciones 4-------------------------------------------------->
+                    <!-------------------------------------------------- publicaciones 4 -------------------------------------------------->
                     <h2 class="mt-5 mb-0">Sección 4</h2>
                     <hr class="mt-0 mb-4" />
                     <div class="row">
-                        <?php
-                        require_once '../../funcs/conexion.php';
+                        <div class="witr_pslide3 all_pslides_color ps1 ps3 service_active">
+                            <div class="witr_cslide3_idany service_top">
+                                <?php
+                                require_once '../../funcs/conexion.php';
 
-                        // Inicializar las 6 posiciones como vacías
-                        $publicaciones = array_fill(0, 6, null);
+                                // Consulta para obtener las publicaciones con Tipo_Publicaciones = 3 (máximo 6)
+                                $sql = "SELECT titulo, imagen FROM publicaciones WHERE Tipo_Publicaciones = 3 LIMIT 6";
+                                $resultado = $conn->query($sql);
 
-                        // Consulta para obtener publicaciones (máximo 6)
-                        $resultado = $conn->query("SELECT titulo, imagen FROM publicaciones WHERE Tipo_Publicaciones = 3 LIMIT 6");
+                                $imagenes = [null, null, null, null, null, null]; // Array para mantener las 6 publicaciones
+                                $index = 1; // Para numeración dinámica
+                                
+                                if ($resultado && $resultado->num_rows > 0) {
+                                    $i = 0; // Índice para el array de imágenes
+                                    while ($i < 6 && $row = $resultado->fetch_assoc()) {
+                                        $imagenes[$i] = [
+                                            'titulo' => htmlspecialchars($row['titulo'] ?? 'Título no disponible'),
+                                            'imagen' => '../uploads/' . htmlspecialchars($row['imagen'] ?? 'placeholder.png'),
+                                        ];
+                                        $i++;
+                                    }
+                                }
 
-                        $index = 0; // Para llenar las posiciones dinámicamente
-                        if ($resultado && $resultado->num_rows > 0) {
-                            while ($row = $resultado->fetch_assoc()) {
-                                $publicaciones[$index] = [
-                                    'titulo' => htmlspecialchars($row['titulo']),
-                                    'imagen' => '../uploads/' . htmlspecialchars($row['imagen']),
-                                ];
-                                $index++;
-                            }
-                        }
+                                // Generar las 6 posiciones, sean dinámicas o con marcador
+                                for ($i = 0; $i < 6; $i++) {
+                                    if (!empty($imagenes[$i])) {
+                                        $titulo = $imagenes[$i]['titulo'];
+                                        $imagePath = $imagenes[$i]['imagen'];
 
-                        // Renderizar publicaciones y espacios disponibles
-                        foreach ($publicaciones as $publicacion) {
-                            if ($publicacion !== null) {
-                                $titulo = $publicacion['titulo'];
-                                $rutaImagen = $publicacion['imagen'];
-                        ?>
-                                <div class="col-md-4 mb-4">
-                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#">
-                                        <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>">
-                                    </a>
-                                    <div class="text-center small"><?php echo $titulo; ?></div>
-                                </div>
-                            <?php
-                            } else {
-                            ?>
-                                <div class="col-md-4 mb-4">
-                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#">
-                                        <img class="img-fluid" src="../uploads/placeholder.png" alt="Espacio disponible" onclick="openAddModal()">
-                                    </a>
-                                    <div class="text-center small">Espacio Disponible</div>
-                                </div>
-                        <?php
-                            }
-                        }
-                        ?>
+                                        echo '<div class="item_pos col-md-4 mb-4">';
+                                        echo '    <div class="witr_single_pslide">';
+                                        echo '        <div class="witr_pslide_image">';
+                                        echo '            <img src="' . $imagePath . '" alt="' . $titulo . '" class="img-fluid">';
+                                        echo '        </div>';
+                                        echo '        <div class="witr_content_pslide_text">';
+                                        echo '            <div class="witr_number_pslide">';
+                                        echo '                <h4>' . sprintf("%02d.", $index) . '</h4>'; // Número dinámico
+                                        echo '            </div>';
+                                        echo '            <div class="witr_content_pslide">';
+                                        echo '                <h3><a href="#">' . $titulo . '</a></h3>'; // Título dinámico
+                                        echo '            </div>';
+                                        echo '            <div class="witr_pslide_custom">';
+                                        echo '                <a href="#"><span class="ti-arrow-right"></span></a>';
+                                        echo '            </div>';
+                                        echo '        </div>';
+                                        echo '    </div>';
+                                        echo '</div>';
+                                    } else {
+                                        // Mostrar un marcador indicando que el espacio está disponible
+                                        echo '<div class="item_pos col-md-4 mb-4">';
+                                        echo '    <div class="witr_single_pslide">';
+                                        echo '        <div class="witr_pslide_image">';
+                                        echo '            <img src="../uploads/placeholder.png" alt="Espacio disponible" class="img-fluid">';
+                                        echo '        </div>';
+                                        echo '        <div class="witr_content_pslide_text">';
+                                        echo '            <div class="witr_number_pslide">';
+                                        echo '                <h4>' . sprintf("%02d.", $index) . '</h4>'; // Número dinámico
+                                        echo '            </div>';
+                                        echo '            <div class="witr_content_pslide">';
+                                        echo '                <h3><a href="#">Sin contenido</a></h3>';
+                                        echo '            </div>';
+                                        echo '            <div class="witr_pslide_custom">';
+                                        echo '                <a href="#"><span class="ti-arrow-right"></span></a>';
+                                        echo '            </div>';
+                                        echo '        </div>';
+                                        echo '    </div>';
+                                        echo '</div>';
+                                    }
+                                    $index++; // Incrementar el número
+                                }
+                                ?>
+                            </div>
+                        </div>
                     </div>
+
                     <!---------------------------------------------------------------------------- publicaciones 5---------------------------------------------------------------------------->
-                    <h2 class="mt-5 mb-0">Sección 5</h2>
-                    <hr class="mt-0 mb-4" />
-                    <div class="row">
-                        <?php
-                        require_once '../../funcs/conexion.php';
+                    <!-------------------------------------------------- publicaciones 5 -------------------------------------------------->
+<h2 class="mt-5 mb-0">Sección 5</h2>
+<hr class="mt-0 mb-4" />
+<div class="row">
+    <div class="witr_pslide3 all_pslides_color ps1 ps3 service_active">
+        <div class="witr_cslide3_idany service_top">
+            <?php
+            require_once '../../funcs/conexion.php';
 
-                        // Inicializar las 4 posiciones como vacías
-                        $publicaciones = array_fill(0, 4, null);
+            // Consulta para obtener las publicaciones con Tipo_Publicaciones = 4 (máximo 4)
+            $sql = "SELECT titulo, imagen FROM publicaciones WHERE Tipo_Publicaciones = 4 LIMIT 4";
+            $resultado = $conn->query($sql);
 
-                        // Consulta para obtener publicaciones (máximo 4)
-                        $resultado = $conn->query("SELECT titulo, imagen FROM publicaciones WHERE Tipo_Publicaciones = 4 LIMIT 4");
+            $imagenes = [null, null, null, null]; // Array para mantener las 4 publicaciones
+            $index = 1; // Para numeración dinámica
 
-                        $index = 0; // Para llenar las posiciones dinámicamente
-                        if ($resultado && $resultado->num_rows > 0) {
-                            while ($row = $resultado->fetch_assoc()) {
-                                $publicaciones[$index] = [
-                                    'titulo' => htmlspecialchars($row['titulo']),
-                                    'imagen' => '../uploads/' . htmlspecialchars($row['imagen']),
-                                ];
-                                $index++;
-                            }
-                        }
+            if ($resultado && $resultado->num_rows > 0) {
+                $i = 0; // Índice para el array de imágenes
+                while ($i < 4 && $row = $resultado->fetch_assoc()) {
+                    $imagenes[$i] = [
+                        'titulo' => htmlspecialchars($row['titulo'] ?? 'Título no disponible'),
+                        'imagen' => '../uploads/' . htmlspecialchars($row['imagen'] ?? 'placeholder.png'),
+                    ];
+                    $i++;
+                }
+            }
 
-                        // Renderizar publicaciones y espacios disponibles
-                        foreach ($publicaciones as $publicacion) {
-                            if ($publicacion !== null) {
-                                $titulo = $publicacion['titulo'];
-                                $rutaImagen = $publicacion['imagen'];
-                        ?>
-                                <div class="col-md-3 mb-4"> <!-- Ajuste para 4 publicaciones por fila -->
-                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#">
-                                        <img class="img-fluid" src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>">
-                                    </a>
-                                    <div class="text-center small"><?php echo $titulo; ?></div>
-                                </div>
-                            <?php
-                            } else {
-                            ?>
-                                <div class="col-md-3 mb-4"> <!-- Ajuste para 4 publicaciones por fila -->
-                                    <a class="d-block lift rounded overflow-hidden mb-2" href="#">
-                                        <img class="img-fluid" src="../uploads/placeholder.png" alt="Espacio disponible" onclick="openAddModal()">
-                                    </a>
-                                    <div class="text-center small">Espacio Disponible</div>
-                                </div>
-                        <?php
-                            }
-                        }
-                        ?>
-                    </div>
+            // Generar las 4 posiciones, sean dinámicas o con marcador
+            for ($i = 0; $i < 4; $i++) {
+                if (!empty($imagenes[$i])) {
+                    $titulo = $imagenes[$i]['titulo'];
+                    $imagePath = $imagenes[$i]['imagen'];
+
+                    echo '<div class="item_pos col-md-3 mb-4">'; // Ajuste para 4 elementos por fila
+                    echo '    <div class="witr_single_pslide">';
+                    echo '        <div class="witr_pslide_image">';
+                    echo '            <img src="' . $imagePath . '" alt="' . $titulo . '" class="img-fluid">';
+                    echo '        </div>';
+                    echo '        <div class="witr_content_pslide_text">';
+                    echo '            <div class="witr_number_pslide">';
+                    echo '                <h4>' . sprintf("%02d.", $index) . '</h4>'; // Número dinámico
+                    echo '            </div>';
+                    echo '            <div class="witr_content_pslide">';
+                    echo '                <h3><a href="#">' . $titulo . '</a></h3>'; // Título dinámico
+                    echo '            </div>';
+                    echo '            <div class="witr_pslide_custom">';
+                    echo '                <a href="#"><span class="ti-arrow-right"></span></a>';
+                    echo '            </div>';
+                    echo '        </div>';
+                    echo '    </div>';
+                    echo '</div>';
+                } else {
+                    // Mostrar un marcador indicando que el espacio está disponible
+                    echo '<div class="item_pos col-md-3 mb-4">'; // Ajuste para 4 elementos por fila
+                    echo '    <div class="witr_single_pslide">';
+                    echo '        <div class="witr_pslide_image">';
+                    echo '            <img src="../uploads/placeholder.png" alt="Espacio disponible" class="img-fluid">';
+                    echo '        </div>';
+                    echo '        <div class="witr_content_pslide_text">';
+                    echo '            <div class="witr_number_pslide">';
+                    echo '                <h4>' . sprintf("%02d.", $index) . '</h4>'; // Número dinámico
+                    echo '            </div>';
+                    echo '            <div class="witr_content_pslide">';
+                    echo '                <h3><a href="#">Sin contenido</a></h3>';
+                    echo '            </div>';
+                    echo '            <div class="witr_pslide_custom">';
+                    echo '                <a href="#"><span class="ti-arrow-right"></span></a>';
+                    echo '            </div>';
+                    echo '        </div>';
+                    echo '    </div>';
+                    echo '</div>';
+                }
+                $index++; // Incrementar el número
+            }
+            ?>
+        </div>
+    </div>
+</div>
+
                     <hr class="mt-0 mb-4" />
 
 
@@ -764,7 +941,7 @@ if (!isset($_SESSION['id'])) {
 
 
         // Toggle sidebar visibility
-        document.getElementById('sidebarToggle').addEventListener('click', function() {
+        document.getElementById('sidebarToggle').addEventListener('click', function () {
             document.getElementById('layoutSidenav').classList.toggle('collapsed');
         });
 
@@ -811,7 +988,7 @@ if (!isset($_SESSION['id'])) {
     <sb-customizer project="sb-admin-pro"></sb-customizer>
 
     <script>
-        (function() {
+        (function () {
             function c() {
                 var b = a.contentDocument || a.contentWindow.document;
                 if (b) {
@@ -833,8 +1010,8 @@ if (!isset($_SESSION['id'])) {
                 if ('loading' !== document.readyState) c();
                 else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
                 else {
-                    var e = document.onreadystatechange || function() {};
-                    document.onreadystatechange = function(b) {
+                    var e = document.onreadystatechange || function () { };
+                    document.onreadystatechange = function (b) {
                         e(b);
                         'loading' !== document.readyState && (document.onreadystatechange = e, c())
                     }
@@ -847,8 +1024,30 @@ if (!isset($_SESSION['id'])) {
         integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
         data-cf-beacon='{"rayId":"8e0ab2c8689f7476","version":"2024.10.5","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"6e2c2575ac8f44ed824cef7899ba8463","b":1}'
         crossorigin="anonymous">
-    </script>
+        </script>
+
+
+    <!-- Scripts exclusivos para el área de publicaciones con estilos del index -->
+    <script src="../../Assets/template1/assets/js/vendor/jquery-3.5.1.min.js"></script>
+    <script src="../../Assets/template1/assets/js/bootstrap.min.js"></script>
+    <script src="../../Assets/template1/assets/js/scripts.js"></script>
+
+    <!-- Include All JS -->
+    <script src="../../Assets/template1/assets/js/vendor/jquery-3.5.1.min.js"></script>
+    <script src="../../Assets/template1/assets/js/bootstrap.min.js"></script>
+    <script src="../../Assets/template1/assets/js/isotope.pkgd.min.js"></script>
+    <script src="../../Assets/template1/assets/js/slick.min.js"></script>
+    <script src="../../Assets/template1/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="../../Assets/template1/venobox/venobox.min.js"></script>
+    <script src="../../Assets/template1/assets/js/theme-pluginjs.js"></script>
+    <script src="../../Assets/template1/assets/js/jquery.meanmenu.js"></script>
+    <script src="../../Assets/template1/assets/js/ajax-mail.js"></script>
+    <script src="../../Assets/template1/assets/js/map.js"></script>
+    <script src="../../Assets/template1/assets/js/theme.js"></script>
+
+
 
 </body>
+
 
 </html>
