@@ -249,8 +249,6 @@
                     </div>
                 </div>
             </div>
-
-
             <?php
 $conn = require '../../funcs/conexion.php';
 
