@@ -18990,6 +18990,13 @@ body {
   --litepicker-button-reset-color-hover: #0061f2;
   --litepicker-highlighted-day-color: #363d47;
   --litepicker-highlighted-day-color-bg: rgba(0, 97, 242, 0.15);
+  --bs-red: #FF6B6B;
+  --bs-yellow: #FFD93D;
+  --bs-green: #6BCB77;
+  --bs-blue: #4D96FF;
+  --bs-purple: #9B59B6;
+  --bs-white: #FFFFFF;
+  --bs-gray-dark: #4A4A4A;
 }
 
 .show-week-numbers {

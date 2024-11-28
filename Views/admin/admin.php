@@ -23,7 +23,10 @@ if (!isset($_SESSION['id'])) {
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../../Assets/template2/css/styles.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
+
 
 <body class="nav-fixed">
     <nav class="topnav navbar navbar-expand shadow justify-content-between navbar-light bg-white" id="sidenavAccordion">
@@ -101,112 +104,19 @@ if (!isset($_SESSION['id'])) {
                             </a>
                         </div>
                     </div>
-
-                    <!-- Section with multiple buttons -->
-                    <div class="news-button-section">
-                        <h5>Acciones disponibles</h5>
-                        <p>Aquí puedes realizar diferentes acciones sobre los datos.</p>
-                        <div class="d-flex justify-content-center flex-wrap gap-3">
-                            <button class="new-publication-button">
-                                <i data-feather="file-plus"></i>
-                                NUEVA PUBLICACIÓN
-                            </button>
-                            <button class="new-publication-button">
-                                <i data-feather="edit-3"></i>
-                                EDITAR
-                            </button>
-                            <button class="new-publication-button">
-                                <i data-feather="trash-2"></i>
-                                ELIMINAR
-                            </button>
-                            <button class="new-publication-button">
-                                <i data-feather="eye"></i>
-                                VER
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Card for Nueva Publicación -->
-                <div class="overlay" id="overlay"></div>
-                    <div class="publication-card" id="publicationCard">
-                        <button class="close-btn" id="closeCard">&times;</button>
-                        <h5>Nueva Publicación</h5>
-                        <form action="add.php" method="POST" enctype="multipart/form-data">
-                            <div class="modal-body">
-                                <div class="mb-3">
-                                    <label for="title" class="form-label">Título</label>
-                                    <input type="text" class="form-control" id="title" name="title" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="content" class="form-label">Contenido</label>
-                                    <textarea class="form-control" id="content" name="content" rows="3" required></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="sector" class="form-label">Seleccionar Sector</label>
-                                    <select class="form-control" id="sector" name="sector" required>
-                                        <option value="0">Seccion 1</option>
-                                        <option value="1">Seccion 2</option>
-                                        <option value="2">Seccion 3</option>
-                                        <option value="3">Seccion 4</option>
-                                        <!-- Agrega más sectores según lo que necesites -->
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="image" class="form-label">Subir Imagen</label>
-                                    <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
-                                </div>
+                    <!---------------------------------------------------------------------Titulo de la Grafica pastel--------------------------------------------------------------------->
+                    <div class="container mt-4">
+                        <h1 class="text-center">Gráfica de Publicaciones</h1>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
+                                <canvas id="myPieChart"></canvas>
                             </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">Guardar</button>
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            </div>
-                        </form>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Card for Editar -->
-                <div class="overlay" id="editCardOverlay"></div>
-                <div class="publication-card" id="editCard">
-                    <button class="close-btn" id="closeEditCard">&times;</button>
-                    <h5>Editar</h5>
-                    <form>
-                        <div class="form-group">
-                            <label for="editTitle">Título</label>
-                            <input type="text" id="editTitle" class="form-control" placeholder="Editar el título">
-                        </div>
-                        <div class="form-group">
-                            <label for="editContent">Contenido</label>
-                            <textarea id="editContent" class="form-control"
-                                placeholder="Editar el contenido"></textarea>
-                        </div>
-                        <div class="form-group text-center">
-                            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Card for Eliminar -->
-                <div class="overlay" id="deleteCardOverlay"></div>
-                <div class="publication-card" id="deleteCard">
-                    <button class="close-btn" id="closeDeleteCard">&times;</button>
-                    <h5>Eliminar</h5>
-                    <p>¿Estás seguro de que deseas eliminar este elemento?</p>
-                    <div class="form-group text-center">
-                        <button type="button" class="btn btn-danger">Eliminar</button>
-                        <button type="button" class="btn btn-secondary" id="cancelDelete">Cancelar</button>
-                    </div>
-                </div>
-
-                <!-- Card for Ver -->
-                <div class="overlay" id="viewCardOverlay"></div>
-                <div class="publication-card" id="viewCard">
-                    <button class="close-btn" id="closeViewCard">&times;</button>
-                    <h5>Detalles</h5>
-                    <p>Aquí se mostrarán los detalles del elemento seleccionado.</p>
-                </div>
 
             </main>
         </div>
+    </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
@@ -276,6 +186,90 @@ if (!isset($_SESSION['id'])) {
             const modal = new bootstrap.Modal(document.getElementById('newPublicationModal'));
             modal.show();
         });
+    </script>
+
+
+
+    <!---Proceso para hacer que la grafica sea dinamica-->
+    <?php
+
+    $sql = "SELECT Tipo_Publicaciones, COUNT(*) as cantidad FROM publicaciones GROUP BY Tipo_Publicaciones";
+    $result = $conn->query(query: $sql);
+    $data = [];
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $data[] = $row;
+        }
+    }
+
+
+
+
+
+    ?>
+    <script>
+        //------------------------------------------------- Grafica pastel pusando chart.js------------------------------------------------->
+    const dataFromPHP = <?php echo json_encode($data); ?>;
+
+    
+    const customTitles = {
+      0: "Seccion 1",
+      1: "Seccion 2",
+      2: "Seccion 3",
+      3: "Seccion 4"
+    };
+
+    
+    const labels = dataFromPHP.map(item => customTitles[item.Tipo_Publicaciones] || `Tipo ${item.Tipo_Publicaciones}`);
+    const values = dataFromPHP.map(item => item.cantidad);
+
+    const ctx = document.getElementById('myPieChart').getContext('2d');
+
+    const data = {
+      labels: labels,
+      datasets: [{
+        data: values,
+        backgroundColor: [
+          '#FF6B6B', // Rojo
+          '#FFD93D', // Amarillo
+          '#6BCB77', // Verde
+          '#4D96FF', // Azul
+          '#9B59B6'  // Morado
+        ],
+        borderColor: '#FFFFFF', // Blanco
+        borderWidth: 2
+      }]
+    };
+
+    const options = {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            color: '#4A4A4A', 
+            font: {
+              size: 14
+            }
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              const label = context.label || '';
+              const value = context.raw || 0;
+              return `${label}: ${value}`;
+            }
+          }
+        }
+      }
+    };
+
+    new Chart(ctx, {
+      type: 'pie',
+      data: data,
+      options: options
+    });
     </script>
 </body>
 
