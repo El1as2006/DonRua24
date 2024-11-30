@@ -25,9 +25,9 @@
                     <div class="col-xs-12 col-lg-9 col-xl-9 col-md-9 col-sm-12">
                         <div class="top-address text-left">
                             <p>
-                                <span><i class="fas fa-home"></i>Quinta Avenida Norte, San Salvador</span>
-                                <a href="#"><i class="fas fa-phone-alt"></i>+503 2526-9742</a>
-                                <a href="#"><i class="fas fa-envelope"></i>demo@example.com</a>
+                                <span><i class="fas fa-home"></i>7ª. Av. Norte entre 23 y 27 calle poniente, San Salvador</span>
+                                <a href="#"><i class="fas fa-phone-alt"></i>+503 7069 9148</a>
+                                <a href="#"><i class="fas fa-envelope"></i>domingo.savio@salesianosds.com</a>
                             </p>
                         </div>
                     </div>
@@ -80,37 +80,6 @@
                                                         </li>
                                                         <li><a href="about.php">Acerca de nosotros</a></li>
                                                         <li><a href="admisiones.php">Admisiones</a></li>
-                                                        <li class="menu-item-has-children">
-                                                            <a href="#">Pages</a>
-                                                            <ul class="sub-menu">
-                                                                <li><a href="pricing-plan.html">Pricing Plan</a></li>
-                                                                <li><a href="why-choose-us.html">Why Choose Us</a></li>
-                                                                <li><a href="faq.html">FAQ’S</a></li>
-                                                                <li class="menu-item-has-children">
-                                                                    <a href="#">Portfolio</a>
-                                                                    <ul class="sub-menu">
-                                                                        <li><a href="portfolio-2column.html">Portfolio
-                                                                                2Column</a></li>
-                                                                        <li><a href="portfolio-3column.html">Portfolio
-                                                                                3Column</a></li>
-                                                                        <li><a href="portfolio-4column.html">Portfolio
-                                                                                4Column</a></li>
-                                                                    </ul>
-                                                                </li>
-                                                                <li><a href="team.html">Team</a></li>
-                                                                <li><a href="testimonial.html">Testimonial</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="menu-item-has-children">
-                                                            <a href="#">News</a>
-                                                            <ul class="sub-menu">
-                                                                <li><a href="blog.html">Blog Grid</a></li>
-                                                                <li><a href="blog-left-sidebar.html">Blog Left
-                                                                        Sidebar</a></li>
-                                                                <li><a href="blog-right-sidebar.html">Blog Right
-                                                                        Sidebar</a></li>
-                                                            </ul>
-                                                        </li>
                                                         <li><a href="contactus.php">Contactanos</a></li>
                                                     </ul>
                                                     <div class="donate-btn-header">
@@ -213,8 +182,8 @@
                     style="background-image: url(../../Assets/template1/assets/images/slider-3.png);">
                     <div class="witr_sw_text_area text-left">
                         <div class="witr_swiper_content">
-                            <h2>Create Your<span> Business</span></h2>
-                            <h3> Security By CCTV</h3>
+                        <h2>Escuela Salesiana</h2>
+                        <h3>Domingo <span> Savio</span></h3>
                             <!-- btn gradient style -->
                             <div class="slider_btn">
                                 <div class="witr_btn_style">
@@ -287,10 +256,13 @@
                                     </div>
                                     <div class="em-service-inner">
                                         <div class="em-service-title">
-                                            <h3><a href="#">PROTECTION</a></h3>
+                                            <h3><a href="#">Misión</a></h3>
                                         </div>
                                         <div class="em-service-desc">
-                                            <p>Private Security </p>
+                                            <p>Formar niños y jóvenes con capacidad crítica y creadora,
+                                                 capaces de transformar su entorno en beneficio personal y 
+                                                 comunitario, utilizando métodos tecnológicos y científicos, 
+                                                cuyos procesos se basan en la razón, religión y amor.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -312,10 +284,13 @@
                                     </div>
                                     <div class="em-service-inner">
                                         <div class="em-service-title">
-                                            <h3><a href="#">MONITORING</a></h3>
+                                            <h3><a href="#">Visión</a></h3>
                                         </div>
                                         <div class="em-service-desc">
-                                            <p>Banking Sector </p>
+                                            <p>Ser una institución líder por su excelencia académica y 
+                                                reconocida por la práctica de valores fundamentados en 
+                                                la pedagogía de San Juan Bosco, formando buenos cristianos y 
+                                                honrados ciudadanos.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -323,31 +298,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- solutech_features_03 -->
-                <div class="col-lg-4 col-md-6 col-sm-12 pdlf">
-                    <div class="em-service2 sleft all_color_service border_lf">
-                        <div class="em_service_content ">
-                            <div class="em_single_service_text width_height_link_0 ">
-                                <div class="service_top_image"></div>
-                                <div class="text_box witr_s_flex">
-                                    <div class="service_top_text all_icon_color">
-                                        <div class="em-service-icon">
-                                            <img src="../../Assets/template1/assets/images/feature3.png" alt="image">
-                                        </div>
-                                    </div>
-                                    <div class="em-service-inner">
-                                        <div class="em-service-title">
-                                            <h3><a href="#">Fingerprint</a></h3>
-                                        </div>
-                                        <div class="em-service-desc">
-                                            <p>Education Institute </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -360,9 +311,8 @@
                 <div class="col-lg-12">
                     <div class="witr_section_title">
                         <div class="witr_section_title_inner text-center">
-                            <h2>Publicaciones</h2>
-                            <h3>Seccion</h3>
-                            <h1>1</h1>
+                            <h2>AVISOS</h2>
+                            <h3>SOLICITUDES DE NUEVO INGRESO</h3>
                         </div>
                     </div>
                 </div>
@@ -374,7 +324,8 @@
                     require_once '../../funcs/conexion.php';
 
                     // Consulta para obtener las dos publicaciones con Tipo_publicaciones = 0
-                    $sql = "SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_publicaciones = 0 LIMIT 2";
+                    $sql = "SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_publicaciones = 0 AND activo = 1 LIMIT 2";
+
                     $result = $conn->query($sql);
 
                     $index = 1; // Para asignar números dinámicos (01, 02, ...)
@@ -586,8 +537,7 @@
                 <div class="col-lg-12">
                     <div class="witr_section_title">
                         <div class="witr_section_title_inner text-center">
-                            <h2>Publicaciones 1</h2>
-                            <h3>Seccion 2</h3>
+                            <h2>Actividades</h2>
                         </div>
                     </div>
                 </div>
@@ -602,7 +552,8 @@
                     $publicaciones = array_fill(0, 5, null);
 
                     // Consulta para obtener publicaciones (máximo 5)
-                    $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 1 LIMIT 5");
+                    $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 1 AND activo = 1 LIMIT 5");
+
 
                     $index = 0; // Para llenar las posiciones dinámicamente
                     if ($resultado && $resultado->num_rows > 0) {
@@ -680,9 +631,9 @@
                 <div class="col-lg-12">
                     <div class="witr_section_title">
                         <div class="witr_section_title_inner text-center">
-                            <h2>Publicaciones 1</h2>
-                            <h3>Seccion </h3>
+                            <h2>Últimas Noticias</h2>
                             <h1>3</h1>
+                           
                         </div>
                     </div>
                 </div>
@@ -695,7 +646,8 @@
                 $publicaciones = array_fill(0, 3, null);
 
                 // Consulta para obtener publicaciones (máximo 3)
-                $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 2 LIMIT 3");
+                $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 2 AND activo = 1 LIMIT 3");
+
 
                 $index = 0; // Para llenar las posiciones dinámicamente
                 if ($resultado && $resultado->num_rows > 0) {
@@ -950,7 +902,8 @@
                             $publicaciones = array_fill(0, 6, null);
 
                             // Consulta para obtener publicaciones (máximo 6)
-                            $resultado = $conn->query("SELECT titulo, imagen FROM publicaciones WHERE Tipo_Publicaciones = 3 LIMIT 6");
+                            $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 3 AND activo = 1 LIMIT 6");
+
 
                             $index = 0; // Para llenar las posiciones dinámicamente
                             if ($resultado && $resultado->num_rows > 0) {
@@ -1001,7 +954,7 @@
         </div>
     </div>
 
-
+<!------------------------------------------- Publicaciones 5------------------------------------------->
     <!-- solutech_blog_bg_area -->
     <div class="solutech_blog_bg_area">
         <div class="container">
@@ -1024,7 +977,8 @@
                     $publicaciones = array_fill(0, 4, null);
 
                     // Consulta para obtener publicaciones (máximo 4)
-                    $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 4 LIMIT 4");
+                    $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 4 AND activo = 1 LIMIT 4");
+
 
                     $index = 0; // Para llenar las posiciones dinámicamente
                     if ($resultado && $resultado->num_rows > 0) {
