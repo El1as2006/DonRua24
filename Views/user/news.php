@@ -1,15 +1,9 @@
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-?>
 <!DOCTYPE HTML>
 <html lang="en-US">
     <head>
 		<meta charset="UTF-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Contactanos</title>
+		<title>Noticias</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="../../Assets/template1/assets/images/favicon.png">
@@ -17,10 +11,8 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
         <link rel="stylesheet" type="text/css" href="../../Assets/template1/venobox/venobox.css">
         <link rel="stylesheet" type="text/css" href="../../Assets/template1/assets/css/plugin_theme_css.css">
         <link rel="stylesheet" type="text/css" href="../../Assets/template1/assets/css/style.css">
-        <link rel="stylesheet" type="text/css" href="../../Assets/template1/assets/css/responsive.css">
-        <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../package/dist/sweetalert2.css">
-        <script src="../../package/dist/sweetalert2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../Assets/template1/assets/css/responsive.css">				
+		
     </head>
 <body>
 <div class="em40_header_area_main">
@@ -74,43 +66,10 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 										<div class="col-md-9 col-sm-9 col-xs-8">
 											<nav class="solutech_menu main-search-menu">					
 												<ul class="sub-menu">
-													<li><a href="index.php">Home</a></li>
-													<li class="menu-item-has-children">
-														<a href="#">Service</a>
-														<ul class="sub-menu">
-															<li><a href="home-security.html">Home Security</a></li>
-															<li><a href="software-development.html">Software Development</a></li>
-															<li><a href="installation.html">Installation CCTV</a></li>
-															<li><a href="service-details.html">Service Details</a></li>
-														</ul>
-													</li>
-													<li class="menu-item-has-children">
-														<a href="#">Pages</a>
-														<ul class="sub-menu">
-															<li><a href="pricing-plan.html">Pricing Plan</a></li>
-															<li><a href="why-choose-us.html">Why Choose Us</a></li>	
-															<li><a href="faq.html">FAQ’S</a></li>
-															<li class="menu-item-has-children">
-																<a href="#">Portfolio</a>
-																<ul class="sub-menu">
-																	<li><a href="portfolio-2column.html">Portfolio 2Column</a></li>
-																	<li><a href="portfolio-3column.html">Portfolio 3Column</a></li>
-																	<li><a href="portfolio-4column.html">Portfolio 4Column</a></li>
-																</ul>
-															</li>
-															<li><a href="team.html">Team</a></li>
-															<li><a href="testimonial.html">Testimonial</a></li>
-														</ul>
-													</li>
-													<li class="menu-item-has-children">
-														<a href="#">News</a>
-														<ul class="sub-menu">
-															<li><a href="blog.html">Blog Grid</a></li>
-															<li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-															<li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-														</ul>
-													</li>
-													<li><a href="contact.html">Contact Us</a></li>
+                                                    <li><a href="index.php">Home</a></li>
+													<li><a href="news.php">Noticias</a></li>
+													<li><a href="admisiones.php">Admisiones</a></li>
+													<li><a href="contactus.php">Contáctanos</a></li>
 												</ul>
 												<div class="donate-btn-header">
 													<a class="dtbtn" href="../login-register/login/Login.php">Iniciar Sesión</a>	
@@ -127,6 +86,9 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 		</div> 
 	</div> 
 </div> 
+
+
+
 
 
 <!-- MOBILE MENU Logo AREA -->
@@ -199,19 +161,21 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 	</div>					
 </div>
 <!-- END MOBILE MENU AREA  -->
+
+
 <!-- breadcumb-area -->
 <div class="breadcumb-area">
 	<div class="container">				
 		<div class="row">
 			<div class="col-md-12 txtc  text-center ccase">
 				<div class="brpt">
-					<h2>Contact</h2>
+					<h2>Blog</h2>
 				</div>
 				<div class="breadcumb-inner">
 					<ul>
 						<li><a href="index.html">Home</a></li>
 						<li><i class="fas fa-angle-right"></i></li>
-						<li>Contact</li>
+						<li>Blog</li>
 					</ul>						
 				</div>
 			</div>
@@ -219,201 +183,86 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 	</div>
 </div>
 
-<!-- solutech_contact5_area -->
-<div class="solutech_contact5_area">
+
+<!-- solutech_blog_area  -->
+<div class="solutech_blog2_area blog_page">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="witr_section_title">
 					<div class="witr_section_title_inner text-center">
-						<h3>Envíanos tu mensaje</h3>		
-						<p>Tienes alguna duda o consulta?</p>		
+						<h2>NEWS</h2>		
+						<h3>All the benefits you get in our</h3>
+						<h1>latest news & blog</h1>		
 					</div>
 				</div>
 			</div>
 		</div>
-        <?php
-$conn = require '../../funcs/conexion.php';
-
-if (!$conn) {
-    die("Error de conexión: " . mysqli_connect_error());
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $name = trim($_POST["name"]);
-    $email = trim($_POST["email"]);
-    $telefono = trim($_POST["phone"]);
-    $message = trim($_POST["mensaje"]);
-
-    echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
-
-    if (empty($name) || empty($email) || empty($telefono) || empty($message)) {
-        echo "<script>
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'Escriba en todos los campos',
-                    confirmButtonText: 'OK'
-                });
-              </script>";
-        return;
-    }
-
-    if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
-        echo "<p><script>Swal.fire({
-            title: 'Invalid Name or Lastname',
-            text: 'Please enter a valid name and lastname (only letters allowed).',
-            icon: 'error',
-            button: 'Close',
-            });</script></p>";
-        exit; 
-    }
-
-    
-    if (!preg_match("/^[0-9-]*$/", $telefono)) {
-        echo "<p><script>Swal.fire({
-            title: 'Número de telefono inválido',
-            text: 'Por favor ingrese un número válido (solo números)',
-            icon: 'error',
-            button: 'Close',
-            });</script></p>";
-        exit; 
-    }
-
-    if (!preg_match('/^\d{8}$/', $telefono)) {
-        echo "<script>
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'Ingrese un teléfono válido de 8 dígitos',
-                    confirmButtonText: 'OK'
-                });
-              </script>";
-        return;
-    }
-
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL) || !str_ends_with($email, '@gmail.com')) {
-        echo "<script>
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'Ingrese un correo válido con dominio @gmail.com',
-                    confirmButtonText: 'OK'
-                });
-              </script>";
-        return;
-    }
-
-    $sql = "INSERT INTO mensajes (nombre, correo, numero, mensaje)
-            VALUES ('$name', '$email', '$telefono', '$message')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "<script>
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Envio exitoso',
-                    text: 'Mensaje de Contacto enviado',
-                    confirmButtonText: 'OK'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        window.location.href = 'contactus.php';
-                    }
-                });
-              </script>";
-    } else {
-        echo "<script>
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'No se pudo enviar el mensaje. Error: " . $conn->error . "',
-                    confirmButtonText: 'OK'
-                });
-              </script>";
-    }
-    $conn->close();
-}
-?>
-		<div class="row contact_top">
-			<div class="col-lg-8 col-md-12 col-sm-12">
-				<div class="apartment_area">				
-					<div class="apartment_text"></div>		
-					<div class="witr_apartment_form">
-						<form action="contactus.php" method="post" id="contact-form">
-							<div class="form-row">
-								<div class="form-group col-md-6">
-									<span><input type="text" name="name" placeholder="Nombre"></span>
-								</div>
-								<div class="form-group col-md-6">
-									<span><input type="email" name="email" placeholder="Correo Eléctronico"></span>
-								</div>
-
-                                <div class="form-group col-md-6">
-                                <span><input type="text" name="phone" placeholder="Número de contacto"></span>
+		 <div class="bgimgload">	
+			<div class="row blog-messonary blog_top">
+				<!-- solutech_blog_01  -->
+				<div class="witr_nth_child col-lg-4  col-md-6 col-sm-8 grid-item   witr_all_mb_30">
+					<div class="blog-part all_blog_color">
+						<div class="blog_part_inner">
+							<div class="witr_blog_imags">
+								<div class="blog-img">
+									<a href="#"><img src="../../Assets/template1/assets/images/blog-thumb-01.jpg" alt="image"> </a>
 								</div>
 							</div>
-
-							<div class="form-group">
-								<span><textarea name="mensaje" placeholder="Mensaje/Comentario"></textarea></span>
+							<div class="wblog-content blog-content-2 all_blog_color">
+								<span><a href="#"><i class="fas fa-user"></i> Solutech </a></span>
+								<span><i class="icofont-tags"></i><a href="#">Antivirus app</a></span>
+								<h5><a href="single-blog.html">Questions every business owner able to answer</a></h5>
+								<p>Lorem Ipsum has been the industry's standarddummy text ever since this 2024</p>
+								<a class="btn2" href="#">Read More</a>
 							</div>
-							<button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-						</form>
-					</div>					
-				</div>									
-			</div>
-			<div class="col-lg-4 col-md-12 col-sm-12">
-				<div class="row em_service_contact_area">
-					<div class="col-lg-12 col-md-6 col-sm-12">
-						<div class="service-item all_color_service width_height_link_0 text-center  ">
-							<div class="service_top_image"></div>
-							<div class="text_box all_icon_color">
-								<h3>Nuestra Dirección</h3>
-								<p>Dirección: 3 Ave. Norte y pasaje Don Rúa, 25 Calle Poniente, San Salvador</p>		
-							</div> 						
-						</div>
-					</div>
-					<div class="col-lg-12 col-md-6 col-sm-12">
-						<div class="service-item all_color_service width_height_link_0 text-center  ">
-							<div class="service_top_image"></div>
-							<div class="text_box all_icon_color">
-								<h3>Horario de Atención</h3>
-								<p>Mon - Sun: 09:00am - 05:00pm<br> +660 198 369 360 2024 </p>	
-							</div> 						
-						</div>
-					</div>
-					<div class="col-lg-12 col-md-6 col-sm-12">
-						<div class="service-item all_color_service width_height_link_0 text-center  ">
-							<div class="service_top_image"></div>
-							<div class="text_box all_icon_color">
-								<h3>Correo Electrónico</h3>
-								<p>demo@example.com, <br>info@example.com </p>
-							</div> 						
 						</div>
 					</div>
 				</div>
-			</div>			
-		</div>			
-	</div>			
-</div>
-
-<!-- security_map_area -->
-<div class="security_map_area"> 
-	<div class="containers">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="map_area">
-					<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.1018599085915!2d-89.1962650251697!3d13.712280198207786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f633096c39f23f1%3A0x58c3ecef1232fb43!2sEscuela%20Salesiana%20%22Domingo%20Savio%22!5e0!3m2!1ses-419!2ssv!4v1732725097204!5m2!1ses-419!2ssv"></iframe>
-				</div>	
+				<!-- solutech_blog_02  -->
+				<div class="witr_nth_child col-lg-4  col-md-6 col-sm-8 grid-item   witr_all_mb_30">
+					<div class="blog-part all_blog_color">
+						<div class="blog_part_inner">
+							<div class="witr_blog_imags">
+								<div class="blog-img">
+									<a href="#"><img src="../../Assets/template1/assets/images/blog-thumb-02.jpg" alt="image"> </a>
+								</div>
+							</div>
+							<div class="wblog-content blog-content-2 all_blog_color">
+								<span><a href="#"><i class="fas fa-user"></i> Solutech </a></span>
+								<span><i class="icofont-tags"></i><a href="#">Business</a></span>
+								<h5><a href="single-blog.html">Boost Leads Optimize Market of New Year</a></h5>
+								<p>Lorem Ipsum has been the industry's standarddummy text ever since this 2024</p>
+								<a class="btn2" href="#">Read More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- solutech_blog_03  -->
+				<div class="witr_nth_child col-lg-4  col-md-6 col-sm-8 grid-item   witr_all_mb_30">
+					<div class="blog-part all_blog_color">
+						<div class="blog_part_inner">
+							<div class="witr_blog_imags">
+								<div class="blog-img">
+									<a href="#"><img src="../../Assets/template1/assets/images/blog-thumb-03.jpg" alt="image"> </a>
+								</div>
+							</div>
+							<div class="wblog-content blog-content-2 all_blog_color">
+								<span><a href="#"><i class="fas fa-user"></i> Solutech </a></span>
+								<span><i class="icofont-tags"></i><a href="#">Antivirus app</a></span>
+								<h5><a href="single-blog.html">We make a Revolution in Word Class Building.</a></h5>
+								<p>Lorem Ipsum has been the industry's standarddummy text ever since this 2024</p>
+								<a class="btn2" href="#">Read More</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-</div>
+	</div>				
+</div>								
 
-
-
-
+	
 
 <!-- witrfm_footer_area -->
 <div class="witrfm_area">
@@ -537,6 +386,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		</div>
 	</div>
 </div>
+	
 	
 
         <!-- Include All JS -->

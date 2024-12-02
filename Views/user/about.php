@@ -3,7 +3,7 @@
     <head>
 		<meta charset="UTF-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Solutech - CCTV & Security Responsive Website Template</title>
+		<title>Acerca de nosotros</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="../../Assets/template1/assets/images/favicon.png">
@@ -22,8 +22,8 @@
 				<div class="col-xs-12 col-lg-9 col-xl-9 col-md-9 col-sm-12">
 					<div class="top-address text-left">
 						<p>
-							<span><i class="fas fa-home"></i>Ground Floor New World.</span>
-							<a href="#"><i class="fas fa-phone-alt"></i>+998556778345</a>
+							<span><i class="fas fa-home"></i>Quinta Avenida Norte, San Salvador</span>
+							<a href="#"><i class="fas fa-phone-alt"></i>+503 2526-9742</a>
 							<a href="#"><i class="fas fa-envelope"></i>demo@example.com</a>
 						</p>
 					</div>
@@ -34,9 +34,7 @@
 						<ul class="social-icons text-right text_m_center">
 							<li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
 							<li><a href="#"><i class="fab fa-x-twitter"></i></a></li>
-							<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-							<li><a href="#"><i class="fab fa-tumblr"></i></a></li>
-							<li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>								
+							<li><a href="#"><i class="fab fa-instagram"></i></a></li>							
 						</ul>
 					</div>
 				</div>	
@@ -67,53 +65,13 @@
 										<div class="col-md-9 col-sm-9 col-xs-8">
 											<nav class="solutech_menu main-search-menu">					
 												<ul class="sub-menu">
-													<li class="menu-item-has-children">
-														<a href="#">Home</a>
-														<ul class="sub-menu">
-															<li><a href="index.html">Home Page</a></li>
-															<li><a href="index-2.html">Landing Page</a></li>
-															<li><a href="index-3.html">Home Banner Page</a></li>
-														</ul>
-													</li>
-													<li class="menu-item-has-children">
-														<a href="#">Service</a>
-														<ul class="sub-menu">
-															<li><a href="home-security.html">Home Security</a></li>
-															<li><a href="software-development.html">Software Development</a></li>
-															<li><a href="installation.html">Installation CCTV</a></li>
-															<li><a href="service-details.html">Service Details</a></li>
-														</ul>
-													</li>
-													<li class="menu-item-has-children">
-														<a href="#">Pages</a>
-														<ul class="sub-menu">
-															<li><a href="pricing-plan.html">Pricing Plan</a></li>
-															<li><a href="why-choose-us.html">Why Choose Us</a></li>	
-															<li><a href="faq.html">FAQ’S</a></li>
-															<li class="menu-item-has-children">
-																<a href="#">Portfolio</a>
-																<ul class="sub-menu">
-																	<li><a href="portfolio-2column.html">Portfolio 2Column</a></li>
-																	<li><a href="portfolio-3column.html">Portfolio 3Column</a></li>
-																	<li><a href="portfolio-4column.html">Portfolio 4Column</a></li>
-																</ul>
-															</li>
-															<li><a href="team.html">Team</a></li>
-															<li><a href="testimonial.html">Testimonial</a></li>
-														</ul>
-													</li>
-													<li class="menu-item-has-children">
-														<a href="#">News</a>
-														<ul class="sub-menu">
-															<li><a href="blog.html">Blog Grid</a></li>
-															<li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-															<li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-														</ul>
-													</li>
-													<li><a href="contact.html">Contact Us</a></li>
+													<li><a href="index.php">Home</a></li>
+													<li><a href="news.php">Noticias</a></li>
+													<li><a href="admisiones.php">Admisiones</a></li>
+													<li><a href="contactus.php">Contáctanos</a></li>
 												</ul>
 												<div class="donate-btn-header">
-													<a class="dtbtn" href="#">Contact Now</a>	
+													<a class="dtbtn" href="../login-register/login/Login.php">Iniciar Sesión</a>	
 												</div>
 											</nav>
 										</div>	

@@ -70,14 +70,8 @@
                                             <div class="col-md-9 col-sm-9 col-xs-8">
                                                 <nav class="solutech_menu main-search-menu">
                                                     <ul class="sub-menu">
-                                                        <li class="menu-item-has-children">
-                                                            <a href="#">Home</a>
-                                                            <ul class="sub-menu">
-                                                                <li><a href="index.html">Home Page</a></li>
-                                                                <li><a href="index-2.html">Landing Page</a></li>
-                                                                <li><a href="index-3.html">Home Banner Page</a></li>
-                                                            </ul>
-                                                        </li>
+                                                        <li><a href="index.php">Home</a></li>
+													    <li><a href="news.php">Noticias</a></li>
                                                         <li><a href="about.php">Acerca de nosotros</a></li>
                                                         <li><a href="admisiones.php">Admisiones</a></li>
                                                         <li><a href="contactus.php">Contactanos</a></li>
