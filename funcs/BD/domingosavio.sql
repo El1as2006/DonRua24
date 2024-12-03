@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 30, 2024 at 02:04 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 03-12-2024 a las 05:13:25
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `domingosavio`
+-- Base de datos: `domingosavio`
 --
 CREATE DATABASE IF NOT EXISTS `domingosavio` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
 USE `domingosavio`;
@@ -26,7 +26,7 @@ USE `domingosavio`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `publicaciones`
+-- Estructura de tabla para la tabla `publicaciones`
 --
 
 CREATE TABLE `publicaciones` (
@@ -40,11 +40,11 @@ CREATE TABLE `publicaciones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `publicaciones`
+-- Volcado de datos para la tabla `publicaciones`
 --
 
 INSERT INTO `publicaciones` (`id`, `titulo`, `contenido`, `imagen`, `creado_en`, `Tipo_Publicaciones`, `activo`) VALUES
-(9, 'Para todas las edades.', 'Tanto para niños y niñas.', '../uploads/../uploads/avisos_2.jpg', '2024-11-29 17:48:35', 0, 1),
+(9, 'Para todas las edades.', 'Tanto para niños y niñas.', '../uploads/../uploads/../uploads/../uploads/avisos_2.jpg', '2024-11-29 17:48:35', 0, 1),
 (10, ' Via Crusis Viviente ', 'Una forma de evangelizar', 'Viacrusi.jpg', '2024-11-29 18:00:35', 1, 1),
 (11, 'Intramuros ', 'Escuela Domingo Savio es un derroche de alegría', 'noticia-intramuros-1.jpg', '2024-11-29 18:01:25', 1, 1),
 (12, 'Entrenos de futbol', 'Se parte del equipo del futbol!!', 'equipo de futbol.jpg', '2024-11-29 18:04:00', 1, 1),
@@ -64,7 +64,7 @@ INSERT INTO `publicaciones` (`id`, `titulo`, `contenido`, `imagen`, `creado_en`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -78,40 +78,40 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `name`, `lastname`, `username`, `pass`, `email`, `user_type`) VALUES
 (1, 'yohalmo', 'cruz', '', '$2y$10$BdMvCfiwaRx.5uqGS1lxBeWiFYtEQUtRY.n9XuTwT8u0j1/82b4Qi', 'yohalmodaniel16@gmail.com', 1);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `publicaciones`
+-- Indices de la tabla `publicaciones`
 --
 ALTER TABLE `publicaciones`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `usuarios`
+-- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `publicaciones`
+-- AUTO_INCREMENT de la tabla `publicaciones`
 --
 ALTER TABLE `publicaciones`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
