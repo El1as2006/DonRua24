@@ -383,7 +383,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="service-item all_color_service width_height_link_0 text-center  ">
                                 <div class="service_top_image"></div>
                                 <div class="text_box all_icon_color">
-                                    <h3>Office Address </h3>
+                                    <h3>Dirección</h3>
                                     <p>Main Building, Centrerl Road,<br> 72/A, New York City, USA </p>
                                 </div>
                             </div>
@@ -392,7 +392,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="service-item all_color_service width_height_link_0 text-center  ">
                                 <div class="service_top_image"></div>
                                 <div class="text_box all_icon_color">
-                                    <h3>Office Opening time </h3>
+                                    <h3>Horario de atención</h3>
                                     <p>Mon - Sun: 09:00am - 05:00pm<br> +660 198 369 360 2024 </p>
                                 </div>
                             </div>
@@ -401,7 +401,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="service-item all_color_service width_height_link_0 text-center  ">
                                 <div class="service_top_image"></div>
                                 <div class="text_box all_icon_color">
-                                    <h3>Message Us</h3>
+                                    <h3>Correo Electrónico</h3>
                                     <p>demo@example.com, <br>info@example.com </p>
                                 </div>
                             </div>
@@ -411,14 +411,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </div>
-
-    <!-- security_map_area -->
-
-
-
-
-
-
     <!-- witrfm_footer_area -->
     <div class="witrfm_area">
         <div class="footer-middle">
