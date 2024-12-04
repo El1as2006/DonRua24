@@ -49,6 +49,10 @@ if (!isset($_SESSION['id'])) {
                             <div class="nav-link-icon"><i data-feather="activity"></i></div>
                             Publicaciones
                         </a>
+                        <a class="nav-link" href="users.php">
+                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            Usuarios
+                        </a>
                         <div class="sidenav-menu-heading">Custom</div>
                         <a class="nav-link" href="pages.html">
                             <div class="nav-link-icon"><i data-feather="grid"></i></div>
