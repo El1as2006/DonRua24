@@ -19,7 +19,7 @@ if (!isset($_SESSION['id'])) {
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Dashboard Cleaned</title>
+    <title>Administrator Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../../Assets/template2/css/styles.css" rel="stylesheet" />
@@ -53,7 +53,14 @@ if (!isset($_SESSION['id'])) {
                             <div class="nav-link-icon"><i data-feather="activity"></i></div>
                             Usuarios
                         </a>
-
+                        <a class="nav-link" href="admisionesadmin.php">
+                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            Admisiones
+                        </a>
+                        <a class="nav-link" href="contactadmin.php">
+                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            Contacto
+                        </a>
                     </div>
                 </div>
                 <div class="sidenav-footer">
