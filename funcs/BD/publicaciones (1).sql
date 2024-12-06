@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-12-2024 a las 05:13:25
+-- Tiempo de generación: 03-12-2024 a las 05:19:36
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `domingosavio`
 --
-CREATE DATABASE IF NOT EXISTS `domingosavio` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
-USE `domingosavio`;
 
 -- --------------------------------------------------------
 
@@ -61,29 +59,6 @@ INSERT INTO `publicaciones` (`id`, `titulo`, `contenido`, `imagen`, `creado_en`,
 (24, '6', '6', '6.jpg', '2024-11-29 18:19:40', 3, 1),
 (26, 'heloou', 'sdasasa', '1732926845_Avisos_1.jpg', '2024-11-30 00:08:06', 0, 1);
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuarios`
---
-
-CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL,
-  `name` varchar(200) NOT NULL,
-  `lastname` varchar(200) NOT NULL,
-  `username` varchar(200) NOT NULL,
-  `pass` varchar(256) NOT NULL,
-  `email` varchar(200) NOT NULL,
-  `user_type` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`id`, `name`, `lastname`, `username`, `pass`, `email`, `user_type`) VALUES
-(1, 'yohalmo', 'cruz', '', '$2y$10$BdMvCfiwaRx.5uqGS1lxBeWiFYtEQUtRY.n9XuTwT8u0j1/82b4Qi', 'yohalmodaniel16@gmail.com', 1);
-
 --
 -- Índices para tablas volcadas
 --
@@ -95,12 +70,6 @@ ALTER TABLE `publicaciones`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -109,12 +78,6 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `publicaciones`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
