@@ -53,15 +53,7 @@ if (!isset($_SESSION['id'])) {
                             <div class="nav-link-icon"><i data-feather="activity"></i></div>
                             Usuarios
                         </a>
-                        <div class="sidenav-menu-heading">Custom</div>
-                        <a class="nav-link" href="pages.html">
-                            <div class="nav-link-icon"><i data-feather="grid"></i></div>
-                            Pages
-                        </a>
-                        <a class="nav-link" href="pages.html">
-                            <div class="nav-link-icon"><i data-feather="grid"></i></div>
-                            Pages
-                        </a>
+
                     </div>
                 </div>
                 <div class="sidenav-footer">
@@ -112,15 +104,27 @@ if (!isset($_SESSION['id'])) {
                             </a>
                         </div>
                     </div>
-                    <!---------------------------------------------------------------------Titulo de la Grafica pastel--------------------------------------------------------------------->
-                    <div class="container mt-4">
-                        <h1 class="text-center">Gráfica de Publicaciones</h1>
+                    <!-- Gráfica de Publicaciones -->
+                    <div class="mt-5">
+                        <h3 class="text-center">Gráfica de Publicaciones</h3>
                         <div class="row justify-content-center">
                             <div class="col-md-6">
-                                <canvas id="myPieChart"></canvas>
+                                <canvas id="publicacionesPieChart"></canvas>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Gráfica de Usuarios -->
+                    <div class="mt-5">
+                        <h3 class="text-center">Gráfica de Usuarios</h3>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
+                                <canvas id="usuariosPieChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
             </main>
         </div>
@@ -201,83 +205,123 @@ if (!isset($_SESSION['id'])) {
     <!---Proceso para hacer que la grafica sea dinamica-->
     <?php
 
-    $sql = "SELECT Tipo_Publicaciones, COUNT(*) as cantidad FROM publicaciones GROUP BY Tipo_Publicaciones";
-    $result = $conn->query(query: $sql);
-    $data = [];
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $data[] = $row;
+    // Obtén los datos para la gráfica de publicaciones
+    $sqlPublicaciones = "SELECT Tipo_Publicaciones, COUNT(*) as cantidad FROM publicaciones GROUP BY Tipo_Publicaciones";
+    $resultPublicaciones = $conn->query($sqlPublicaciones);
+    $dataPublicaciones = [];
+    if ($resultPublicaciones->num_rows > 0) {
+        while ($row = $resultPublicaciones->fetch_assoc()) {
+            $dataPublicaciones[] = $row;
         }
     }
 
-
-
-
-
+    // Obtén los datos para la gráfica de usuarios
+    $sqlUsuarios = "SELECT user_type, COUNT(*) as cantidad FROM usuarios GROUP BY user_type";
+    $resultUsuarios = $conn->query($sqlUsuarios);
+    $dataUsuarios = [];
+    if ($resultUsuarios->num_rows > 0) {
+        while ($row = $resultUsuarios->fetch_assoc()) {
+            $dataUsuarios[] = $row;
+        }
+    }
     ?>
     <script>
-        //------------------------------------------------- Grafica pastel pusando chart.js------------------------------------------------->
-    const dataFromPHP = <?php echo json_encode($data); ?>;
+        // Datos para la gráfica de publicaciones
+        const publicacionesDataFromPHP = <?php echo json_encode($dataPublicaciones); ?>;
+        const publicacionesTitles = {
+            0: "Sección 1",
+            1: "Sección 2",
+            2: "Sección 3",
+            3: "Sección 4"
+        };
+        const publicacionesLabels = publicacionesDataFromPHP.map(item => publicacionesTitles[item.Tipo_Publicaciones] || `Tipo ${item.Tipo_Publicaciones}`);
+        const publicacionesValues = publicacionesDataFromPHP.map(item => item.cantidad);
 
-    
-    const customTitles = {
-      0: "Seccion 1",
-      1: "Seccion 2",
-      2: "Seccion 3",
-      3: "Seccion 4"
-    };
-
-    
-    const labels = dataFromPHP.map(item => customTitles[item.Tipo_Publicaciones] || `Tipo ${item.Tipo_Publicaciones}`);
-    const values = dataFromPHP.map(item => item.cantidad);
-
-    const ctx = document.getElementById('myPieChart').getContext('2d');
-
-    const data = {
-      labels: labels,
-      datasets: [{
-        data: values,
-        backgroundColor: [
-          '#FF6B6B', // Rojo
-          '#FFD93D', // Amarillo
-          '#6BCB77', // Verde
-          '#4D96FF', // Azul
-          '#9B59B6'  // Morado
-        ],
-        borderColor: '#FFFFFF', // Blanco
-        borderWidth: 2
-      }]
-    };
-
-    const options = {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'bottom',
-          labels: {
-            color: '#4A4A4A', 
-            font: {
-              size: 14
+        // Configuración para la gráfica de publicaciones
+        const publicacionesCtx = document.getElementById('publicacionesPieChart').getContext('2d');
+        new Chart(publicacionesCtx, {
+            type: 'pie',
+            data: {
+                labels: publicacionesLabels,
+                datasets: [{
+                    data: publicacionesValues,
+                    backgroundColor: ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#9B59B6'],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#4A4A4A',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.raw || 0;
+                                return `${label}: ${value}`;
+                            }
+                        }
+                    }
+                }
             }
-          }
-        },
-        tooltip: {
-          callbacks: {
-            label: function(context) {
-              const label = context.label || '';
-              const value = context.raw || 0;
-              return `${label}: ${value}`;
-            }
-          }
-        }
-      }
-    };
+        });
 
-    new Chart(ctx, {
-      type: 'pie',
-      data: data,
-      options: options
-    });
+        // Datos para la gráfica de usuarios
+        const usuariosDataFromPHP = <?php echo json_encode($dataUsuarios); ?>;
+        const usuariosTitles = {
+            1: "Administrador",
+            0: "Usuario",
+            2: "Desactivado"
+        };
+        const usuariosLabels = usuariosDataFromPHP.map(item => usuariosTitles[item.user_type] || `Tipo ${item.user_type}`);
+        const usuariosValues = usuariosDataFromPHP.map(item => item.cantidad);
+
+        // Configuración para la gráfica de usuarios
+        const usuariosCtx = document.getElementById('usuariosPieChart').getContext('2d');
+        new Chart(usuariosCtx, {
+            type: 'pie',
+            data: {
+                labels: usuariosLabels,
+                datasets: [{
+                    data: usuariosValues,
+                    backgroundColor: ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#9B59B6'],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#4A4A4A',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.raw || 0;
+                                return `${label}: ${value}`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
     </script>
 </body>
 
