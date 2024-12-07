@@ -34,6 +34,13 @@ if (!isset($_SESSION['id'])) {
             <i data-feather="menu"></i>
         </button>
         <a class="navbar-brand pe-3 ps-4 ps-lg-2">DOMINGO SAVIO</a>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link btn btn-icon btn-transparent-dark me-3" href="../../logout.php">
+                    <i data-feather="log-out"></i>
+                </a>
+            </li>
+        </ul>
     </nav>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
