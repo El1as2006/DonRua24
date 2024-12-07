@@ -13,6 +13,8 @@
     <link rel="stylesheet" type="text/css" href="../../Assets/template1/assets/css/plugin_theme_css.css">
     <link rel="stylesheet" type="text/css" href="../../Assets/template1/assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="../../Assets/template1/assets/css/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 
 </head>
 
@@ -25,7 +27,8 @@
                     <div class="col-xs-12 col-lg-9 col-xl-9 col-md-9 col-sm-12">
                         <div class="top-address text-left">
                             <p>
-                                <span><i class="fas fa-home"></i>7ª. Av. Norte entre 23 y 27 calle poniente, San Salvador</span>
+                                <span><i class="fas fa-home"></i>7ª. Av. Norte entre 23 y 27 calle poniente, San
+                                    Salvador</span>
                                 <a href="#"><i class="fas fa-phone-alt"></i>+503 7069 9148</a>
                                 <a href="#"><i class="fas fa-envelope"></i>domingo.savio@salesianosds.com</a>
                             </p>
@@ -71,13 +74,14 @@
                                                 <nav class="solutech_menu main-search-menu">
                                                     <ul class="sub-menu">
                                                         <li><a href="index.php">Home</a></li>
-													    <li><a href="news.php">Noticias</a></li>
-                                                        <li><a href="about.php">Acerca de nosotros</a></li>
+                                                        <li><a href="news.php">Noticias</a></li>
+                                                        <li><a href="#seccion4">Acerca de Nosotros</a></li>
                                                         <li><a href="admisiones.php">Admisiones</a></li>
                                                         <li><a href="contactus.php">Contactanos</a></li>
                                                     </ul>
                                                     <div class="donate-btn-header">
-                                                        <a class="dtbtn" href="../login-register/login/Login.php">Iniciar Sesión </a>
+                                                        <a class="dtbtn"
+                                                            href="../login-register/login/Login.php">Iniciar Sesión </a>
                                                     </div>
                                                 </nav>
                                             </div>
@@ -176,25 +180,16 @@
                     style="background-image: url(../../Assets/template1/assets/images/slider-3.png);">
                     <div class="witr_sw_text_area text-left">
                         <div class="witr_swiper_content">
-                        <h2>Escuela Salesiana</h2>
-                        <h3>Domingo <span> Savio</span></h3>
+                            <h2>Escuela Salesiana</h2>
+                            <h3>Domingo <span> Savio</span></h3>
                             <!-- btn gradient style -->
                             <div class="slider_btn">
                                 <div class="witr_btn_style">
-                                    <div class="witr_btn_sinner">
-                                        <a class="witr_btn" href="#">DISCOVER MORE</a>
-                                        <a class="witr_btn active recpwit" href="#">CONTACT MORE</a>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
-                        <div class="slider_vd_icon">
-                            <div class="slider_vd_icon_inner">
-                                <a class="tx_svd_icon recpwit video-popup video-vemo-icon venobox vbox-item"
-                                    data-vbtype="youtube" data-autoplay="true" href="https://youtu.be/BS4TUd7FJSg"><i
-                                        class="fas fa-play"></i></a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 <div class="swiper-slide witr_swiper_height"
@@ -205,21 +200,9 @@
                             <h3>Domingo <span> Savio</span></h3>
                             <!-- btn gradient style -->
                             <div class="slider_btn">
-                                <div class="witr_btn_style">
-                                    <div class="witr_btn_sinner">
-                                        <a class="witr_btn" href="#">DISCOVER MORE</a>
-                                        <a class="witr_btn active recpwit" href="#">CONTACT MORE</a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
-                        <div class="slider_vd_icon">
-                            <div class="slider_vd_icon_inner">
-                                <a class="tx_svd_icon recpwit video-popup video-vemo-icon venobox vbox-item"
-                                    data-vbtype="youtube" data-autoplay="true" href="https://youtu.be/BS4TUd7FJSg"><i
-                                        class="fas fa-play"></i></a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -254,8 +237,8 @@
                                         </div>
                                         <div class="em-service-desc">
                                             <p>Formar niños y jóvenes con capacidad crítica y creadora,
-                                                 capaces de transformar su entorno en beneficio personal y 
-                                                 comunitario, utilizando métodos tecnológicos y científicos, 
+                                                capaces de transformar su entorno en beneficio personal y
+                                                comunitario, utilizando métodos tecnológicos y científicos,
                                                 cuyos procesos se basan en la razón, religión y amor.</p>
                                         </div>
                                     </div>
@@ -281,9 +264,9 @@
                                             <h3><a href="#">Visión</a></h3>
                                         </div>
                                         <div class="em-service-desc">
-                                            <p>Ser una institución líder por su excelencia académica y 
-                                                reconocida por la práctica de valores fundamentados en 
-                                                la pedagogía de San Juan Bosco, formando buenos cristianos y 
+                                            <p>Ser una institución líder por su excelencia académica y
+                                                reconocida por la práctica de valores fundamentados en
+                                                la pedagogía de San Juan Bosco, formando buenos cristianos y
                                                 honrados ciudadanos.</p>
                                         </div>
                                     </div>
@@ -292,7 +275,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -324,7 +307,7 @@
 
                     $index = 1; // Para asignar números dinámicos (01, 02, ...)
                     $imagenes = array_fill(0, 2, null); // Array para mantener las posiciones de las imágenes (02 elementos)
-
+                    
                     if ($result && $result->num_rows > 0) {
                         $i = 0; // Índice para el array de imágenes
                         while ($row = $result->fetch_assoc()) {
@@ -412,117 +395,82 @@
                 </div>
             </div>
             <div class="row service_top">
-                <!-- solutech_serivce_bg_01 -->
+                <!-- Amor y Servicio al Prójimo -->
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="all_feature_color single_feature2 text-center">
                         <div class="witr_feature2">
                             <div class="witr_fea2_icon_top">
-                                <i class=" aprova-website-1"></i>
+                                <i class="fas fa-hands-helping" style="color: #ffde59; font-size: 48px;"></i>
                             </div>
-                            <h3><a href="#">Concierge & Reception </a></h3>
-                            <p>Lorem ipsum dolor ame elit, sed do eiusmod tempor incididunt </p>
-                            <div class="witr_feature_btn2">
-                                <a class="witr_btn_all_color" href="#">Read More</a>
-                            </div>
-                            <div class="witr_feature2_icon">
-                                <i class=" aprova-website-1"></i>
-                            </div>
+                            <h3>Amor y Servicio al Prójimo</h3>
+                            <p>Comprometidos con el cuidado y la ayuda a los demás como expresión del amor de Dios.</p>
                         </div>
                     </div>
                 </div>
-                <!-- solutech_serivce_bg_02 -->
+                <!-- Alegría y Optimismo -->
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="all_feature_color single_feature2 text-center">
                         <div class="witr_feature2">
                             <div class="witr_fea2_icon_top">
-                                <i class=" aprova-landing"></i>
+                                <i class="fas fa-smile" style="color: #ffde59; font-size: 48px;"></i>
                             </div>
-                            <h3><a href="#">Mobile Patrol And Security</a></h3>
-                            <p>Lorem ipsum dolor ame elit, sed do eiusmod tempor incididunt </p>
-                            <div class="witr_feature_btn2">
-                                <a class="witr_btn_all_color" href="#">Read More</a>
-                            </div>
-                            <div class="witr_feature2_icon">
-                                <i class=" aprova-landing"></i>
-                            </div>
+                            <h3>Alegría y Optimismo</h3>
+                            <p>Vivir con entusiasmo, irradiando esperanza en todas las circunstancias.</p>
                         </div>
                     </div>
                 </div>
-                <!-- solutech_serivce_bg_03 -->
+                <!-- Espiritualidad y Fe -->
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="all_feature_color single_feature2 text-center">
                         <div class="witr_feature2">
                             <div class="witr_fea2_icon_top">
-                                <i class="aprova aprova-analysis"></i>
+                                <i class="fas fa-cross" style="color: #ffde59; font-size: 48px;"></i>
                             </div>
-                            <h3><a href="#">Offshore Software Develop </a></h3>
-                            <p>Lorem ipsum dolor ame elit, sed do eiusmod tempor incididunt </p>
-                            <div class="witr_feature_btn2">
-                                <a class="witr_btn_all_color" href="#">Read More</a>
-                            </div>
-                            <div class="witr_feature2_icon">
-                                <i class="aprova aprova-analysis"></i>
-                            </div>
+                            <h3>Espiritualidad y Fe</h3>
+                            <p>Fortalecemos la vida espiritual con oración y confianza en Dios.</p>
                         </div>
                     </div>
                 </div>
-                <!-- solutech_serivce_bg_04 -->
+                <!-- Trabajo y Esfuerzo Constante -->
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="all_feature_color single_feature2 text-center">
                         <div class="witr_feature2">
                             <div class="witr_fea2_icon_top">
-                                <i class="aprova aprova-bitcoin-1"></i>
+                                <i class="fas fa-tools" style="color: #ffde59; font-size: 48px;"></i>
                             </div>
-                            <h3><a href="#">Security Management Service</a></h3>
-                            <p>Lorem ipsum dolor ame elit, sed do eiusmod tempor incididunt </p>
-                            <div class="witr_feature_btn2">
-                                <a class="witr_btn_all_color" href="#">Read More</a>
-                            </div>
-                            <div class="witr_feature2_icon">
-                                <i class="aprova aprova-bitcoin-1"></i>
-                            </div>
+                            <h3>Trabajo y Esfuerzo Constante</h3>
+                            <p>Promovemos la dedicación y la excelencia en todas nuestras acciones.</p>
                         </div>
                     </div>
                 </div>
-                <!-- solutech_serivce_bg_05 -->
+                <!-- Honestidad y Sinceridad -->
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="all_feature_color single_feature2 text-center">
                         <div class="witr_feature2">
                             <div class="witr_fea2_icon_top">
-                                <i class="aprova aprova-startup"></i>
+                                <i class="fas fa-balance-scale" style="color: #ffde59; font-size: 48px;"></i>
                             </div>
-                            <h3><a href="#">Mobile Patrol And Security</a></h3>
-                            <p>Lorem ipsum dolor ame elit, sed do eiusmod tempor incididunt </p>
-                            <div class="witr_feature_btn2">
-                                <a class="witr_btn_all_color" href="#">Read More</a>
-                            </div>
-                            <div class="witr_feature2_icon">
-                                <i class="aprova aprova-startup"></i>
-                            </div>
+                            <h3>Honestidad y Sinceridad</h3>
+                            <p>Actuar con rectitud y transparencia en cada decisión y acción.</p>
                         </div>
                     </div>
                 </div>
-                <!-- solutech_serivce_bg_06 -->
+                <!-- Solidaridad y Comunidad -->
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="all_feature_color single_feature2 text-center">
                         <div class="witr_feature2">
                             <div class="witr_fea2_icon_top">
-                                <i class="aprova aprova-bitcoin-6"></i>
+                                <i class="fas fa-users" style="color: #ffde59; font-size: 48px;"></i>
                             </div>
-                            <h3><a href="#">Offshore Software Develop</a></h3>
-                            <p>Lorem ipsum dolor ame elit, sed do eiusmod tempor incididunt </p>
-                            <div class="witr_feature_btn2">
-                                <a class="witr_btn_all_color" href="#">Read More</a>
-                            </div>
-                            <div class="witr_feature2_icon">
-                                <i class="aprova aprova-bitcoin-6"></i>
-                            </div>
+                            <h3>Solidaridad y Comunidad</h3>
+                            <p>Fomentamos el trabajo en equipo y el sentido de pertenencia.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <!-------------------------------------------------- publicaciones 2 -------------------------------------------------->
     <!-- solutech_project_area -->
     <div class="solutech_project_area">
@@ -567,7 +515,7 @@
                             $titulo = $publicaciones[$i]['titulo'];
                             $contenido = $publicaciones[$i]['contenido'];
                             $rutaImagen = $publicaciones[$i]['imagen'];
-                    ?>
+                            ?>
                             <div class="item_pos col-lg-12">
                                 <div class="witr_single_pslide">
                                     <div class="witr_pslide_image">
@@ -584,10 +532,10 @@
                                     </div>
                                 </div>
                             </div>
-                        <?php
+                            <?php
                         } else {
                             // Espacio vacío (placeholder)
-                        ?>
+                            ?>
                             <div class="item_pos col-lg-12">
                                 <div class="witr_single_pslide">
                                     <div class="witr_pslide_image">
@@ -604,7 +552,7 @@
                                     </div>
                                 </div>
                             </div>
-                    <?php
+                            <?php
                         }
                     }
                     ?>
@@ -627,7 +575,7 @@
                         <div class="witr_section_title_inner text-center">
                             <h2>Últimas Noticias</h2>
                             <h1>3</h1>
-                           
+
                         </div>
                     </div>
                 </div>
@@ -661,7 +609,7 @@
                         $titulo = $publicacion['titulo'];
                         $contenido = $publicacion['contenido'];
                         $rutaImagen = $publicacion['imagen'];
-                ?>
+                        ?>
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="em-team all_color_team ">
                                 <div class="em-team-one">
@@ -693,16 +641,17 @@
                                 </div>
                             </div>
                         </div>
-                    <?php
+                        <?php
                     } else {
                         // Espacio vacío (placeholder)
-                    ?>
+                        ?>
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="em-team all_color_team ">
                                 <div class="em-team-one">
                                     <div class="em-team-content-image-inner">
                                         <div class="em-team-content-image">
-                                            <img src="../uploads/placeholder.png" alt="Espacio Disponible" onclick="openAddModal()">
+                                            <img src="../uploads/placeholder.png" alt="Espacio Disponible"
+                                                onclick="openAddModal()">
                                         </div>
                                     </div>
                                     <div class="em-team-content-waraper all_content_bg_color">
@@ -728,7 +677,7 @@
                                 </div>
                             </div>
                         </div>
-                <?php
+                        <?php
                     }
                 }
                 ?>
@@ -738,138 +687,96 @@
         </div>
     </div>
     <!-------------------------------------------------- publicaciones 4 -------------------------------------------------->
-    <!-- single_next_work_area -->
-    <div class="single_faq_bg_area faq_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-10 col-sm-12">
-                    <div class="witr_section_title">
-                        <div class="witr_section_title_inner text-left">
-                            <h2>Publicaciones 1
-                                Preguntas Frecuentes
-                            </h2>
-                            <h3>seccion 4</h3>
-                        </div>
-                    </div>
-                    <div class="witr_single_progress">
-                        <div class="witr_title2">
-                            <span class="witr_label">SKILLED EMPLOYEE </span>
-                        </div>
-                        <div class="progress witr_progress-style2">
-                            <div class="progress-bar wow fadeInLeft " data-wow-duration="1.5s" data-wow-delay="0.2s"
-                                style="width: 90%;">
-                                <span class="witr_percent">90%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="witr_single_progress">
-                        <div class="witr_title2">
-                            <span class="witr_label">QUALITY SERVICES </span>
-                        </div>
-                        <div class="progress witr_progress-style2">
-                            <div class="progress-bar wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.2s"
-                                style="width: 60%;">
-                                <span class="witr_percent">60%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="witr_single_progress">
-                        <div class="witr_title2">
-                            <span class="witr_label">SKILLED COMPLATET </span>
-                        </div>
-                        <div class="progress witr_progress-style2">
-                            <div class="progress-bar wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.2s"
-                                style="width: 85%;">
-                                <span class="witr_percent">85%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="witr_single_progress">
-                        <div class="witr_title2">
-                            <span class="witr_label">SUPPORT COMPLATET </span>
-                        </div>
-                        <div class="progress witr_progress-style2">
-                            <div class="progress-bar wow fadeInLeft " data-wow-duration="1.5s" data-wow-delay="0.2s"
-                                style="width: 90%;">
-                                <span class="witr_percent">90%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="witr_button_area button2">
-                        <div class="witr_btn_style mr">
-                            <div class="witr_btn_sinner">
-                                <a href="#" class="witr_btn">DISCOVER MORE</a>
-                            </div>
-                        </div>
+   <!-- single_next_work_area -->
+<div class="single_faq_bg_area faq_area">
+    <div class="container">
+        <div class="row">
+            <!-- Título de la sección -->
+            <div class="col-lg-6 col-md-10 col-sm-12">
+                <div class="witr_section_title">
+                    <div class="witr_section_title_inner text-left">
+                        <h2>Preguntas Frecuentes</h2>
+                        <h3 id="seccion4">Historia y Valores</h3>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12">
-                    <div class="accordion_area">
-                        <div class="faq-part">
-                            <div id="accordion">
-                                <div class="card card-2">
-                                    <div class="card-header witr_ac_card">
-                                        <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
-                                            data-bs-target="#collapse_242536c" aria-expanded="true">
-                                            01. Do You Need A Business Service?</a>
-                                    </div>
-                                    <div id="collapse_242536c" class="collapse" data-parent="#accordion">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqu ad minim veniam, quis
-                                            nostrud exercitation.</p>
-                                    </div>
+
+                <!-- Contenido textual -->
+                <p>
+                    La Escuela Domingo Savio tiene una rica historia de 35 años en el Oratorio, evolucionando hacia modernas instalaciones en 1985. Su misión se centra en formar ciudadanos íntegros y responsables, guiados por los valores de la pedagogía de Don Bosco: razón, religión y amor.
+                </p>
+                <p>
+                    Desde 1986, las Hijas del Divino Salvador han dirigido la institución, manteniendo un compromiso constante con la excelencia académica y la formación en valores. La escuela cuenta con un gimnasio, una capilla y modernas aulas, diseñadas para brindar una educación integral a sus estudiantes.
+                </p>
+            </div>
+
+            <!-- Preguntas frecuentes -->
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="accordion_area">
+                    <div class="faq-part">
+                        <div id="accordion">
+                            <div class="card card-2">
+                                <div class="card-header witr_ac_card">
+                                    <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse_1" aria-expanded="true">
+                                        01. ¿Cuál es la historia de la Escuela Domingo Savio?
+                                    </a>
                                 </div>
-                                <div class="card card-2">
-                                    <div class="card-header witr_ac_card">
-                                        <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
-                                            data-bs-target="#collapse_9315e3d1" aria-expanded="true">
-                                            02. Business Service A Scam?</a>
-                                    </div>
-                                    <div id="collapse_9315e3d1" class="collapse   " data-parent="#accordion">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqu ad minim veniam, quis
-                                            nostrud exercitation.</p>
-                                    </div>
+                                <div id="collapse_1" class="collapse" data-parent="#accordion">
+                                    <p>
+                                        La Escuela Domingo Savio inició su misión en el Oratorio y en 1985 se trasladó a una sede moderna con instalaciones como un gimnasio y una capilla.
+                                    </p>
                                 </div>
-                                <!-- card -->
-                                <div class="card card-2  ">
-                                    <div class="card-header witr_ac_card">
-                                        <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
-                                            data-bs-target="#collapse_9965145" aria-expanded="true">
-                                            03. Most Out Of Your Business Service?</a>
-                                    </div>
-                                    <div id="collapse_9965145" class="collapse   " data-parent="#accordion">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqu ad minim veniam, quis
-                                            nostrud exercitation.</p>
-                                    </div>
+                            </div>
+                            <div class="card card-2">
+                                <div class="card-header witr_ac_card">
+                                    <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse_2" aria-expanded="true">
+                                        02. ¿Qué valores rigen la educación en la escuela?
+                                    </a>
                                 </div>
-                                <!-- card -->
-                                <div class="card card-2  ">
-                                    <div class="card-header witr_ac_card">
-                                        <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
-                                            data-bs-target="#collapse_4b685b3" aria-expanded="true">
-                                            04. The Sound Of Business Service?</a>
-                                    </div>
-                                    <div id="collapse_4b685b3" class="collapse   " data-parent="#accordion">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqu ad minim veniam, quis
-                                            nostrud exercitation.</p>
-                                    </div>
+                                <div id="collapse_2" class="collapse" data-parent="#accordion">
+                                    <p>
+                                        Se fomenta la razón, religión y amor según la pedagogía de Don Bosco, para formar ciudadanos con principios.
+                                    </p>
                                 </div>
-                                <!-- card -->
-                                <div class="card card-2  ">
-                                    <div class="card-header witr_ac_card">
-                                        <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
-                                            data-bs-target="#collapse_4b685b4" aria-expanded="true">
-                                            05. The Sound Of Business Service?</a>
-                                    </div>
-                                    <div id="collapse_4b685b4" class="collapse   " data-parent="#accordion">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqu ad minim veniam, quis
-                                            nostrud exercitation.</p>
-                                    </div>
+                            </div>
+                            <div class="card card-2">
+                                <div class="card-header witr_ac_card">
+                                    <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse_3" aria-expanded="true">
+                                        03. ¿Quiénes administran la escuela?
+                                    </a>
+                                </div>
+                                <div id="collapse_3" class="collapse" data-parent="#accordion">
+                                    <p>
+                                        Las Hijas del Divino Salvador lideran la escuela desde 1986, trabajando con el sistema preventivo de Don Bosco.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card card-2">
+                                <div class="card-header witr_ac_card">
+                                    <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse_4" aria-expanded="true">
+                                        04. ¿Cuál es la misión de la escuela?
+                                    </a>
+                                </div>
+                                <div id="collapse_4" class="collapse" data-parent="#accordion">
+                                    <p>
+                                        Formar niños y jóvenes capaces de transformar su entorno, utilizando métodos tecnológicos y científicos.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card card-2">
+                                <div class="card-header witr_ac_card">
+                                    <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse_5" aria-expanded="true">
+                                        05. ¿Qué mensaje comparte la Hermana Directora?
+                                    </a>
+                                </div>
+                                <div id="collapse_5" class="collapse" data-parent="#accordion">
+                                    <p>
+                                        La Hermana Directora invita a reflexionar sobre la santificación personal y a trabajar juntos en la educación.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -878,7 +785,7 @@
             </div>
         </div>
     </div>
-
+</div>
 
 
     <!------------------------------------------- Publicaciones 4 ------------------------------------------->
@@ -915,18 +822,19 @@
                                 if ($publicacion !== null) {
                                     $titulo = $publicacion['titulo'];
                                     $rutaImagen = $publicacion['imagen'];
-                            ?>
+                                    ?>
                                     <div class="slide_items">
                                         <img src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>" class="img-fluid">
                                     </div>
-                                <?php
+                                    <?php
                                 } else {
                                     // Espacio vacío (placeholder)
-                                ?>
+                                    ?>
                                     <div class="slide_items">
-                                        <img src="../uploads/placeholder.png" alt="Espacio Disponible" class="img-fluid" onclick="openAddModal()">
+                                        <img src="../uploads/placeholder.png" alt="Espacio Disponible" class="img-fluid"
+                                            onclick="openAddModal()">
                                     </div>
-                            <?php
+                                    <?php
                                 }
                             }
                             ?>
@@ -948,7 +856,7 @@
         </div>
     </div>
 
-<!------------------------------------------- Publicaciones 5------------------------------------------->
+    <!------------------------------------------- Publicaciones 5------------------------------------------->
     <!-- solutech_blog_bg_area -->
     <div class="solutech_blog_bg_area">
         <div class="container">
@@ -956,92 +864,24 @@
                 <div class="col-lg-12">
                     <div class="witr_section_title">
                         <div class="witr_section_title_inner text-center">
-                            <h2>Publicaciones 1</h2>
-                            <h3>seccion 5</h3>
+                            <h2>Mensaje de la hermana Directora</h2>
+                            <h3>Hna. Rosa Demi Larreynaga Ayala H.D.S</h3>
+                            <p>Estimados maestros, padres de familia y estudiantes:</p>
+                            <p>
+                                Reciban un cordial saludo en este nuevo año, implorando de Dios su bendición y
+                                protección para ustedes y cada uno de los miembros de su familia.
+                                Gracias por asociarnos en la noble tarea de la educación de sus hijos, misión que
+                                realizamos en conjunto con la ayuda de Dios, de usted estimado padre de familia, el
+                                docente y el mismo estudiante con su docilidad y colaboración.
+                                Les invito queridos docentes, padres de familia, y estudiantes a reflexionar seriamente
+                                en su propia santificación. Dios nos ofrece esa oportunidad, él mismo nos ayuda y nos
+                                ama. Agradezco desde ya su apoyo y colaboración en todas las actividades programadas
+                                para este año, esperando que Dios los bendiga por su entrega y donación generosa.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="witr_blog_area11 witr_blog_area16">
-                <div class="blog_wrap blog16_idblog1 blog_top">
-                    <?php
-                    require_once '../../funcs/conexion.php';
-
-                    // Inicializar las 4 posiciones como vacías
-                    $publicaciones = array_fill(0, 4, null);
-
-                    // Consulta para obtener publicaciones (máximo 4)
-                    $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 4 AND activo = 1 LIMIT 4");
-
-
-                    $index = 0; // Para llenar las posiciones dinámicamente
-                    if ($resultado && $resultado->num_rows > 0) {
-                        while ($row = $resultado->fetch_assoc()) {
-                            $publicaciones[$index] = [
-                                'titulo' => htmlspecialchars($row['titulo']),
-                                'contenido' => htmlspecialchars($row['contenido']),
-                                'imagen' => '../uploads/' . htmlspecialchars($row['imagen']),
-                            ];
-                            $index++;
-                        }
-                    }
-
-                    // Generar las publicaciones dinámicas o espacios vacíos
-                    foreach ($publicaciones as $publicacion) {
-                        if ($publicacion !== null) {
-                            $titulo = $publicacion['titulo'];
-                            $contenido = $publicacion['contenido'];
-                            $rutaImagen = $publicacion['imagen'];
-                    ?>
-                            <div class="witr_all_mb_30 col-lg-12">
-                                <div class="busi_singleBlog">
-                                    <div class="witr_sb_thumb">
-                                        <a href="#"><img src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>" class="img-fluid"></a>
-                                    </div>
-                                    <div class="all_blog_color">
-                                        <div class="witr_blog_con bs5">
-                                            <h2><a href="#"><?php echo $titulo; ?></a></h2>
-                                            <p><?php echo $contenido; ?></p>
-                                            <div class="em-blog-content-area_adn">
-                                                <div class="learn_more_adn">
-                                                    <a class="learn_btn adnbtn2" href="#">Read More</a>
-                                                </div>
-                                            </div>
-                                            <div class="witr_blog_border"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php
-                        } else {
-                            // Espacio vacío
-                        ?>
-                            <div class="witr_all_mb_30 col-lg-12">
-                                <div class="busi_singleBlog">
-                                    <div class="witr_sb_thumb">
-                                        <a href="#"><img src="../uploads/placeholder.png" alt="Espacio Disponible" class="img-fluid" onclick="openAddModal()"></a>
-                                    </div>
-                                    <div class="all_blog_color">
-                                        <div class="witr_blog_con bs5">
-                                            <h2><a href="#">Espacio Disponible</a></h2>
-                                            <p>Publica aquí tu contenido</p>
-                                            <div class="em-blog-content-area_adn">
-                                                <div class="learn_more_adn">
-                                                    <a class="learn_btn adnbtn2" href="#">Add Content</a>
-                                                </div>
-                                            </div>
-                                            <div class="witr_blog_border"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    <?php
-                        }
-                    }
-                    ?>
-                </div>
-            </div>
-
         </div>
     </div>
 
@@ -1057,8 +897,7 @@
                         <div class="widget widget_solutech_description_widget">
                             <div class="solutech-description-area">
                                 <a href="#"><img src="../../Assets/template1/assets/images/logo2.png" alt="image"></a>
-                                <p>We help businesses elevate the alue ere custom softwa topmet, product fr design lored
-                                    many of the easier. technicians lif making people.</p>
+                                <p>La Escuela Domingo Savio, fundada en 1985, forma generaciones con el sistema preventivo de Don Bosco, guiada por las Hijas del Divino Salvador, con compromiso educativo y valores salesianos.</p>
                                 <div class="social-icons">
                                     <a href="#"><i class="fa fa-facebook-f"></i></a>
                                     <a href="#"><i class="fab fa-google-plus-g"></i></a>
@@ -1069,24 +908,15 @@
                         </div>
                     </div>
                     <div class=" col-lg-3 col-md-6 col-sm-12">
-                        <div class="widget widget_nav_menu">
-                            <h2 class="widget-title">Support 24/7</h2>
-                            <ul class="menu">
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">FAQ’s</a></li>
-                                <li><a href="#">Term & Conditions</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">History & Experience</a></li>
-                            </ul>
-                        </div>
+                        
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="widget about_us">
-                            <h2 class="widget-title">Local Address</h2>
+                            <h2 class="widget-title">Dirección Local</h2>
                             <div class="about-footer">
                                 <div class="footer-widget address">
                                     <div class="footer-logo">
-                                        <p>Fire suppression and incident of manage get recovery.</p>
+                                        <p>Estamos ubicados en el corazón de San Salvador para servirle mejor.</p>
                                     </div>
                                     <div class="footer-address">
                                         <div class="footer_s_inner">
@@ -1094,7 +924,8 @@
                                                 <i class="fa fa-map-marker"></i>
                                             </div>
                                             <div class="footer-sociala-info">
-                                                <p>Address : New York. US</p>
+                                                <p>Dirección: 7ª Av. Norte entre 23 y 27 calle poniente, San Salvador
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="footer_s_inner">
@@ -1102,7 +933,7 @@
                                                 <i class="fa fa-phone"></i>
                                             </div>
                                             <div class="footer-sociala-info">
-                                                <p>Phone : +99 568 989 565</p>
+                                                <p>Teléfono: +503 7069 9148</p>
                                             </div>
                                         </div>
                                         <div class="footer_s_inner">
@@ -1110,7 +941,7 @@
                                                 <i class="fa fa-envelope"></i>
                                             </div>
                                             <div class="footer-sociala-info">
-                                                <p>Email : demo@gmail.com</p>
+                                                <p>Email: domingo.savio@salesianosds.com</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1118,35 +949,38 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-6  col-lg-3 last">
+                    
+
+                    <div class="col-sm-12 col-md-6 col-lg-3 last">
                         <div class="widget_text widget widget_custom_html">
-                            <h2 class="widget-title">Working Hours</h2>
+                            <h2 class="widget-title">Horario de Atención</h2>
                             <div class="textwidget custom-html-widget">
                                 <div class="witr_table">
                                     <div class="witr_sub_table">
-                                        <span>Tuesday - Friday</span>
-                                        <span>08:00 - 20:00</span>
+                                        <span>Martes - Viernes</span>
+                                        <span>07:00 - 16:00</span>
                                     </div>
                                     <div class="witr_sub_table">
-                                        <span>Saturday</span>
+                                        <span>Sábado</span>
+                                        <span>07:00 - 12:00</span>
+                                    </div>
+                                    <div class="witr_sub_table">
+                                        <span>Domingo</span>
                                         <span>09:00 - 18:00</span>
                                     </div>
                                     <div class="witr_sub_table">
-                                        <span>Sunday</span>
+                                        <span>Lunes</span>
                                         <span>09:00 - 18:00</span>
                                     </div>
                                     <div class="witr_sub_table">
-                                        <span>Monday</span>
-                                        <span>09:00 - 18:00</span>
-                                    </div>
-                                    <div class="witr_sub_table">
-                                        <span>Emergency:</span>
-                                        <span> (+099) 020 768 69</span>
+                                        <span>Emergencias:</span>
+                                        <span>(+099) 020 768 69</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -1155,15 +989,15 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6  col-sm-12">
                         <div class="copy-right-text">
-                            <p>Copyright &copy; solutech all rights reserved.</p>
+                            <p>Copyright &copy; domingo savio all rights reserved.</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6  col-sm-12">
                         <div class="footer-menu">
                             <ul class="text-right">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Team</a></li>
+                                <li><a href="#">Inicio</a></li>
+                                <li><a href="#">Admiciones</a></li>
+                                <li><a href="#">Noticias</a></li>
                             </ul>
                         </div>
                     </div>
