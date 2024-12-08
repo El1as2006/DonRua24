@@ -39,6 +39,13 @@ if (!isset($_SESSION['id'])) {
             <i data-feather="menu"></i>
         </button>
         <a class="navbar-brand pe-3 ps-4 ps-lg-2">DOMINGO SAVIO</a>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link btn btn-icon btn-transparent-dark me-3" href="../../logout.php">
+                    <i data-feather="log-out"></i>
+                </a>
+            </li>
+        </ul>
     </nav>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
@@ -62,9 +69,12 @@ if (!isset($_SESSION['id'])) {
                             <div class="nav-link-icon"><i data-feather="activity"></i></div>
                             Admisiones
                         </a>
+                        <a class="nav-link" href="contactadmin.php">
+                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            Contacto
+                        </a>
                     </div>
                 </div>
-
                 <div class="sidenav-footer">
                     <div class="sidenav-footer-content">
                         <div class="sidenav-footer-subtitle">Logged in as:</div>
@@ -92,36 +102,36 @@ if (!isset($_SESSION['id'])) {
                             <table id="tablaUsuarios" class="table table-striped table-bordered" style="width:100%">
                                 <input type="hidden" name="formulario" value="contactos">
                                 <button class="btn btn-primary btn-block" type="submit">Imprimir Contactos</button>
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Nombre</th>
-                                            <th>Correo</th>
-                                            <th>Teléfono de contacto</th>
-                                            <th>Mensaje</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        $sql = "SELECT * FROM mensajes";
-                                        $result = $conn->query(query: $sql);
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>Correo</th>
+                                        <th>Teléfono de contacto</th>
+                                        <th>Mensaje</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $sql = "SELECT * FROM mensajes";
+                                    $result = $conn->query(query: $sql);
 
-                                        if ($result->num_rows > 0) {
-                                            while ($row = $result->fetch_assoc()) {
+                                    if ($result->num_rows > 0) {
+                                        while ($row = $result->fetch_assoc()) {
 
-                                                echo "<tr>
+                                            echo "<tr>
                                                 <td>{$row['id_mensaje']}</td>
                                                 <td>{$row['nombre']}</td>
                                                 <td>{$row['correo']}</td>
                                                 <td>{$row['numero']}</td>
                                                 <td>{$row['mensaje']}</td>
                                             </tr>";
-                                            }
-                                        } else {
-                                            echo "<tr><td colspan='7'>No hay usuarios registrados.</td></tr>";
                                         }
-                                        ?>
-                                    </tbody>
+                                    } else {
+                                        echo "<tr><td colspan='7'>No hay usuarios registrados.</td></tr>";
+                                    }
+                                    ?>
+                                </tbody>
                             </table>
                         </div>
                     </form>
@@ -210,4 +220,5 @@ if (!isset($_SESSION['id'])) {
         });
     </script>
 </body>
+
 </html>

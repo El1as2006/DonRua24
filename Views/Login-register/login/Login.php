@@ -1,217 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-    html,
-    body {
+<style>
+    /* Configuración básica */
+    html, body {
         height: 100%;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        overflow-y: auto;
-        /* Permitir desplazamiento vertical */
         background-image: url('../../../Assets/template2/assets/img/fondo.png');
-        /* Imagen de fondo */
         background-size: cover;
-        /* Expandir al tamaño de la pantalla */
         background-repeat: no-repeat;
-        /* No repetir */
-        background-position: center center;
-        /* Centrar */
+        background-position: center;
     }
 
+    /* Contenedor principal */
     .login-container {
-        min-height: calc(100vh - 20px);
-        /* Altura completa con espacio debajo */
+        min-height: 100vh;
         display: flex;
         justify-content: center;
-        align-items: flex-start;
-        /* Alinear hacia arriba */
+        align-items: center;
         flex-direction: column;
-        /* Estructura vertical */
-        padding: 20px 0;
-        /* Espaciado superior e inferior */
+        padding: 20px;
     }
 
+    /* Caja de inicio de sesión */
     .login-box {
         width: 90%;
-        /* Adaptarse al tamaño del viewport */
         max-width: 400px;
-        /* No exceder un ancho máximo */
         background: white;
         border-radius: 8px;
         padding: 20px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         margin: 20px auto;
-        /* Margen superior e inferior */
     }
 
-    html,
-    body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        overflow-y: auto;
-        /* Permitir desplazamiento vertical */
-        background-image: url('../../../Assets/template2/assets/img/fondo.png');
-        /* Imagen de fondo */
-        background-size: cover;
-        /* Expandir al tamaño de la pantalla */
-        background-repeat: no-repeat;
-        /* No repetir */
-        background-position: center center;
-        /* Centrar */
-    }
-
-    .login-container {
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        /* Asegurar estructura vertical */
-        padding: 20px;
-        /* Espacio para contenido accesible */
-    }
-
-    .login-box {
-        width: 90%;
-        /* Adaptarse al tamaño del viewport */
-        max-width: 400px;
-        /* No exceder un ancho máximo */
-        background: white;
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
+    /* Estilo para imágenes */
     img {
         max-width: 100%;
-        /* Escalar el logo */
         height: auto;
+        display: block;
         margin: 0 auto;
-        /* Centrar */
     }
 
-    html,
-    body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        overflow-y: auto;
-        /* Permitir desplazamiento vertical */
-        background-image: url('../../../Assets/template2/assets/img/fondo.png');
-        /* Imagen de fondo */
-        background-size: cover;
-        /* Expandir al tamaño de la pantalla */
-        background-repeat: no-repeat;
-        /* No repetir */
-        background-position: center center;
-        /* Centrar */
-    }
-
+    /* Estilo para evitar márgenes y manejar el espacio inferior */
     .login-container {
-        min-height: 100vh;
-        /* Ocupa siempre el tamaño completo */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        /* Asegurar estructura vertical */
-        padding: 20px;
-        /* Espacio para contenido accesible */
-    }
-
-    html,
-    body {
-        height: 100%;
         margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        overflow: hidden;
-        /* Evitar barras de desplazamiento */
-        background-image: url('../../../Assets/template2/assets/img/fondo.png');
-        /* Imagen de fondo */
-        background-size: cover;
-        /* Expandir al tamaño de la pantalla */
-        background-repeat: no-repeat;
-        /* No repetir */
-        background-position: center center;
-        /* Centrar */
+        padding-bottom: 20px;
     }
 
-    .login-container {
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        /* Eliminar cualquier margen */
-    }
-
+    /* Estilo adicional para tarjetas (si se usan) */
     .card {
         box-shadow: none;
-        /* Eliminar sombra si está causando efecto visual */
     }
 
-    html,
-    body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        background-image: url('../../../Assets/template2/assets/img/fondo.png');
-        /* Imagen de fondo */
-        background-size: cover;
-        /* Expandir al tamaño de la pantalla */
-        background-repeat: no-repeat;
-        /* No repetir */
-        background-position: center center;
-        /* Centrar */
-    }
-
+    /* Estilo adicional para el cuerpo si necesita flexibilidad */
     body {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-
-    .login-container {
-        flex: 1;
-        /* Forzar que el contenedor ocupe el espacio necesario */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    html,
-    body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    .login-container {
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 20px;
-        /* Espacio inferior agregado */
-    }
-
-    body {
-        background-image: url('../../../Assets/template2/assets/img/fondo.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        height: 100vh;
-        margin: 0;
-    }
-    </style>
+</style>
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />

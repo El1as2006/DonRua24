@@ -34,14 +34,21 @@ if (!isset($_SESSION['id'])) {
 
 
 <body class="nav-fixed">
-    <nav class="topnav navbar navbar-expand shadow justify-content-between navbar-light bg-white" id="sidenavAccordion">
+<nav class="topnav navbar navbar-expand shadow justify-content-between navbar-light bg-white" id="sidenavAccordion">
         <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle">
             <i data-feather="menu"></i>
         </button>
         <a class="navbar-brand pe-3 ps-4 ps-lg-2">DOMINGO SAVIO</a>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link btn btn-icon btn-transparent-dark me-3" href="../../logout.php">
+                    <i data-feather="log-out"></i>
+                </a>
+            </li>
+        </ul>
     </nav>
     <div id="layoutSidenav">
-        <div id="layoutSidenav_nav">
+    <div id="layoutSidenav_nav">
             <nav class="sidenav shadow-right sidenav-light">
                 <div class="sidenav-menu">
                     <div class="nav accordion" id="accordionSidenav">
@@ -58,9 +65,16 @@ if (!isset($_SESSION['id'])) {
                             <div class="nav-link-icon"><i data-feather="activity"></i></div>
                             Usuarios
                         </a>
+                        <a class="nav-link" href="admisionesadmin.php">
+                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            Admisiones
+                        </a>
+                        <a class="nav-link" href="contactadmin.php">
+                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            Contacto
+                        </a>
                     </div>
                 </div>
-
                 <div class="sidenav-footer">
                     <div class="sidenav-footer-content">
                         <div class="sidenav-footer-subtitle">Logged in as:</div>

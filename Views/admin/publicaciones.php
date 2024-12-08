@@ -67,7 +67,7 @@ if (!isset($_SESSION['id'])) {
 
 
 <body class="nav-fixed">
-<nav class="topnav navbar navbar-expand shadow justify-content-between navbar-light bg-white" id="sidenavAccordion">
+    <nav class="topnav navbar navbar-expand shadow justify-content-between navbar-light bg-white" id="sidenavAccordion">
         <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle">
             <i data-feather="menu"></i>
         </button>
@@ -94,14 +94,17 @@ if (!isset($_SESSION['id'])) {
                             <div class="nav-link-icon"><i data-feather="activity"></i></div>
                             Publicaciones
                         </a>
-                        <div class="sidenav-menu-heading">Custom</div>
-                        <a class="nav-link" href="pages.html">
-                            <div class="nav-link-icon"><i data-feather="grid"></i></div>
-                            Pages
+                        <a class="nav-link" href="users.php">
+                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            Usuarios
                         </a>
-                        <a class="nav-link" href="pages.html">
-                            <div class="nav-link-icon"><i data-feather="grid"></i></div>
-                            Pages
+                        <a class="nav-link" href="admisionesadmin.php">
+                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            Admisiones
+                        </a>
+                        <a class="nav-link" href="contactadmin.php">
+                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            Contacto
                         </a>
                     </div>
                 </div>
@@ -145,12 +148,14 @@ if (!isset($_SESSION['id'])) {
                         </div>
                     </div>
 
-                    <div class="modal fade" id="newPublicationModal" tabindex="-1" aria-labelledby="newPublicationModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="newPublicationModal" tabindex="-1"
+                        aria-labelledby="newPublicationModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="newPublicationModalLabel">Nueva Publicación</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <form action="add.php" method="POST" enctype="multipart/form-data">
@@ -160,7 +165,8 @@ if (!isset($_SESSION['id'])) {
                                         </div>
                                         <div class="mb-3">
                                             <label for="content" class="form-label">Contenido</label>
-                                            <textarea class="form-control" id="content" name="content" rows="3" required></textarea>
+                                            <textarea class="form-control" id="content" name="content" rows="3"
+                                                required></textarea>
                                         </div>
                                         <div class="mb-3">
                                             <label for="sector" class="form-label">Seleccionar Sector</label>
@@ -173,10 +179,12 @@ if (!isset($_SESSION['id'])) {
                                         </div>
                                         <div class="mb-3">
                                             <label for="image" class="form-label">Subir Imagen</label>
-                                            <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
+                                            <input type="file" class="form-control" id="image" name="image"
+                                                accept="image/*" required>
                                         </div>
                                         <button type="submit" class="btn btn-primary">Guardar</button>
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cancelar</button>
                                     </form>
                                 </div>
                             </div>
@@ -186,29 +194,35 @@ if (!isset($_SESSION['id'])) {
 
 
                     <!-- Card for Editar -->
-                    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel"
+                        aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="editModalLabel">Editar Publicación</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <form id="editForm" enctype="multipart/form-data">
                                         <input type="hidden" id="editId" name="id">
-                                        <input type="hidden" id="currentImage" name="current_image"> <!-- Imagen actual -->
+                                        <input type="hidden" id="currentImage" name="current_image">
+                                        <!-- Imagen actual -->
                                         <div class="mb-3">
                                             <label for="editTitle" class="form-label">Título</label>
-                                            <input type="text" class="form-control" id="editTitle" name="title" required>
+                                            <input type="text" class="form-control" id="editTitle" name="title"
+                                                required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="editContent" class="form-label">Contenido</label>
-                                            <textarea class="form-control" id="editContent" name="content" rows="3" required></textarea>
+                                            <textarea class="form-control" id="editContent" name="content" rows="3"
+                                                required></textarea>
                                         </div>
                                         <div class="mb-3">
                                             <label for="editImage" class="form-label">Imagen</label>
                                             <input type="file" class="form-control" id="editImage" name="image">
-                                            <img id="imagePreview" src="" alt="Previsualización" style="max-width: 100%; margin-top: 10px; display: none;">
+                                            <img id="imagePreview" src="" alt="Previsualización"
+                                                style="max-width: 100%; margin-top: 10px; display: none;">
                                         </div>
                                         <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                                     </form>
@@ -256,7 +270,7 @@ if (!isset($_SESSION['id'])) {
                                     // Inicializar array de publicaciones
                                     $imagenes = array_fill(0, $max_positions, null); // Crear un array con $max_positions valores nulos
                                     $index = 1; // Para numeración dinámica
-
+                                    
                                     // Cargar publicaciones en las posiciones correspondientes
                                     if ($resultado && $resultado->num_rows > 0) {
                                         $i = 0; // Índice para el array de imágenes
@@ -344,7 +358,7 @@ if (!isset($_SESSION['id'])) {
 
                                     $imagenes = [null, null, null, null, null]; // Array para mantener las 5 publicaciones
                                     $index = 1; // Para numeración dinámica
-
+                                    
                                     if ($resultado && $resultado->num_rows > 0) {
                                         $i = 0; // Índice para el array de imágenes
                                         while ($i < 5 && $row = $resultado->fetch_assoc()) {
@@ -437,7 +451,7 @@ if (!isset($_SESSION['id'])) {
                                     // Inicializar array de publicaciones
                                     $imagenes = array_fill(0, $max_positions, null); // Crear un array con $max_positions valores nulos
                                     $index = 1; // Para numeración dinámica
-
+                                    
                                     // Cargar publicaciones en las posiciones correspondientes
                                     if ($resultado && $resultado->num_rows > 0) {
                                         $i = 0; // Índice para el array de imágenes
@@ -528,7 +542,7 @@ if (!isset($_SESSION['id'])) {
                                     // Inicializar array de publicaciones
                                     $imagenes = array_fill(0, $max_positions, null); // Crear un array con $max_positions valores nulos
                                     $index = 1; // Para numeración dinámica
-
+                                    
                                     // Cargar publicaciones en las posiciones correspondientes
                                     if ($resultado && $resultado->num_rows > 0) {
                                         $i = 0; // Índice para el array de imágenes
@@ -615,7 +629,7 @@ if (!isset($_SESSION['id'])) {
                                     // Inicializar array de publicaciones
                                     $imagenes = array_fill(0, $max_positions, null); // Crear un array con $max_positions valores nulos
                                     $index = 1; // Para numeración dinámica
-
+                                    
                                     // Cargar publicaciones en las posiciones correspondientes
                                     if ($resultado && $resultado->num_rows > 0) {
                                         $i = 0; // Índice para el array de imágenes
@@ -749,7 +763,7 @@ if (!isset($_SESSION['id'])) {
 
 
         // Toggle sidebar visibility
-        document.getElementById('sidebarToggle').addEventListener('click', function() {
+        document.getElementById('sidebarToggle').addEventListener('click', function () {
             document.getElementById('layoutSidenav').classList.toggle('collapsed');
         });
 
@@ -886,18 +900,18 @@ if (!isset($_SESSION['id'])) {
     </script>
 
     <script>
-        document.querySelector("#editForm").addEventListener("submit", function(e) {
+        document.querySelector("#editForm").addEventListener("submit", function (e) {
             e.preventDefault(); // Evita que el formulario recargue la página automáticamente
 
             const formData = new FormData(this); // Captura los datos del formulario
 
             fetch("update_publicaciones.php", {
-                    method: "POST",
-                    body: formData,
-                })
+                method: "POST",
+                body: formData,
+            })
                 .then((response) => response.json())
                 .then((data) => {
-                    if (data.success) {} else {
+                    if (data.success) { } else {
                         alert("Error al actualizar la publicación: " + data.message);
                     }
                 })
@@ -960,15 +974,15 @@ if (!isset($_SESSION['id'])) {
         };
     </script>
     <script>
-        document.querySelector("#editForm").addEventListener("submit", function(e) {
+        document.querySelector("#editForm").addEventListener("submit", function (e) {
             e.preventDefault(); // Evitar que el formulario recargue la página
 
             const formData = new FormData(this); // Captura los datos del formulario
 
             fetch("update_publicaciones.php", {
-                    method: "POST",
-                    body: formData,
-                })
+                method: "POST",
+                body: formData,
+            })
                 .then((response) => response.json())
                 .then((data) => {
                     if (data.success) {
@@ -1004,7 +1018,7 @@ if (!isset($_SESSION['id'])) {
     </script>
 
     <script>
-        (function() {
+        (function () {
             function c() {
                 var b = a.contentDocument || a.contentWindow.document;
                 if (b) {
@@ -1026,8 +1040,8 @@ if (!isset($_SESSION['id'])) {
                 if ('loading' !== document.readyState) c();
                 else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
                 else {
-                    var e = document.onreadystatechange || function() {};
-                    document.onreadystatechange = function(b) {
+                    var e = document.onreadystatechange || function () { };
+                    document.onreadystatechange = function (b) {
                         e(b);
                         'loading' !== document.readyState && (document.onreadystatechange = e, c())
                     }
@@ -1048,9 +1062,8 @@ if (!isset($_SESSION['id'])) {
         integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
         data-cf-beacon='{"rayId":"8e0ab2c8689f7476","version":"2024.10.5","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"6e2c2575ac8f44ed824cef7899ba8463","b":1}'
         crossorigin="anonymous">
-    </script>
-    <script
-        data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+        </script>
+    <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
 
     </script>
     <script src="../cdn.jsdelivr.net/npm/bootstrap%405.2.3/dist/js/bootstrap.bundle.min.js"
