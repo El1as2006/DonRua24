@@ -31,9 +31,10 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 					<div class="col-xs-12 col-lg-9 col-xl-9 col-md-9 col-sm-12">
 						<div class="top-address text-left">
 							<p>
-								<span><i class="fas fa-home"></i>Quinta Avenida Norte, San Salvador</span>
-								<a href="#"><i class="fas fa-phone-alt"></i>+503 2526-9742</a>
-								<a href="#"><i class="fas fa-envelope"></i>demo@example.com</a>
+								<span><i class="fas fa-home"></i>7ª. Av. Norte entre 23 y 27 calle poniente, San
+									Salvador</span>
+								<a href="#"><i class="fas fa-phone-alt"></i>+503 7069 9148</a>
+								<a href="#"><i class="fas fa-envelope"></i>domingo.savio@salesianosds.com</a>
 							</p>
 						</div>
 					</div>
@@ -76,14 +77,15 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 											<div class="col-md-9 col-sm-9 col-xs-8">
 												<nav class="solutech_menu main-search-menu">
 													<ul class="sub-menu">
-														<li><a href="index.php">Home</a></li>
+														<li><a href="index.php">Inicio</a></li>
 														<li><a href="news.php">Noticias</a></li>
+														<li><a href="#seccion4">Acerca de Nosotros</a></li>
 														<li><a href="admisiones.php">Admisiones</a></li>
-														<li><a href="contactus.php">Contáctanos</a></li>
+														<li><a href="contactus.php">Contactanos</a></li>
 													</ul>
 													<div class="donate-btn-header">
 														<a class="dtbtn"
-															href="../login-register/login/Login.php">Iniciar Sesión</a>
+															href="../login-register/login/Login.php">Iniciar Sesión </a>
 													</div>
 												</nav>
 											</div>
@@ -205,7 +207,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 							<h2>Noticias</h2>
 							<h3>Nuestra Noticias</h3>
 							<h1>Noticas más recientes y blog
-								
+
 							</h1>
 						</div>
 					</div>
@@ -256,8 +258,9 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 						<div class="widget widget_solutech_description_widget">
 							<div class="solutech-description-area">
 								<a href="#"><img src="../../Assets/template1/assets/images/logo2.png" alt="image"></a>
-								<p>We help businesses elevate the alue ere custom softwa topmet, product fr design lored
-									many of the easier. technicians lif making people.</p>
+								<p>La Escuela Domingo Savio, fundada en 1985, forma generaciones con el sistema
+									preventivo de Don Bosco, guiada por las Hijas del Divino Salvador, con compromiso
+									educativo y valores salesianos.</p>
 								<div class="social-icons">
 									<a href="#"><i class="fa fa-facebook-f"></i></a>
 									<a href="#"><i class="fab fa-google-plus-g"></i></a>
@@ -268,24 +271,15 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 						</div>
 					</div>
 					<div class=" col-lg-3 col-md-6 col-sm-12">
-						<div class="widget widget_nav_menu">
-							<h2 class="widget-title">Support 24/7</h2>
-							<ul class="menu">
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">FAQ’s</a></li>
-								<li><a href="#">Term & Conditions</a></li>
-								<li><a href="#">Contact</a></li>
-								<li><a href="#">History & Experience</a></li>
-							</ul>
-						</div>
+
 					</div>
 					<div class="col-lg-3 col-md-6 col-sm-12">
 						<div class="widget about_us">
-							<h2 class="widget-title">Local Address</h2>
+							<h2 class="widget-title">Dirección Local</h2>
 							<div class="about-footer">
 								<div class="footer-widget address">
 									<div class="footer-logo">
-										<p>Fire suppression and incident of manage get recovery.</p>
+										<p>Estamos ubicados en el corazón de San Salvador para servirle mejor.</p>
 									</div>
 									<div class="footer-address">
 										<div class="footer_s_inner">
@@ -293,7 +287,8 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 												<i class="fa fa-map-marker"></i>
 											</div>
 											<div class="footer-sociala-info">
-												<p>Address : New York. US</p>
+												<p>Dirección: 7ª Av. Norte entre 23 y 27 calle poniente, San Salvador
+												</p>
 											</div>
 										</div>
 										<div class="footer_s_inner">
@@ -301,7 +296,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 												<i class="fa fa-phone"></i>
 											</div>
 											<div class="footer-sociala-info">
-												<p>Phone : +99 568 989 565</p>
+												<p>Teléfono: +503 7069 9148</p>
 											</div>
 										</div>
 										<div class="footer_s_inner">
@@ -309,7 +304,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 												<i class="fa fa-envelope"></i>
 											</div>
 											<div class="footer-sociala-info">
-												<p>Email : demo@gmail.com</p>
+												<p>Email: domingo.savio@salesianosds.com</p>
 											</div>
 										</div>
 									</div>
@@ -317,35 +312,38 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-12 col-md-6  col-lg-3 last">
+
+
+					<div class="col-sm-12 col-md-6 col-lg-3 last">
 						<div class="widget_text widget widget_custom_html">
-							<h2 class="widget-title">Working Hours</h2>
+							<h2 class="widget-title">Horario de Atención</h2>
 							<div class="textwidget custom-html-widget">
 								<div class="witr_table">
 									<div class="witr_sub_table">
-										<span>Tuesday - Friday</span>
-										<span>08:00 - 20:00</span>
+										<span>Martes - Viernes</span>
+										<span>07:00 - 16:00</span>
 									</div>
 									<div class="witr_sub_table">
-										<span>Saturday</span>
+										<span>Sábado</span>
+										<span>07:00 - 12:00</span>
+									</div>
+									<div class="witr_sub_table">
+										<span>Domingo</span>
 										<span>09:00 - 18:00</span>
 									</div>
 									<div class="witr_sub_table">
-										<span>Sunday</span>
+										<span>Lunes</span>
 										<span>09:00 - 18:00</span>
 									</div>
 									<div class="witr_sub_table">
-										<span>Monday</span>
-										<span>09:00 - 18:00</span>
-									</div>
-									<div class="witr_sub_table">
-										<span>Emergency:</span>
-										<span> (+099) 020 768 69</span>
+										<span>Emergencias:</span>
+										<span>(+099) 020 768 69</span>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+
 				</div>
 			</div>
 		</div>
@@ -354,15 +352,15 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 				<div class="row">
 					<div class="col-lg-6 col-md-6  col-sm-12">
 						<div class="copy-right-text">
-							<p>Copyright &copy; solutech all rights reserved.</p>
+							<p>Copyright &copy; domingo savio all rights reserved.</p>
 						</div>
 					</div>
 					<div class="col-lg-6 col-md-6  col-sm-12">
 						<div class="footer-menu">
 							<ul class="text-right">
-								<li><a href="#">Home</a></li>
-								<li><a href="#">About</a></li>
-								<li><a href="#">Team</a></li>
+								<li><a href="#">Inicio</a></li>
+								<li><a href="#">Admiciones</a></li>
+								<li><a href="#">Noticias</a></li>
 							</ul>
 						</div>
 					</div>
@@ -370,7 +368,6 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 			</div>
 		</div>
 	</div>
-
 
 
 	<!-- Include All JS -->
@@ -386,4 +383,5 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 	<script src="../../Assets/template1/assets/js/map.js"></script>
 	<script src="../../Assets/template1/assets/js/theme.js"></script>
 </body>
+
 </html>
