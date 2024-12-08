@@ -58,6 +58,10 @@ if (!isset($_SESSION['id'])) {
                             <div class="nav-link-icon"><i data-feather="activity"></i></div>
                             Usuarios
                         </a>
+                        <a class="nav-link" href="contactadmin.php">
+                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            Contacto
+                        </a>
                     </div>
                 </div>
 
@@ -81,31 +85,33 @@ if (!isset($_SESSION['id'])) {
                     </div>
                 </header>
                 <div class="container mt-5">
-                    <h1 class="text-center">Lista de Usuarios</h1>
-                    <div class="table-responsive"
-                        style="max-width: 100%; margin: auto; background-color: #ffffff; border-radius: 8px; padding: 20px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
-                        <table id="tablaUsuarios" class="table table-striped table-bordered" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nombre Completo</th>
-                                    <th>Edad</th>
-                                    <th>Sexo</th>
-                                    <th>Nacionalidad</th>
-                                    <th>Teléfono de contacto</th>
-                                    <th>Correo</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                $sql = "SELECT id_admision, nombre, edad, sexo, nacionalidad, tel_contacto, correo FROM admisiones";
-                                $result = $conn->query(query: $sql);
+                    <h1 class="text-center">Lista de Aspirantes</h1>
+                    <form action="generar_pdf.php" method="POST">
+                        <div class="table-responsive"
+                            style="max-width: 100%; margin: auto; background-color: #ffffff; border-radius: 8px; padding: 20px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+                            <table id="tablaUsuarios" class="table table-striped table-bordered" style="width:100%">
+                                <input type="hidden" name="formulario" value="admisiones">
+                                <button class="btn btn-primary btn-block" type="submit">Imprimir Aspirantes</button>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre Completo</th>
+                                        <th>Edad</th>
+                                        <th>Sexo</th>
+                                        <th>Nacionalidad</th>
+                                        <th>Teléfono de contacto</th>
+                                        <th>Correo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $sql = "SELECT * FROM admisiones";
+                                    $result = $conn->query(query: $sql);
 
-                                // Genera las filas de la tabla
-                                if ($result->num_rows > 0) {
-                                    while ($row = $result->fetch_assoc()) {
+                                    if ($result->num_rows > 0) {
+                                        while ($row = $result->fetch_assoc()) {
 
-                                        echo "<tr>
+                                            echo "<tr>
                                                 <td>{$row['id_admision']}</td>
                                                 <td>{$row['nombre']}</td>
                                                 <td>{$row['edad']}</td>
@@ -114,15 +120,15 @@ if (!isset($_SESSION['id'])) {
                                                 <td>{$row['tel_contacto']}</td>
                                                 <td>{$row['correo']}</td>
                                             </tr>";
+                                        }
+                                    } else {
+                                        echo "<tr><td colspan='7'>No hay usuarios registrados.</td></tr>";
                                     }
-                                } else {
-                                    echo "<tr><td colspan='7'>No hay usuarios registrados.</td></tr>";
-                                }
-                                ?>
-                            </tbody>
-
-                        </table>
-                    </div>
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
                 </div>
             </main>
         </div>
@@ -208,4 +214,5 @@ if (!isset($_SESSION['id'])) {
         });
     </script>
 </body>
+
 </html>
