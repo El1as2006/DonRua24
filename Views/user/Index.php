@@ -73,7 +73,7 @@
                                             <div class="col-md-9 col-sm-9 col-xs-8">
                                                 <nav class="solutech_menu main-search-menu">
                                                     <ul class="sub-menu">
-                                                        <li><a href="index.php">Home</a></li>
+                                                        <li><a href="index.php">Inicio</a></li>
                                                         <li><a href="news.php">Noticias</a></li>
                                                         <li><a href="#seccion4">Acerca de Nosotros</a></li>
                                                         <li><a href="admisiones.php">Admisiones</a></li>
@@ -215,71 +215,8 @@
 
 
 
-    <!-- solutech_features_area -->
-    <div class="solutech_features_area">
-        <div class="container">
-            <div class="row features_bg">
-                <!-- solutech_features_01 -->
-                <div class="col-lg-4 col-md-6 col-sm-12 pdlf">
-                    <div class="em-service2 sleft all_color_service">
-                        <div class="em_service_content ">
-                            <div class="em_single_service_text width_height_link_0 ">
-                                <div class="service_top_image"></div>
-                                <div class="text_box witr_s_flex">
-                                    <div class="service_top_text all_icon_color">
-                                        <div class="em-service-icon">
-                                            <img src="../../Assets/template1/assets/images/feature1.png" alt="image">
-                                        </div>
-                                    </div>
-                                    <div class="em-service-inner">
-                                        <div class="em-service-title">
-                                            <h3><a href="#">Misión</a></h3>
-                                        </div>
-                                        <div class="em-service-desc">
-                                            <p>Formar niños y jóvenes con capacidad crítica y creadora,
-                                                capaces de transformar su entorno en beneficio personal y
-                                                comunitario, utilizando métodos tecnológicos y científicos,
-                                                cuyos procesos se basan en la razón, religión y amor.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- solutech_features_02 -->
-                <div class="col-lg-4 col-md-6 col-sm-12 pdlf">
-                    <div class="em-service2 sleft all_color_service">
-                        <div class="em_service_content ">
-                            <div class="em_single_service_text width_height_link_0 ">
-                                <div class="service_top_image"></div>
-                                <div class="text_box witr_s_flex">
-                                    <div class="service_top_text all_icon_color">
-                                        <div class="em-service-icon">
-                                            <img src="../../Assets/template1/assets/images/feature2.png" alt="image">
-                                        </div>
-                                    </div>
-                                    <div class="em-service-inner">
-                                        <div class="em-service-title">
-                                            <h3><a href="#">Visión</a></h3>
-                                        </div>
-                                        <div class="em-service-desc">
-                                            <p>Ser una institución líder por su excelencia académica y
-                                                reconocida por la práctica de valores fundamentados en
-                                                la pedagogía de San Juan Bosco, formando buenos cristianos y
-                                                honrados ciudadanos.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-        </div>
-    </div>
-
+    
     <!-------------------------------------------------- publicaciones 1 -------------------------------------------------->
     <!-- solutech_about_area -->
     <div class="solutech_about_area">
@@ -479,7 +416,8 @@
                 <div class="col-lg-12">
                     <div class="witr_section_title">
                         <div class="witr_section_title_inner text-center">
-                            <h2>Actividades</h2>
+                            <h2>Felices de compartir</h2>
+                            <h3 id="seccion4">Nuestas Actividades</h3>
                         </div>
                     </div>
                 </div>
@@ -573,8 +511,8 @@
                 <div class="col-lg-12">
                     <div class="witr_section_title">
                         <div class="witr_section_title_inner text-center">
-                            <h2>Últimas Noticias</h2>
-                            <h1>3</h1>
+                            <h2>Manteniendote al tanto de</h2>
+                            <h1>Nuestas noticias</h1>
 
                         </div>
                     </div>

@@ -8308,7 +8308,7 @@ p.form-messege{
 }
  .breadcumb-area {
      padding: 150px 0px;
-     background-image: url(assets/images/slider-2.jpg);
+     background-image: url(../../assets/images/slider-2.png);
      background-position: center center;
      background-repeat: no-repeat;
      position: relative;
@@ -8855,7 +8855,7 @@ p.form-messege{
 }
  .witr_section_title_inner h2{
      font-size: 26px;
-     color: #0c5adb;
+     color: #ffde59;
      margin-bottom: 13px;
      display: inline-block;
 }
@@ -11218,7 +11218,7 @@ p.form-messege{
      line-height: 1;
 }
  .witr_swiper_content h2 span, .witr_swiper_content h3 span{
-     color: #0c5adb;
+     color: #ffde59;
 }
  .witr_swiper_content p {
      font-weight: 400;
@@ -11348,7 +11348,7 @@ p.form-messege{
      content: "";
      bottom: 0;
      left: -38px;
-     background:#00247e;
+     background:#ffde59;
      z-index: -1;
      border-radius:50px;
 }
