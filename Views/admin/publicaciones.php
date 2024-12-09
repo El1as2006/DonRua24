@@ -81,32 +81,33 @@ if (!isset($_SESSION['id'])) {
         </ul>
     </nav>
     <div id="layoutSidenav">
-        <div id="layoutSidenav_nav">
+    <div id="layoutSidenav_nav">
             <nav class="sidenav shadow-right sidenav-light">
                 <div class="sidenav-menu">
                     <div class="nav accordion" id="accordionSidenav">
                         <div class="sidenav-menu-heading">Core</div>
                         <a class="nav-link" href="admin.php">
-                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            <div class="nav-link-icon"><i data-feather="home"></i></div>
                             Dashboards
                         </a>
                         <a class="nav-link" href="publicaciones.php">
-                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            <div class="nav-link-icon"><i data-feather="file-text"></i></div>
                             Publicaciones
                         </a>
                         <a class="nav-link" href="users.php">
-                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            <div class="nav-link-icon"><i data-feather="users"></i></div>
                             Usuarios
                         </a>
                         <a class="nav-link" href="admisionesadmin.php">
-                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            <div class="nav-link-icon"><i data-feather="briefcase"></i></div>
                             Admisiones
                         </a>
                         <a class="nav-link" href="contactadmin.php">
-                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            <div class="nav-link-icon"><i data-feather="mail"></i></div>
                             Contacto
                         </a>
                     </div>
+
                 </div>
                 <div class="sidenav-footer">
                     <div class="sidenav-footer-content">

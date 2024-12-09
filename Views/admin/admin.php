@@ -49,26 +49,27 @@ if (!isset($_SESSION['id'])) {
                     <div class="nav accordion" id="accordionSidenav">
                         <div class="sidenav-menu-heading">Core</div>
                         <a class="nav-link" href="admin.php">
-                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            <div class="nav-link-icon"><i data-feather="home"></i></div>
                             Dashboards
                         </a>
                         <a class="nav-link" href="publicaciones.php">
-                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            <div class="nav-link-icon"><i data-feather="file-text"></i></div>
                             Publicaciones
                         </a>
                         <a class="nav-link" href="users.php">
-                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            <div class="nav-link-icon"><i data-feather="users"></i></div>
                             Usuarios
                         </a>
                         <a class="nav-link" href="admisionesadmin.php">
-                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            <div class="nav-link-icon"><i data-feather="briefcase"></i></div>
                             Admisiones
                         </a>
                         <a class="nav-link" href="contactadmin.php">
-                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            <div class="nav-link-icon"><i data-feather="mail"></i></div>
                             Contacto
                         </a>
                     </div>
+
                 </div>
                 <div class="sidenav-footer">
                     <div class="sidenav-footer-content">
@@ -184,7 +185,7 @@ if (!isset($_SESSION['id'])) {
 
 
         // Toggle sidebar visibility
-        document.getElementById('sidebarToggle').addEventListener('click', function() {
+        document.getElementById('sidebarToggle').addEventListener('click', function () {
             document.getElementById('layoutSidenav').classList.toggle('collapsed');
         });
 
@@ -208,7 +209,7 @@ if (!isset($_SESSION['id'])) {
             publicationCard.style.display = 'none';
             overlay.style.display = 'none';
         });
-        document.getElementById('newPublicationBtn').addEventListener('click', function() {
+        document.getElementById('newPublicationBtn').addEventListener('click', function () {
             const modal = new bootstrap.Modal(document.getElementById('newPublicationModal'));
             modal.show();
         });
@@ -278,7 +279,7 @@ if (!isset($_SESSION['id'])) {
                     },
                     tooltip: {
                         callbacks: {
-                            label: function(context) {
+                            label: function (context) {
                                 const label = context.label || '';
                                 const value = context.raw || 0;
                                 return `${label}: ${value}`;
@@ -326,7 +327,7 @@ if (!isset($_SESSION['id'])) {
                     },
                     tooltip: {
                         callbacks: {
-                            label: function(context) {
+                            label: function (context) {
                                 const label = context.label || '';
                                 const value = context.raw || 0;
                                 return `${label}: ${value}`;
