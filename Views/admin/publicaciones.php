@@ -137,6 +137,7 @@ if (!isset($_SESSION['id'])) {
                         <h5>Acciones disponibles</h5>
                         <p>Aquí puedes realizar diferentes acciones sobre los datos.</p>
                         <div class="d-flex justify-content-center flex-wrap gap-3">
+
                             <button id="openNewPublicationButton" class="new-publication-button">
                                 <i data-feather="file-plus"></i>
                                 NUEVA PUBLICACIÓN
@@ -144,6 +145,10 @@ if (!isset($_SESSION['id'])) {
                             <button id="editButton" data-image class="new-publication-button">
                                 <i data-feather="edit-3"></i>
                                 EDITAR
+                            </button>
+                            <button id="homeButton" class="new-publication-button" style="background-color: #FFD700;">
+                                <i data-feather="home"></i>
+                                INICIO
                             </button>
                         </div>
                     </div>
@@ -270,7 +275,7 @@ if (!isset($_SESSION['id'])) {
                                     // Inicializar array de publicaciones
                                     $imagenes = array_fill(0, $max_positions, null); // Crear un array con $max_positions valores nulos
                                     $index = 1; // Para numeración dinámica
-                                    
+
                                     // Cargar publicaciones en las posiciones correspondientes
                                     if ($resultado && $resultado->num_rows > 0) {
                                         $i = 0; // Índice para el array de imágenes
@@ -358,7 +363,7 @@ if (!isset($_SESSION['id'])) {
 
                                     $imagenes = [null, null, null, null, null]; // Array para mantener las 5 publicaciones
                                     $index = 1; // Para numeración dinámica
-                                    
+
                                     if ($resultado && $resultado->num_rows > 0) {
                                         $i = 0; // Índice para el array de imágenes
                                         while ($i < 5 && $row = $resultado->fetch_assoc()) {
@@ -451,7 +456,7 @@ if (!isset($_SESSION['id'])) {
                                     // Inicializar array de publicaciones
                                     $imagenes = array_fill(0, $max_positions, null); // Crear un array con $max_positions valores nulos
                                     $index = 1; // Para numeración dinámica
-                                    
+
                                     // Cargar publicaciones en las posiciones correspondientes
                                     if ($resultado && $resultado->num_rows > 0) {
                                         $i = 0; // Índice para el array de imágenes
@@ -542,7 +547,7 @@ if (!isset($_SESSION['id'])) {
                                     // Inicializar array de publicaciones
                                     $imagenes = array_fill(0, $max_positions, null); // Crear un array con $max_positions valores nulos
                                     $index = 1; // Para numeración dinámica
-                                    
+
                                     // Cargar publicaciones en las posiciones correspondientes
                                     if ($resultado && $resultado->num_rows > 0) {
                                         $i = 0; // Índice para el array de imágenes
@@ -629,7 +634,7 @@ if (!isset($_SESSION['id'])) {
                                     // Inicializar array de publicaciones
                                     $imagenes = array_fill(0, $max_positions, null); // Crear un array con $max_positions valores nulos
                                     $index = 1; // Para numeración dinámica
-                                    
+
                                     // Cargar publicaciones en las posiciones correspondientes
                                     if ($resultado && $resultado->num_rows > 0) {
                                         $i = 0; // Índice para el array de imágenes
@@ -763,7 +768,7 @@ if (!isset($_SESSION['id'])) {
 
 
         // Toggle sidebar visibility
-        document.getElementById('sidebarToggle').addEventListener('click', function () {
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
             document.getElementById('layoutSidenav').classList.toggle('collapsed');
         });
 
@@ -900,18 +905,18 @@ if (!isset($_SESSION['id'])) {
     </script>
 
     <script>
-        document.querySelector("#editForm").addEventListener("submit", function (e) {
+        document.querySelector("#editForm").addEventListener("submit", function(e) {
             e.preventDefault(); // Evita que el formulario recargue la página automáticamente
 
             const formData = new FormData(this); // Captura los datos del formulario
 
             fetch("update_publicaciones.php", {
-                method: "POST",
-                body: formData,
-            })
+                    method: "POST",
+                    body: formData,
+                })
                 .then((response) => response.json())
                 .then((data) => {
-                    if (data.success) { } else {
+                    if (data.success) {} else {
                         alert("Error al actualizar la publicación: " + data.message);
                     }
                 })
@@ -974,15 +979,15 @@ if (!isset($_SESSION['id'])) {
         };
     </script>
     <script>
-        document.querySelector("#editForm").addEventListener("submit", function (e) {
+        document.querySelector("#editForm").addEventListener("submit", function(e) {
             e.preventDefault(); // Evitar que el formulario recargue la página
 
             const formData = new FormData(this); // Captura los datos del formulario
 
             fetch("update_publicaciones.php", {
-                method: "POST",
-                body: formData,
-            })
+                    method: "POST",
+                    body: formData,
+                })
                 .then((response) => response.json())
                 .then((data) => {
                     if (data.success) {
@@ -1018,7 +1023,7 @@ if (!isset($_SESSION['id'])) {
     </script>
 
     <script>
-        (function () {
+        (function() {
             function c() {
                 var b = a.contentDocument || a.contentWindow.document;
                 if (b) {
@@ -1040,8 +1045,8 @@ if (!isset($_SESSION['id'])) {
                 if ('loading' !== document.readyState) c();
                 else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
                 else {
-                    var e = document.onreadystatechange || function () { };
-                    document.onreadystatechange = function (b) {
+                    var e = document.onreadystatechange || function() {};
+                    document.onreadystatechange = function(b) {
                         e(b);
                         'loading' !== document.readyState && (document.onreadystatechange = e, c())
                     }
@@ -1062,7 +1067,7 @@ if (!isset($_SESSION['id'])) {
         integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
         data-cf-beacon='{"rayId":"8e0ab2c8689f7476","version":"2024.10.5","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"6e2c2575ac8f44ed824cef7899ba8463","b":1}'
         crossorigin="anonymous">
-        </script>
+    </script>
     <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
 
     </script>
