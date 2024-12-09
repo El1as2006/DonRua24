@@ -216,7 +216,7 @@
 
 
 
-    
+
     <!-------------------------------------------------- publicaciones 1 -------------------------------------------------->
     <!-- solutech_about_area -->
     <div class="solutech_about_area">
@@ -238,18 +238,19 @@
                     require_once '../../funcs/conexion.php';
 
                     // Consulta para obtener las dos publicaciones con Tipo_publicaciones = 0
-                    $sql = "SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_publicaciones = 0 AND activo = 1 LIMIT 2";
+                    $sql = "SELECT id, titulo, contenido, imagen FROM publicaciones WHERE Tipo_publicaciones = 0 AND activo = 1 LIMIT 2";
 
                     $result = $conn->query($sql);
 
                     $index = 1; // Para asignar números dinámicos (01, 02, ...)
                     $imagenes = array_fill(0, 2, null); // Array para mantener las posiciones de las imágenes (02 elementos)
-                    
+
                     if ($result && $result->num_rows > 0) {
                         $i = 0; // Índice para el array de imágenes
                         while ($row = $result->fetch_assoc()) {
                             if ($i < 2) {
                                 $imagenes[$i] = [
+                                    'id' => $row['id'], // Agregar el ID
                                     'titulo' => htmlspecialchars($row['titulo']),
                                     'contenido' => htmlspecialchars($row['contenido']),
                                     'imagen' => '../uploads/' . htmlspecialchars($row['imagen']),
@@ -261,6 +262,7 @@
 
                     for ($i = 0; $i < 2; $i++) {
                         if ($imagenes[$i] !== null) {
+                            $id = $imagenes[$i]['id']; // Capturar el ID
                             $titulo = $imagenes[$i]['titulo'];
                             $contenido = $imagenes[$i]['contenido'];
                             $imagePath = $imagenes[$i]['imagen'];
@@ -268,7 +270,9 @@
                             echo '<div class="item_pos col-lg-12">';
                             echo '    <div class="witr_single_pslide">';
                             echo '        <div class="witr_pslide_image">';
-                            echo '            <img src="' . $imagePath . '" alt="' . $titulo . '" class="img-fluid">';
+                            echo '            <a href="new_dinamic.php?id=' . $id . '">'; // Enlace dinámico
+                            echo '                <img src="' . $imagePath . '" alt="' . $titulo . '" class="img-fluid">';
+                            echo '            </a>';
                             echo '        </div>';
                             echo '        <div class="witr_content_pslide_text">';
                             echo '            <div class="witr_number_pslide">';
@@ -276,10 +280,10 @@
                             echo '            </div>';
                             echo '            <div class="witr_content_pslide">';
                             echo '                <p>' . $contenido . '</p>'; // Contenido dinámico
-                            echo '                <h3><a href="#">' . $titulo . '</a></h3>'; // Título dinámico
+                            echo '                <h3><a href="new_dinamic.php?id=' . $id . '">' . $titulo . '</a></h3>'; // Enlace dinámico
                             echo '            </div>';
                             echo '            <div class="witr_pslide_custom">';
-                            echo '                <a href="#"><span class="ti-arrow-right"></span></a>';
+                            echo '                <a href="new_dinamic.php?id=' . $id . '"><span class="ti-arrow-right"></span></a>'; // Enlace dinámico
                             echo '            </div>';
                             echo '        </div>';
                             echo '    </div>';
@@ -308,8 +312,6 @@
                         }
                         $index++; // Incrementar el número
                     }
-
-
                     ?>
                 </div>
 
@@ -432,13 +434,13 @@
                     $publicaciones = array_fill(0, 5, null);
 
                     // Consulta para obtener publicaciones (máximo 5)
-                    $resultado = $conn->query("SELECT titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 1 AND activo = 1 LIMIT 5");
-
+                    $resultado = $conn->query("SELECT id, titulo, contenido, imagen FROM publicaciones WHERE Tipo_Publicaciones = 1 AND activo = 1 LIMIT 5");
 
                     $index = 0; // Para llenar las posiciones dinámicamente
                     if ($resultado && $resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()) {
                             $publicaciones[$index] = [
+                                'id' => $row['id'], // Agregar el id de la publicación
                                 'titulo' => htmlspecialchars($row['titulo']),
                                 'contenido' => htmlspecialchars($row['contenido']),
                                 'imagen' => '../uploads/' . htmlspecialchars($row['imagen']),
@@ -450,30 +452,31 @@
                     // Iterar para renderizar las 5 posiciones
                     for ($i = 0; $i < 5; $i++) {
                         if ($publicaciones[$i] !== null) {
+                            $id = $publicaciones[$i]['id']; // Obtener el id
                             $titulo = $publicaciones[$i]['titulo'];
                             $contenido = $publicaciones[$i]['contenido'];
                             $rutaImagen = $publicaciones[$i]['imagen'];
-                            ?>
+                    ?>
                             <div class="item_pos col-lg-12">
                                 <div class="witr_single_pslide">
                                     <div class="witr_pslide_image">
                                         <img src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>" class="img-fluid">
                                     </div>
                                     <div class="witr_pslide_custom">
-                                        <a href="#"><span class="ti-arrow-right"></span></a>
+                                        <a href="new_dinamic.php?id=<?php echo $id; ?>"><span class="ti-arrow-right"></span></a> <!-- Redirección al nuevo enlace -->
                                     </div>
                                     <div class="witr_content_pslide_text">
                                         <div class="witr_content_pslide">
-                                            <h3><a href="#"><?php echo $titulo; ?></a></h3>
+                                            <h3><a href="new_dinamic.php?id=<?php echo $id; ?>"><?php echo $titulo; ?></a></h3> <!-- Redirección al nuevo enlace -->
                                             <p><?php echo $contenido; ?></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <?php
+                        <?php
                         } else {
                             // Espacio vacío (placeholder)
-                            ?>
+                        ?>
                             <div class="item_pos col-lg-12">
                                 <div class="witr_single_pslide">
                                     <div class="witr_pslide_image">
@@ -490,10 +493,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php
+                    <?php
                         }
                     }
                     ?>
+
                 </div>
             </div>
 
@@ -547,7 +551,7 @@
                         $titulo = $publicacion['titulo'];
                         $contenido = $publicacion['contenido'];
                         $rutaImagen = $publicacion['imagen'];
-                        ?>
+                ?>
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="em-team all_color_team ">
                                 <div class="em-team-one">
@@ -579,10 +583,10 @@
                                 </div>
                             </div>
                         </div>
-                        <?php
+                    <?php
                     } else {
                         // Espacio vacío (placeholder)
-                        ?>
+                    ?>
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="em-team all_color_team ">
                                 <div class="em-team-one">
@@ -615,7 +619,7 @@
                                 </div>
                             </div>
                         </div>
-                        <?php
+                <?php
                     }
                 }
                 ?>
@@ -625,96 +629,97 @@
         </div>
     </div>
     <!-------------------------------------------------- publicaciones 4 -------------------------------------------------->
-   <!-- single_next_work_area -->
-<div class="single_faq_bg_area faq_area">
-    <div class="container">
-        <div class="row">
-            <!-- Título de la sección -->
-            <div class="col-lg-6 col-md-10 col-sm-12">
-                <div class="witr_section_title">
-                    <div class="witr_section_title_inner text-left">
-                        <h2>Preguntas Frecuentes</h2>
-                        <h3 id="seccion4">Historia y Valores</h3>
+    <!-- single_next_work_area -->
+    <div class="single_faq_bg_area faq_area">
+        <div class="container">
+            <div class="row">
+                <!-- Título de la sección -->
+                <div class="col-lg-6 col-md-10 col-sm-12">
+                    <div class="witr_section_title">
+                        <div class="witr_section_title_inner text-left">
+                            <h2>Preguntas Frecuentes</h2>
+                            <h3 id="seccion4">Historia y Valores</h3>
+                        </div>
                     </div>
+
+                    <!-- Contenido textual -->
+                    <p>
+                        La Escuela Domingo Savio tiene una rica historia de 35 años en el Oratorio, evolucionando hacia modernas instalaciones en 1985. Su misión se centra en formar ciudadanos íntegros y responsables, guiados por los valores de la pedagogía de Don Bosco: razón, religión y amor.
+                    </p>
+                    <p>
+                        Desde 1986, las Hijas del Divino Salvador han dirigido la institución, manteniendo un compromiso constante con la excelencia académica y la formación en valores. La escuela cuenta con un gimnasio, una capilla y modernas aulas, diseñadas para brindar una educación integral a sus estudiantes.
+                    </p>
                 </div>
 
-                <!-- Contenido textual -->
-                <p>
-                    La Escuela Domingo Savio tiene una rica historia de 35 años en el Oratorio, evolucionando hacia modernas instalaciones en 1985. Su misión se centra en formar ciudadanos íntegros y responsables, guiados por los valores de la pedagogía de Don Bosco: razón, religión y amor.
-                </p>
-                <p>
-                    Desde 1986, las Hijas del Divino Salvador han dirigido la institución, manteniendo un compromiso constante con la excelencia académica y la formación en valores. La escuela cuenta con un gimnasio, una capilla y modernas aulas, diseñadas para brindar una educación integral a sus estudiantes.
-                </p>
-            </div>
-
-            <!-- Preguntas frecuentes -->
-            <div class="col-lg-6 col-md-12 col-sm-12">
-                <div class="accordion_area">
-                    <div class="faq-part">
-                        <div id="accordion">
-                            <div class="card card-2">
-                                <div class="card-header witr_ac_card">
-                                    <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
-                                        data-bs-target="#collapse_1" aria-expanded="true">
-                                        01. ¿Cuál es la historia de la Escuela Domingo Savio?
-                                    </a>
+                <!-- Preguntas frecuentes -->
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="accordion_area">
+                        <div class="faq-part">
+                            <div id="accordion">
+                                <div class="card card-2">
+                                    <div class="card-header witr_ac_card">
+                                        <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
+                                            data-bs-target="#collapse_1" aria-expanded="true">
+                                            01. ¿Cuál es la historia de la Escuela Domingo Savio?
+                                        </a>
+                                    </div>
+                                    <div id="collapse_1" class="collapse" data-parent="#accordion">
+                                        <p>
+                                            La Escuela Domingo Savio inició su misión en el Oratorio y en 1985 se trasladó a una sede moderna con instalaciones como un gimnasio y una capilla.
+                                        </p>
+                                    </div>
                                 </div>
-                                <div id="collapse_1" class="collapse" data-parent="#accordion">
-                                    <p>
-                                        La Escuela Domingo Savio inició su misión en el Oratorio y en 1985 se trasladó a una sede moderna con instalaciones como un gimnasio y una capilla.
-                                    </p>
+                                <div class="card card-2">
+                                    <div class="card-header witr_ac_card">
+                                        <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
+                                            data-bs-target="#collapse_2" aria-expanded="true">
+                                            02. ¿Qué valores rigen la educación en la escuela?
+                                        </a>
+                                    </div>
+                                    <div id="collapse_2" class="collapse" data-parent="#accordion">
+                                        <p>
+                                            Se fomenta la razón, religión y amor según la pedagogía de Don Bosco, para formar ciudadanos con principios.
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card card-2">
-                                <div class="card-header witr_ac_card">
-                                    <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
-                                        data-bs-target="#collapse_2" aria-expanded="true">
-                                        02. ¿Qué valores rigen la educación en la escuela?
-                                    </a>
+                                <div class="card card-2">
+                                    <div class="card-header witr_ac_card">
+                                        <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
+                                            data-bs-target="#collapse_3" aria-expanded="true">
+                                            03. ¿Quiénes administran la escuela?
+                                        </a>
+                                    </div>
+                                    <div id="collapse_3" class="collapse" data-parent="#accordion">
+                                        <p>
+                                            Las Hijas del Divino Salvador lideran la escuela desde 1986, trabajando con el sistema preventivo de Don Bosco.
+                                        </p>
+                                    </div>
                                 </div>
-                                <div id="collapse_2" class="collapse" data-parent="#accordion">
-                                    <p>
-                                        Se fomenta la razón, religión y amor según la pedagogía de Don Bosco, para formar ciudadanos con principios.
-                                    </p>
+                                <div class="card card-2">
+                                    <div class="card-header witr_ac_card">
+                                        <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
+                                            data-bs-target="#collapse_4" aria-expanded="true">
+                                            04. ¿Cuál es la misión de la escuela?
+                                        </a>
+                                    </div>
+                                    <div id="collapse_4" class="collapse" data-parent="#accordion">
+                                        <p>
+                                            Formar niños y jóvenes capaces de transformar su entorno, utilizando métodos tecnológicos y científicos.
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card card-2">
-                                <div class="card-header witr_ac_card">
-                                    <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
-                                        data-bs-target="#collapse_3" aria-expanded="true">
-                                        03. ¿Quiénes administran la escuela?
-                                    </a>
-                                </div>
-                                <div id="collapse_3" class="collapse" data-parent="#accordion">
-                                    <p>
-                                        Las Hijas del Divino Salvador lideran la escuela desde 1986, trabajando con el sistema preventivo de Don Bosco.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="card card-2">
-                                <div class="card-header witr_ac_card">
-                                    <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
-                                        data-bs-target="#collapse_4" aria-expanded="true">
-                                        04. ¿Cuál es la misión de la escuela?
-                                    </a>
-                                </div>
-                                <div id="collapse_4" class="collapse" data-parent="#accordion">
-                                    <p>
-                                        Formar niños y jóvenes capaces de transformar su entorno, utilizando métodos tecnológicos y científicos.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="card card-2">
-                                <div class="card-header witr_ac_card">
-                                    <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
-                                        data-bs-target="#collapse_5" aria-expanded="true">
-                                        05. ¿Qué mensaje comparte la Hermana Directora?
-                                    </a>
-                                </div>
-                                <div id="collapse_5" class="collapse" data-parent="#accordion">
-                                    <p>
-                                        La Hermana Directora invita a reflexionar sobre la santificación personal y a trabajar juntos en la educación.
-                                    </p>
+                                <div class="card card-2">
+                                    <div class="card-header witr_ac_card">
+                                        <a href="#" class="card-link witr_ac_style" data-bs-toggle="collapse"
+                                            data-bs-target="#collapse_5" aria-expanded="true">
+                                            05. ¿Qué mensaje comparte la Hermana Directora?
+                                        </a>
+                                    </div>
+                                    <div id="collapse_5" class="collapse" data-parent="#accordion">
+                                        <p>
+                                            La Hermana Directora invita a reflexionar sobre la santificación personal y a trabajar juntos en la educación.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -723,7 +728,6 @@
             </div>
         </div>
     </div>
-</div>
 
 
     <!------------------------------------------- Publicaciones 4 ------------------------------------------->
@@ -760,19 +764,19 @@
                                 if ($publicacion !== null) {
                                     $titulo = $publicacion['titulo'];
                                     $rutaImagen = $publicacion['imagen'];
-                                    ?>
+                            ?>
                                     <div class="slide_items">
                                         <img src="<?php echo $rutaImagen; ?>" alt="<?php echo $titulo; ?>" class="img-fluid">
                                     </div>
-                                    <?php
+                                <?php
                                 } else {
                                     // Espacio vacío (placeholder)
-                                    ?>
+                                ?>
                                     <div class="slide_items">
                                         <img src="../uploads/placeholder.png" alt="Espacio Disponible" class="img-fluid"
                                             onclick="openAddModal()">
                                     </div>
-                                    <?php
+                            <?php
                                 }
                             }
                             ?>
@@ -846,7 +850,7 @@
                         </div>
                     </div>
                     <div class=" col-lg-3 col-md-6 col-sm-12">
-                        
+
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="widget about_us">
@@ -887,7 +891,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
 
                     <div class="col-sm-12 col-md-6 col-lg-3 last">
                         <div class="widget_text widget widget_custom_html">

@@ -32,6 +32,22 @@ if (!isset($_SESSION['id'])) {
     <link rel="stylesheet" type="text/css" href="../../Assets/template1/assets/css/plugin_theme_css.css">
     <link rel="stylesheet" type="text/css" href="../../Assets/template1/assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="../../Assets/template1/assets/css/responsive.css">
+    <style>
+        .new-publication-button {
+            color: white; /* Color del texto */
+            text-decoration: none; /* Quitar subrayado */
+            padding: 10px 15px; /* Espaciado interno */
+            border-radius: 5px; /* Bordes redondeados */
+            display: inline-flex; /* Para alinear el ícono y el texto */
+            align-items: center; /* Centrar verticalmente */
+        }
+
+        .new-publication-button:hover,
+        .new-publication-button:focus {
+            color: white; /* Mantener el color blanco al pasar el mouse o al hacer foco */
+            text-decoration: none; /* Asegurarse de que no haya subrayado */
+        }
+    </style>
 
 
     <style>
@@ -74,14 +90,14 @@ if (!isset($_SESSION['id'])) {
         <a class="navbar-brand pe-3 ps-4 ps-lg-2">DOMINGO SAVIO</a>
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link btn btn-icon btn-transparent-dark me-3" href="../../logout.php">
+                <a class="nav-link btn btn-icon btn-transparent-dark me-3" href="../Login-register/login/logout.php">
                     <i data-feather="log-out"></i>
                 </a>
             </li>
         </ul>
     </nav>
     <div id="layoutSidenav">
-    <div id="layoutSidenav_nav">
+        <div id="layoutSidenav_nav">
             <nav class="sidenav shadow-right sidenav-light">
                 <div class="sidenav-menu">
                     <div class="nav accordion" id="accordionSidenav">
@@ -147,10 +163,10 @@ if (!isset($_SESSION['id'])) {
                                 <i data-feather="edit-3"></i>
                                 EDITAR
                             </button>
-                            <button id="homeButton" class="new-publication-button" style="background-color: #FFD700;">
-                                <i data-feather="home"></i>
-                                INICIO
-                            </button>
+                            <a id="homeButton"  data-image class="new-publication-button" style="background-color: #FFD700;" href="publicaciones.php">
+                                <i data-feather="arrow-left"></i>
+                                VOLVER
+                            </a>
                         </div>
                     </div>
 
@@ -739,35 +755,12 @@ if (!isset($_SESSION['id'])) {
             document.getElementById('editCardOverlay').style.display = 'none';
         });
 
-        // Show/Hide the delete card
-        document.querySelector('.new-publication-button:nth-of-type(3)').addEventListener('click', () => {
-            document.getElementById('deleteCard').style.display = 'block';
-            document.getElementById('deleteCardOverlay').style.display = 'block';
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('homeButton').addEventListener('click', () => {
+                // Redirigir a la página deseada
+                window.location.href = 'publicaciones.php'; // Cambia esta URL a la que desees redirigir
+            });
         });
-        document.getElementById('closeDeleteCard').addEventListener('click', () => {
-            document.getElementById('deleteCard').style.display = 'none';
-            document.getElementById('deleteCardOverlay').style.display = 'none';
-        });
-        document.getElementById('cancelDelete').addEventListener('click', () => {
-            document.getElementById('deleteCard').style.display = 'none';
-            document.getElementById('deleteCardOverlay').style.display = 'none';
-        });
-        document.getElementById('botoncancelar').addEventListener('click', () => {
-            document.getElementById('publicationCard').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
-        });
-
-        // Show/Hide the view card
-        document.querySelector('.new-publication-button:nth-of-type(4)').addEventListener('click', () => {
-            document.getElementById('viewCard').style.display = 'block';
-            document.getElementById('viewCardOverlay').style.display = 'block';
-        });
-        document.getElementById('closeViewCard').addEventListener('click', () => {
-            document.getElementById('viewCard').style.display = 'none';
-            document.getElementById('viewCardOverlay').style.display = 'none';
-        });
-
-
         // Toggle sidebar visibility
         document.getElementById('sidebarToggle').addEventListener('click', function() {
             document.getElementById('layoutSidenav').classList.toggle('collapsed');
