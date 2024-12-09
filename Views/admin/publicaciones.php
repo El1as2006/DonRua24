@@ -88,7 +88,7 @@ if (!isset($_SESSION['id'])) {
                         <div class="sidenav-menu-heading">Core</div>
                         <a class="nav-link" href="admin.php">
                             <div class="nav-link-icon"><i data-feather="home"></i></div>
-                            Dashboards
+                            Inicio
                         </a>
                         <a class="nav-link" href="publicaciones.php">
                             <div class="nav-link-icon"><i data-feather="file-text"></i></div>

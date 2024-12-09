@@ -61,11 +61,11 @@
                                             <!-- LOGO -->
                                             <div class="col-md-3 col-sm-3 col-xs-4">
                                                 <div class="logo">
-                                                    <a class="main_sticky_main_l" href="index.html" title="solutech">
+                                                    <a class="main_sticky_main_l"  title="solutech">
                                                         <img src="../../Assets/template1/assets/images/logo.png"
                                                             alt="solutech">
                                                     </a>
-                                                    <a class="main_sticky_l" href="index.html" title="solutech">
+                                                    <a class="main_sticky_l"  title="solutech">
                                                         <img src="../../Assets/template1/assets/images/logo2.png"
                                                             alt="solutech">
                                                     </a>
