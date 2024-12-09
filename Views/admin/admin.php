@@ -50,7 +50,7 @@ if (!isset($_SESSION['id'])) {
                         <div class="sidenav-menu-heading">Core</div>
                         <a class="nav-link" href="admin.php">
                             <div class="nav-link-icon"><i data-feather="home"></i></div>
-                            Dashboards
+                            Inicio
                         </a>
                         <a class="nav-link" href="publicaciones.php">
                             <div class="nav-link-icon"><i data-feather="file-text"></i></div>
@@ -80,69 +80,69 @@ if (!isset($_SESSION['id'])) {
             </nav>
         </div>
         <div id="layoutSidenav_content">
-            <main>
-                <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
-                    <div class="container-xl px-4">
-                        <div class="page-header-content pt-4">
-                            <h1 class="page-header-title">Dashboard</h1>
-                            <div class="page-header-subtitle">Example dashboard overview and content summary</div>
+    <main>
+        <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+            <div class="container-xl px-4">
+                <div class="page-header-content pt-4">
+                    <h1 class="page-header-title">Panel de Control</h1>
+                    <div class="page-header-subtitle">Resumen general del panel y contenido</div>
+                </div>
+            </div>
+        </header>
+        <div class="container-xl px-4 mt-n10">
+            <div class="row">
+                <div class="col-xl-4 mb-4">
+                    <a class="card lift h-100" href="#!">
+                        <div class="card-body d-flex justify-content-center flex-column">
+                            <i class="feather-xl text-primary mb-3" data-feather="package"></i>
+                            <h5>Componentes Poderosos</h5>
+                            <div class="text-muted small">Para crear elementos visuales informativos</div>
                         </div>
-                    </div>
-                </header>
-                <div class="container-xl px-4 mt-n10">
-                    <div class="row">
-                        <div class="col-xl-4 mb-4">
-                            <a class="card lift h-100" href="#!">
-                                <div class="card-body d-flex justify-content-center flex-column">
-                                    <i class="feather-xl text-primary mb-3" data-feather="package"></i>
-                                    <h5>Powerful Components</h5>
-                                    <div class="text-muted small">To create informative visual elements</div>
-                                </div>
-                            </a>
+                    </a>
+                </div>
+                <div class="col-xl-4 mb-4">
+                    <a class="card lift h-100" href="#!">
+                        <div class="card-body d-flex justify-content-center flex-column">
+                            <i class="feather-xl text-secondary mb-3" data-feather="book"></i>
+                            <h5>Documentación</h5>
+                            <div class="text-muted small">Para mantenerte al día con nuestras herramientas</div>
                         </div>
-                        <div class="col-xl-4 mb-4">
-                            <a class="card lift h-100" href="#!">
-                                <div class="card-body d-flex justify-content-center flex-column">
-                                    <i class="feather-xl text-secondary mb-3" data-feather="book"></i>
-                                    <h5>Documentation</h5>
-                                    <div class="text-muted small">To keep you on track with our toolkit</div>
-                                </div>
-                            </a>
+                    </a>
+                </div>
+                <div class="col-xl-4 mb-4">
+                    <a class="card lift h-100" href="#!">
+                        <div class="card-body d-flex justify-content-center flex-column">
+                            <i class="feather-xl text-green mb-3" data-feather="layout"></i>
+                            <h5>Páginas y Diseños</h5>
+                            <div class="text-muted small">Para ayudarte a comenzar con tu nueva interfaz</div>
                         </div>
-                        <div class="col-xl-4 mb-4">
-                            <a class="card lift h-100" href="#!">
-                                <div class="card-body d-flex justify-content-center flex-column">
-                                    <i class="feather-xl text-green mb-3" data-feather="layout"></i>
-                                    <h5>Pages & Layouts</h5>
-                                    <div class="text-muted small">To help get you started with your new UI</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Gráfica de Publicaciones -->
-                    <div class="mt-5">
-                        <h3 class="text-center">Gráfica de Publicaciones</h3>
-                        <div class="row justify-content-center">
-                            <div class="col-md-6">
-                                <canvas id="publicacionesPieChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Gráfica de Usuarios -->
-                    <div class="mt-5">
-                        <h3 class="text-center">Gráfica de Usuarios</h3>
-                        <div class="row justify-content-center">
-                            <div class="col-md-6">
-                                <canvas id="usuariosPieChart"></canvas>
-                            </div>
-                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Gráfica de Publicaciones -->
+            <div class="mt-5">
+                <h3 class="text-center">Gráfica de Publicaciones</h3>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <canvas id="publicacionesPieChart"></canvas>
                     </div>
                 </div>
+            </div>
 
-
-            </main>
+            <!-- Gráfica de Usuarios -->
+            <div class="mt-5">
+                <h3 class="text-center">Gráfica de Usuarios</h3>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <canvas id="usuariosPieChart"></canvas>
+                    </div>
+                </div>
+            </div>
         </div>
+    </main>
+</div>
+
     </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +21,8 @@
     <script src="../../../package/dist/sweetalert2.min.js"></script>
     <style>
         /* Configuración básica */
-        html, body {
+        html,
+        body {
             height: 100%;
             margin: 0;
             padding: 0;
@@ -124,6 +124,9 @@
                                 <div class="card-footer text-center">
                                     <div class="small"><a href="../login/login.php">Have an account? Go to login</a>
                                     </div>
+                                </div>
+                                <div class="small text-center">
+                                    <a href="../../user/index.php">Inicio</a>
                                 </div>
                             </div>
                         </div>

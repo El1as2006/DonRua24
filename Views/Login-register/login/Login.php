@@ -158,6 +158,9 @@
                                         New user?
                                         <a href="../registro/register.php">Create an account!</a>
                                     </div>
+                                    <div class="small text-center">
+                                        <a href="../../user/index.php">Inicio</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
