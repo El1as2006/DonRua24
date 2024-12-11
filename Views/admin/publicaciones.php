@@ -122,6 +122,10 @@ if (!isset($_SESSION['id'])) {
                             <div class="nav-link-icon"><i data-feather="mail"></i></div>
                             Contacto
                         </a>
+                        <a class="nav-link" href="redesociales.php">
+                            <div class="nav-link-icon"><i data-feather="castillo aqui pone algo de redes sociales"></i></div>
+                            Redes Sociales
+                        </a>
                     </div>
 
                 </div>

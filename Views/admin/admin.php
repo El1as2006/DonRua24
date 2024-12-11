@@ -47,7 +47,7 @@ if (!isset($_SESSION['id'])) {
             <nav class="sidenav shadow-right sidenav-light">
                 <div class="sidenav-menu">
                     <div class="nav accordion" id="accordionSidenav">
-                        <div class="sidenav-menu-heading">Core</div>
+                        <div class="sidenav-menu-heading">Principal</div>
                         <a class="nav-link" href="admin.php">
                             <div class="nav-link-icon"><i data-feather="home"></i></div>
                             Inicio
@@ -68,8 +68,11 @@ if (!isset($_SESSION['id'])) {
                             <div class="nav-link-icon"><i data-feather="mail"></i></div>
                             Contacto
                         </a>
+                        <a class="nav-link" href="redesociales.php">
+                            <div class="nav-link-icon"><i data-feather="castillo aqui pone algo de redes sociales"></i></div>
+                            Redes Sociales
+                        </a>
                     </div>
-
                 </div>
                 <div class="sidenav-footer">
                     <div class="sidenav-footer-content">
@@ -85,7 +88,7 @@ if (!isset($_SESSION['id'])) {
             <div class="container-xl px-4">
                 <div class="page-header-content pt-4">
                     <h1 class="page-header-title">Panel de Control</h1>
-                    <div class="page-header-subtitle">Resumen general del panel y contenido</div>
+                    <div class="page-header-subtitle">Dashboard principal y publicaciones</div>
                 </div>
             </div>
         </header>

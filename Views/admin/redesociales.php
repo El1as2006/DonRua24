@@ -19,7 +19,7 @@ if (!isset($_SESSION['id'])) {
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Admisiones</title>
+    <title>Redes Sociales</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../../Assets/template2/css/styles.css" rel="stylesheet" />
@@ -74,7 +74,7 @@ if (!isset($_SESSION['id'])) {
                             Contacto
                         </a>
                         <a class="nav-link" href="redesociales.php">
-                            <div class="nav-link-icon"><i data-feather="castillo aqui pone algo de redes sociales"></i></div>
+                            <div class="nav-link-icon"><i data-feather="mail"></i></div>
                             Redes Sociales
                         </a>
                     </div>
@@ -94,50 +94,46 @@ if (!isset($_SESSION['id'])) {
                 <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
                     <div class="container-xl px-4">
                         <div class="page-header-content pt-4">
-                            <h1 class="page-header-title">Tabla Solicitudes de admisión</h1>
+                            <h1 class="page-header-title">Tabla Redes Sociales</h1>
                             <div class="page-header-subtitle"></div>
                         </div>
                     </div>
                 </header>
                 <div class="container mt-5">
-                    <h1 class="text-center">Lista de Aspirantes</h1>
-                    <form action="generar_pdf.php" method="POST">
+                    <h1 class="text-center">Lista de Redes Sociales</h1>
+                    <form method="GET">
                         <div class="table-responsive"
                             style="max-width: 100%; margin: auto; background-color: #ffffff; border-radius: 8px; padding: 20px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
                             <table id="tablaUsuarios" class="table table-striped table-bordered" style="width:100%">
-                                <input type="hidden" name="formulario" value="admisiones">
-                                <button class="btn btn-primary btn-block" type="submit">Imprimir Aspirantes</button>
+                                <a class="btn btn-primary btn-block" href="rednueva.php">Agregar Red Social</a>
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Nombre Completo</th>
-                                        <th>Edad</th>
-                                        <th>Sexo</th>
-                                        <th>Nacionalidad</th>
-                                        <th>Teléfono de contacto</th>
-                                        <th>Correo</th>
+                                        <th>Red Social</th>
+                                        <th>URL</th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $sql = "SELECT * FROM admisiones";
+                                    $sql = "SELECT * FROM redes";
                                     $result = $conn->query(query: $sql);
 
                                     if ($result->num_rows > 0) {
                                         while ($row = $result->fetch_assoc()) {
 
                                             echo "<tr>
-                                                <td>{$row['id_admision']}</td>
+                                                <td>{$row['id_red']}</td>
                                                 <td>{$row['nombre']}</td>
-                                                <td>{$row['edad']}</td>
-                                                <td>{$row['sexo']}</td>
-                                                <td>{$row['nacionalidad']}</td>
-                                                <td>{$row['tel_contacto']}</td>
-                                                <td>{$row['correo']}</td>
+                                                <td>{$row['URL']}</td>
+                                                <td>
+                                                    <a href='acciones_redes/editar_red.php?id_red={$row['id_red']}' class='btn btn-primary btn-sm'>Editar</a> 
+                                                    <a href='acciones_redes/eliminar_red.php?id_red={$row['id_red']}' class='btn btn-danger btn-sm'>Eliminar</a>                                                
+                                                </td>
                                             </tr>";
                                         }
                                     } else {
-                                        echo "<tr><td colspan='7'>No hay usuarios registrados.</td></tr>";
+                                        echo "<tr><td colspan='7'>No hay Redes Sociales registradas.</td></tr>";
                                     }
                                     ?>
                                 </tbody>
@@ -229,5 +225,4 @@ if (!isset($_SESSION['id'])) {
         });
     </script>
 </body>
-
 </html>
